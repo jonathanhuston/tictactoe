@@ -24,30 +24,36 @@ extension GameControlsView: View {
             }
             .pickerStyle(MenuPickerStyle())
             .frame(width: 185)
-            .hidden(game.winner == nil)
+            .hidden(game.winner == nil && !game.launch)
                 
             Button(action: {
+                game.launch = false
+                
                 switch newGameType {
                 case "Human vs. Human":
                     newGame(game, players: 2)
                 case "Computer vs. Human":
-                    newGame(game, players: 1, humanStarts: false)
+                    newGame(game, players: 1, computerTurn: true)
                 case "Human vs. Computer":
-                    newGame(game, players: 1, humanStarts: true)
+                    newGame(game, players: 1, computerTurn: false)
                 default:
                     newGame(game, players: 0)
                 }
             }) {
-                Text("Play again?")
+                if game.launch {
+                    Text("Play")
+                } else {
+                    Text("Play again?")
+                }
             }
-            .hidden(game.winner == nil)
+            .hidden(game.winner == nil && !game.launch)
             
             Button(action: {
                 exit(0)
             }) {
                 Text("Quit")
             }
-            .hidden(game.winner == nil)
+            .hidden(game.winner == nil && !game.launch)
         }
         .padding()
     }

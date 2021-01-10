@@ -13,12 +13,13 @@ func newBoard(size: Int) -> Board {
     return Array(repeating: emptyRow, count: size)
 }
 
-func newGame(_ game: Game, players: Int, humanStarts: Bool = true) {
+func newGame(_ game: Game, players: Int, computerTurn: Bool = false) {
     game.board = newBoard(size: 3)
     game.players = players
-    game.humanStarts = humanStarts
     game.playing = Piece.X
-    game.remaining = 9
+    game.computerTurn = computerTurn || (players == 0)
+    game.computerMove = (computerTurn ? computerMove(in: game) : (0, 0))
+    game.remaining = (computerTurn ? 8 : 9)
     game.winner = nil
 }
 
@@ -110,4 +111,44 @@ func winner(_ game: Game) -> Piece? {
     }
     
     return nil
+}
+
+func playPiece(in game: Game, row: Int, col: Int) {
+    game.board[row][col] = game.playing
+    game.remaining -= 1
+    game.winner = winner(game)
+    game.playing = nextPlayer(player: game.playing)
+}
+
+func computerMove(in game: Game) -> (Int, Int) {
+    var emptySquares = [(Int, Int)]()
+    
+    for row in 0..<game.board.count {
+        for col in 0..<game.board.count {
+            if game.board[row][col] == Piece.empty {
+                emptySquares.append((row, col))
+            }
+        }
+    }
+    
+    let (row, col) = emptySquares.randomElement()!
+    
+    playPiece(in: game, row: row, col: col)
+    
+    if game.players != 0 {
+        game.computerTurn = false
+    } else if game.winner == nil {
+        game.computerMove = computerMove(in: game)
+    }
+    
+    return (row, col)
+}
+
+func humanMove(in game: Game, row: Int, col: Int) {
+    playPiece(in: game, row: row, col: col)
+    
+    if game.players != 2 && game.winner == nil {
+        game.computerTurn = true
+        game.computerMove = computerMove(in: game)
+    }
 }

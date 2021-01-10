@@ -18,7 +18,11 @@ extension PiecesView: View {
             ForEach(game.board.indices, id:\.self) {row in
                 HStack(spacing: 20) {
                     ForEach(game.board[row].indices, id:\.self) {col in
-                        SinglePieceView(row: row, col: col)
+                        if game.computerTurn && game.computerMove == (row, col) && game.winner == nil {
+                            PieceImageView(row: row, col: col)
+                        } else {
+                            PieceButtonView(row: row, col: col)
+                        }
                     }
                 }
             }

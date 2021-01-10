@@ -13,17 +13,15 @@ struct PlayingStatusView {
 
 extension PlayingStatusView: View {
     var body: some View {
-        switch game.playing {
-        case Piece.X:
+        if game.playing == Piece.X {
             Text("Player X's turn")
                 .font(.title)
                 .foregroundColor(.primary)
-        case Piece.O:
+                .hidden(game.launch)
+        } else {
             Text("Player O's turn")
                 .font(.title)
                 .foregroundColor(.primary)
-        default:
-            EmptyView()
         }
     }
 }

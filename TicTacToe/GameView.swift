@@ -16,7 +16,10 @@ extension GameView: View {
         VStack {
             ZStack {
                 GridView()
-                PiecesView()
+                
+                if !game.launch {
+                    PiecesView()
+                }
             }
         
             StatusView()
