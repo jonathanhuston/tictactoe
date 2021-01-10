@@ -11,6 +11,15 @@
 		15A51A9425AB07020070D0FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51A9325AB07020070D0FB /* ContentView.swift */; };
 		15A51A9625AB07020070D0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A51A9525AB07020070D0FB /* Assets.xcassets */; };
 		15A51A9925AB07020070D0FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A51A9825AB07020070D0FB /* Preview Assets.xcassets */; };
+		15A51AA525AB075D0070D0FB /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AA425AB075D0070D0FB /* GridView.swift */; };
+		15A51AA925AB07C00070D0FB /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AA825AB07C00070D0FB /* Board.swift */; };
+		15A51AAC25AB0AD10070D0FB /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AAB25AB0AD10070D0FB /* GameLogic.swift */; };
+		15A51AB025AB0E340070D0FB /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AAF25AB0E340070D0FB /* PiecesView.swift */; };
+		15A51AB825AB15040070D0FB /* SinglePieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AB725AB15040070D0FB /* SinglePieceView.swift */; };
+		15A51ABB25AB26380070D0FB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51ABA25AB26380070D0FB /* GameView.swift */; };
+		15A51ABF25AB26ED0070D0FB /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51ABE25AB26ED0070D0FB /* StatusView.swift */; };
+		15A51AC225AB291F0070D0FB /* PlayingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */; };
+		15A51AC525AB29BD0070D0FB /* WinnerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +30,15 @@
 		15A51A9825AB07020070D0FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		15A51A9A25AB07020070D0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15A51A9B25AB07020070D0FB /* TicTacToe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TicTacToe.entitlements; sourceTree = "<group>"; };
+		15A51AA425AB075D0070D0FB /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		15A51AA825AB07C00070D0FB /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		15A51AAB25AB0AD10070D0FB /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		15A51AAF25AB0E340070D0FB /* PiecesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiecesView.swift; sourceTree = "<group>"; };
+		15A51AB725AB15040070D0FB /* SinglePieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePieceView.swift; sourceTree = "<group>"; };
+		15A51ABA25AB26380070D0FB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		15A51ABE25AB26ED0070D0FB /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingStatusView.swift; sourceTree = "<group>"; };
+		15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				15A51A9125AB07010070D0FB /* TicTacToeApp.swift */,
-				15A51A9325AB07020070D0FB /* ContentView.swift */,
+				15A51AA325AB074C0070D0FB /* Views */,
+				15A51AA825AB07C00070D0FB /* Board.swift */,
+				15A51AAB25AB0AD10070D0FB /* GameLogic.swift */,
 				15A51A9525AB07020070D0FB /* Assets.xcassets */,
 				15A51A9A25AB07020070D0FB /* Info.plist */,
 				15A51A9B25AB07020070D0FB /* TicTacToe.entitlements */,
@@ -69,6 +89,21 @@
 				15A51A9825AB07020070D0FB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		15A51AA325AB074C0070D0FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15A51A9325AB07020070D0FB /* ContentView.swift */,
+				15A51ABA25AB26380070D0FB /* GameView.swift */,
+				15A51AA425AB075D0070D0FB /* GridView.swift */,
+				15A51AAF25AB0E340070D0FB /* PiecesView.swift */,
+				15A51AB725AB15040070D0FB /* SinglePieceView.swift */,
+				15A51ABE25AB26ED0070D0FB /* StatusView.swift */,
+				15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */,
+				15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +175,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A51AB825AB15040070D0FB /* SinglePieceView.swift in Sources */,
 				15A51A9425AB07020070D0FB /* ContentView.swift in Sources */,
+				15A51AC525AB29BD0070D0FB /* WinnerStatusView.swift in Sources */,
+				15A51ABF25AB26ED0070D0FB /* StatusView.swift in Sources */,
+				15A51AC225AB291F0070D0FB /* PlayingStatusView.swift in Sources */,
+				15A51AA525AB075D0070D0FB /* GridView.swift in Sources */,
 				15A51A9225AB07010070D0FB /* TicTacToeApp.swift in Sources */,
+				15A51AB025AB0E340070D0FB /* PiecesView.swift in Sources */,
+				15A51AAC25AB0AD10070D0FB /* GameLogic.swift in Sources */,
+				15A51ABB25AB26380070D0FB /* GameView.swift in Sources */,
+				15A51AA925AB07C00070D0FB /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

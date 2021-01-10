@@ -7,15 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView {
+    @EnvironmentObject var game: Game
+}
+
+extension ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        GameView()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Game())
     }
 }
