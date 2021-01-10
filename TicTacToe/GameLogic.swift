@@ -18,9 +18,12 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false) {
     game.players = players
     game.playing = Piece.X
     game.computerTurn = computerTurn || (players == 0)
-    game.computerMove = (computerTurn ? computerMove(in: game) : (0, 0))
-    game.remaining = (computerTurn ? 8 : 9)
+    game.remaining = 9
     game.winner = nil
+
+    if game.computerTurn {
+        computerMove(in: game)
+    }
 }
 
 func nextPlayer(player: Piece) -> Piece {
@@ -113,6 +116,10 @@ func winner(_ game: Game) -> Piece? {
     return nil
 }
 
+//func displayComputerPiece(in game: Game, row: Int, col: Int) -> Bool {
+//    return (game.computerTurn && game.computerMove == (row, col) && game.winner == nil) || (game.players == 0 && game.winner == nil)
+//}
+
 func playPiece(in game: Game, row: Int, col: Int) {
     game.board[row][col] = game.playing
     game.remaining -= 1
@@ -120,7 +127,7 @@ func playPiece(in game: Game, row: Int, col: Int) {
     game.playing = nextPlayer(player: game.playing)
 }
 
-func computerMove(in game: Game) -> (Int, Int) {
+func computerMove(in game: Game) {
     var emptySquares = [(Int, Int)]()
     
     for row in 0..<game.board.count {
@@ -132,16 +139,16 @@ func computerMove(in game: Game) -> (Int, Int) {
     }
     
     let (row, col) = emptySquares.randomElement()!
-    
+        
     playPiece(in: game, row: row, col: col)
     
     if game.players != 0 {
         game.computerTurn = false
     } else if game.winner == nil {
-        game.computerMove = computerMove(in: game)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            computerMove(in: game)
+        }
     }
-    
-    return (row, col)
 }
 
 func humanMove(in game: Game, row: Int, col: Int) {
@@ -149,6 +156,8 @@ func humanMove(in game: Game, row: Int, col: Int) {
     
     if game.players != 2 && game.winner == nil {
         game.computerTurn = true
-        game.computerMove = computerMove(in: game)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            computerMove(in: game)
+        }
     }
 }

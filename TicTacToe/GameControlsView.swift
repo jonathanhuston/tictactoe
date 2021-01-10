@@ -10,8 +10,8 @@ import SwiftUI
 struct GameControlsView {
     @EnvironmentObject var game: Game
     
-    private let gameTypes = ["Human vs. Human", "Computer vs. Human", "Human vs. Computer", "Computer vs. Computer"]
-    @State private var newGameType = "Human vs. Human"
+    private let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human"]
+    @State private var newGameType = "Computer vs. Computer"
 }
 
 extension GameControlsView: View {
@@ -30,14 +30,14 @@ extension GameControlsView: View {
                 game.launch = false
                 
                 switch newGameType {
-                case "Human vs. Human":
-                    newGame(game, players: 2)
+                case "Computer vs. Computer":
+                    newGame(game, players: 0)
                 case "Computer vs. Human":
                     newGame(game, players: 1, computerTurn: true)
                 case "Human vs. Computer":
                     newGame(game, players: 1, computerTurn: false)
                 default:
-                    newGame(game, players: 0)
+                    newGame(game, players: 2)
                 }
             }) {
                 if game.launch {

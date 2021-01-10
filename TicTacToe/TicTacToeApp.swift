@@ -12,7 +12,6 @@ class Game: ObservableObject {
     @Published var players = 2
     @Published var playing = Piece.X
     @Published var computerTurn = false
-    @Published var computerMove = (0, 0)
     @Published var remaining = 9
     @Published var winner: Piece? = nil
     @Published var launch = true
