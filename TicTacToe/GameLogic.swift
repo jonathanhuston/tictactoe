@@ -13,9 +13,10 @@ func newBoard(size: Int) -> Board {
     return Array(repeating: emptyRow, count: size)
 }
 
-func newGame(_ game: Game) {
+func newGame(_ game: Game, players: Int, humanStarts: Bool = true) {
     game.board = newBoard(size: 3)
-    game.players = 2
+    game.players = players
+    game.humanStarts = humanStarts
     game.playing = Piece.X
     game.remaining = 9
     game.winner = nil

@@ -20,25 +20,7 @@ extension GameView: View {
             }
         
             StatusView()
-            
-            HStack(spacing: 20) {
-                Button(action: {
-                    newGame(game)
-                }) {
-                    Text("New game?")
-                }
-                .disabled(game.winner == nil)
-                .opacity(game.winner == nil ? 0 : 1)
-                
-                Button(action: {
-                    exit(0)
-                }) {
-                    Text("Quit")
-                }
-                .disabled(game.winner == nil)
-                .opacity(game.winner == nil ? 0 : 1)
-            }
-            .padding()
+            GameControlsView()
         }
         .frame(height: 650)
     }
