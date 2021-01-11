@@ -20,7 +20,7 @@ struct Move: Hashable {
     var col = 0
 }
 
-struct Library {
+class Library {
     var score: Int = 0
     var nextMoves = [Move: Library]()
 }

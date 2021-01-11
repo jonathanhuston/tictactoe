@@ -156,7 +156,9 @@ func computerMove(in game: Game) {
             computerMove(in: game)
         }
     } else if game.train {
-        newGame(game, players: 0, train: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            newGame(game, players: 0, train: true)
+        }
     }
 }
 
