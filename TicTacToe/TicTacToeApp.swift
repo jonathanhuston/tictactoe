@@ -9,12 +9,14 @@ import SwiftUI
 
 class Game: ObservableObject {
     @Published var board = newBoard(size: 3)
-    @Published var players = 2
     @Published var playing = Piece.X
-    @Published var computerTurn = false
-    @Published var remaining = 9
     @Published var winner: Piece? = nil
     @Published var launch = true
+    @Published var train = false
+
+    var players = 2
+    var computerTurn = false
+    var remaining = 9
 }
 
 @main

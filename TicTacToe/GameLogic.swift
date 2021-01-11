@@ -13,13 +13,14 @@ func newBoard(size: Int) -> Board {
     return Array(repeating: emptyRow, count: size)
 }
 
-func newGame(_ game: Game, players: Int, computerTurn: Bool = false) {
+func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
     game.board = newBoard(size: 3)
     game.players = players
     game.playing = Piece.X
     game.computerTurn = computerTurn || (players == 0)
     game.remaining = 9
     game.winner = nil
+    game.train = train
 
     if game.computerTurn {
         computerMove(in: game)
@@ -116,10 +117,6 @@ func winner(_ game: Game) -> Piece? {
     return nil
 }
 
-//func displayComputerPiece(in game: Game, row: Int, col: Int) -> Bool {
-//    return (game.computerTurn && game.computerMove == (row, col) && game.winner == nil) || (game.players == 0 && game.winner == nil)
-//}
-
 func playPiece(in game: Game, row: Int, col: Int) {
     game.board[row][col] = game.playing
     game.remaining -= 1
@@ -147,6 +144,10 @@ func computerMove(in game: Game) {
     } else if game.winner == nil {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             computerMove(in: game)
+        }
+    } else if game.train {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            newGame(game, players: 0, train: true)
         }
     }
 }

@@ -23,7 +23,12 @@ extension GameView: View {
             }
         
             StatusView()
-            GameControlsView()
+            
+            if !game.train {
+                GameControlsView()
+            } else {
+                TrainControlsView()
+            }
         }
         .frame(height: 650)
     }

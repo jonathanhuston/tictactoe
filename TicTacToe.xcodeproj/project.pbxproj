@@ -21,6 +21,7 @@
 		15A51ABF25AB26ED0070D0FB /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51ABE25AB26ED0070D0FB /* StatusView.swift */; };
 		15A51AC225AB291F0070D0FB /* PlayingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */; };
 		15A51AC525AB29BD0070D0FB /* WinnerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */; };
+		15F54D6C25AC489C0088718A /* TrainControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F54D6B25AC489C0088718A /* TrainControlsView.swift */; };
 		15FAFDD625AB92330079DF5E /* HiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAFDD525AB92330079DF5E /* HiddenModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		15A51ABE25AB26ED0070D0FB /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingStatusView.swift; sourceTree = "<group>"; };
 		15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerStatusView.swift; sourceTree = "<group>"; };
+		15F54D6B25AC489C0088718A /* TrainControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainControlsView.swift; sourceTree = "<group>"; };
 		15FAFDD525AB92330079DF5E /* HiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				15A51AC125AB291F0070D0FB /* PlayingStatusView.swift */,
 				15A51AC425AB29BD0070D0FB /* WinnerStatusView.swift */,
 				1509F3A125AB9A1100144CDB /* GameControlsView.swift */,
+				15F54D6B25AC489C0088718A /* TrainControlsView.swift */,
 				15FAFDD525AB92330079DF5E /* HiddenModifier.swift */,
 			);
 			name = Views;
@@ -190,6 +193,7 @@
 				15FAFDD625AB92330079DF5E /* HiddenModifier.swift in Sources */,
 				1509F3B125AB9A1100144CDB /* GameControlsView.swift in Sources */,
 				15A51AB025AB0E340070D0FB /* PiecesView.swift in Sources */,
+				15F54D6C25AC489C0088718A /* TrainControlsView.swift in Sources */,
 				15A51AAC25AB0AD10070D0FB /* GameLogic.swift in Sources */,
 				151B397F25AB9BD100B76AF6 /* PieceImageView.swift in Sources */,
 				15A51ABB25AB26380070D0FB /* GameView.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct GameControlsView {
     @EnvironmentObject var game: Game
     
-    private let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human"]
+    private let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train"]
     @State private var newGameType = "Computer vs. Computer"
 }
 
@@ -24,7 +24,6 @@ extension GameControlsView: View {
             }
             .pickerStyle(MenuPickerStyle())
             .frame(width: 185)
-            .hidden(game.winner == nil && !game.launch)
                 
             Button(action: {
                 game.launch = false
@@ -36,8 +35,10 @@ extension GameControlsView: View {
                     newGame(game, players: 1, computerTurn: true)
                 case "Human vs. Computer":
                     newGame(game, players: 1, computerTurn: false)
-                default:
+                case "Human vs. Human":
                     newGame(game, players: 2)
+                default:
+                    newGame(game, players: 0, train: true)
                 }
             }) {
                 if game.launch {
@@ -46,15 +47,14 @@ extension GameControlsView: View {
                     Text("Play again?")
                 }
             }
-            .hidden(game.winner == nil && !game.launch)
             
             Button(action: {
                 exit(0)
             }) {
                 Text("Quit")
             }
-            .hidden(game.winner == nil && !game.launch)
         }
+        .hidden(game.winner == nil && !game.launch)
         .padding()
     }
 }
