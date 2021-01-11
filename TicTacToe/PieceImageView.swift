@@ -32,7 +32,7 @@ extension PieceImageView: View {
                 Image(systemName: "circle")
                     .font(.system(size: 100, weight: .medium))
                     .foregroundColor(.blue)
-            case .empty:
+            case .none:
                 Text(" ")
             }
         }

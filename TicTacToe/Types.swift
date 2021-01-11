@@ -7,12 +7,20 @@
 
 import Foundation
 
-enum Piece {
+enum Player {
     case X
     case O
-    case empty
+    case none
 }
 
-typealias Board = [[Piece]]
-typealias Move = (Board, Piece, row: Int, col: Int)
-typealias Library = [(moves: [Move], winner: Piece)]
+typealias Board = [[Player]]
+
+struct Move: Hashable {
+    var row = 0
+    var col = 0
+}
+
+struct Library {
+    var score: Int = 0
+    var nextMoves = [Move: Library]()
+}

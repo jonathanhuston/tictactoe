@@ -8,42 +8,42 @@
 import Foundation
 
 func newBoard(size: Int) -> Board {
-    let emptyRow = Array(repeating: Piece.empty, count: size)
+    let emptyRow = Array(repeating: Player.none, count: size)
     
     return Array(repeating: emptyRow, count: size)
 }
 
 func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
     game.board = newBoard(size: 3)
-    game.playing = Piece.X
+    game.player = .X
     game.winner = nil
     game.train = train
-    game.moves = [Move]()
+    game.moves = []
     game.players = players
     game.computerTurn = computerTurn || (players == 0)
     game.remaining = 9
 
-//    if let bundleID = Bundle.main.bundleIdentifier {
-//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-//    }
+    if let bundleID = Bundle.main.bundleIdentifier {
+        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+    }
 
     if game.computerTurn {
         computerMove(in: game)
     }
 }
 
-func nextPlayer(player: Piece) -> Piece {
-    if player == Piece.X {
-        return Piece.O
+func nextPlayer(player: Player) -> Player {
+    if player == .X {
+        return .O
     } else {
-        return Piece.X
+        return .X
     }
 }
 
-func allSamePlayer(in squares: [Piece]) -> Piece? {
+func allSamePlayer(in squares: [Player]) -> Player? {
     let firstSquare = squares[0]
     
-    if firstSquare == Piece.empty {
+    if firstSquare == .none {
         return nil
     }
     
@@ -56,7 +56,7 @@ func allSamePlayer(in squares: [Piece]) -> Piece? {
     return firstSquare
 }
 
-func anyRowWinner(in board: Board) -> Piece? {
+func anyRowWinner(in board: Board) -> Player? {
     for row in board {
         if let winner = allSamePlayer(in: row) {
             return winner
@@ -66,9 +66,9 @@ func anyRowWinner(in board: Board) -> Piece? {
     return nil
 }
 
-func anyColWinner(in board: Board) -> Piece? {
+func anyColWinner(in board: Board) -> Player? {
     for i in 0..<board.count {
-        var col = [Piece]()
+        var col = [Player]()
         
         for row in board {
             col.append(row[i])
@@ -82,9 +82,9 @@ func anyColWinner(in board: Board) -> Piece? {
     return nil
 }
 
-func anyDiagWinner(in board: Board) -> Piece? {
-    var diag1 = [Piece]()
-    var diag2 = [Piece]()
+func anyDiagWinner(in board: Board) -> Player? {
+    var diag1 = [Player]()
+    var diag2 = [Player]()
 
     for i in 0..<board.count {
         diag1.append(board[i][i])
@@ -102,7 +102,7 @@ func anyDiagWinner(in board: Board) -> Piece? {
     return nil
 }
 
-func winner(_ game: Game) -> Piece? {
+func winner(_ game: Game) -> Player? {
     if let winner = anyRowWinner(in: game.board) {
         updateLibrary(with: game, winner: winner)
         return winner
@@ -119,35 +119,35 @@ func winner(_ game: Game) -> Piece? {
     }
     
     if game.remaining == 0 {
-        updateLibrary(with: game, winner: Piece.empty)
-        return Piece.empty
+        updateLibrary(with: game, winner: .none)
+        return Player.none
     }
     
     return nil
 }
 
-func playPiece(in game: Game, row: Int, col: Int) {
-    game.board[row][col] = game.playing
-    game.moves.append((game.board, game.playing, row, col))
+func play(move: Move, in game: Game) {
+    game.board[move.row][move.col] = game.player
+    game.moves.append(move)
     game.remaining -= 1
     game.winner = winner(game)
-    game.playing = nextPlayer(player: game.playing)
+    game.player = nextPlayer(player: game.player)
 }
 
 func computerMove(in game: Game) {
-    var emptySquares = [(Int, Int)]()
+    var possibleMoves = [Move]()
     
     for row in 0..<game.board.count {
         for col in 0..<game.board.count {
-            if game.board[row][col] == Piece.empty {
-                emptySquares.append((row, col))
+            if game.board[row][col] == .none {
+                possibleMoves.append(Move(row: row, col: col))
             }
         }
     }
     
-    let (row, col) = emptySquares.randomElement()!
+    let move = bestMove(in: game, given: possibleMoves)
         
-    playPiece(in: game, row: row, col: col)
+    play(move: move, in: game)
     
     if game.players != 0 {
         game.computerTurn = false
@@ -156,15 +156,13 @@ func computerMove(in game: Game) {
             computerMove(in: game)
         }
     } else if game.train {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            newGame(game, players: 0, train: true)
-        }
+        newGame(game, players: 0, train: true)
     }
 }
 
-func humanMove(in game: Game, row: Int, col: Int) {
-    playPiece(in: game, row: row, col: col)
-    
+func humanMove(move: Move, in game: Game) {
+    play(move: move, in: game)
+
     if game.players != 2 && game.winner == nil {
         game.computerTurn = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

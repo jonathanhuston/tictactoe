@@ -13,7 +13,7 @@ struct PlayingStatusView {
 
 extension PlayingStatusView: View {
     var body: some View {
-        if game.playing == Piece.X {
+        if game.player == .X {
             Text("Player X's turn")
                 .font(.title)
                 .foregroundColor(.primary)

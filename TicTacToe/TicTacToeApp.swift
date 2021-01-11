@@ -9,14 +9,14 @@ import SwiftUI
 
 
 class Game: ObservableObject {
-    @AppStorage("trainingCounter") var trainingCounter = 0
-    var library = Library() // @AppStorage
-
     @Published var board = newBoard(size: 3)
-    @Published var playing = Piece.X
-    @Published var winner: Piece? = nil
+    @Published var player: Player = .X
+    @Published var winner: Player? = nil
     @Published var launch = true
     @Published var train = false
+    
+    @AppStorage("trainingCounter") var trainingCounter = 0
+    var library = Library()
     
     var moves = [Move]()
     var players = 2
