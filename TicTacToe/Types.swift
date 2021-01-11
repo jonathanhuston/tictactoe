@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  Types.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/10/21.
@@ -14,4 +14,5 @@ enum Piece {
 }
 
 typealias Board = [[Piece]]
-typealias Move = (Board, Piece, Int, Int)
+typealias Move = (Board, Piece, row: Int, col: Int)
+typealias Library = [(moves: [Move], winner: Piece)]
