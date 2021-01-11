@@ -99,18 +99,22 @@ func anyDiagWinner(in board: Board) -> Piece? {
 
 func winner(_ game: Game) -> Piece? {
     if let winner = anyRowWinner(in: game.board) {
+        game.trainingCounter += 1
         return winner
     }
     
     if let winner = anyColWinner(in: game.board) {
+        game.trainingCounter += 1
         return winner
     }
     
     if let winner = anyDiagWinner(in: game.board) {
+        game.trainingCounter += 1
         return winner
     }
     
     if game.remaining == 0 {
+        game.trainingCounter += 1
         return Piece.empty
     }
     

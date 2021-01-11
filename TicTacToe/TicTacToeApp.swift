@@ -13,6 +13,8 @@ class Game: ObservableObject {
     @Published var winner: Piece? = nil
     @Published var launch = true
     @Published var train = false
+    
+    @AppStorage("trainingCounter") var trainingCounter = 0
 
     var players = 2
     var computerTurn = false
