@@ -21,6 +21,10 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool
     game.remaining = 9
     game.winner = nil
     game.train = train
+    
+//    if let bundleID = Bundle.main.bundleIdentifier {
+//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+//    }
 
     if game.computerTurn {
         computerMove(in: game)

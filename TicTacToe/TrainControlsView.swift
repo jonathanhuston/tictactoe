@@ -22,7 +22,7 @@ extension TrainControlsView: View {
             Button(action: {
                 game.train = false
             }) {
-                Text("Stop training")
+                Text("Suspend training")
             }
         }
         .padding()
