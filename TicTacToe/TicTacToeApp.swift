@@ -9,14 +9,15 @@ import SwiftUI
 
 
 class Game: ObservableObject {
+//    @AppStorage("library") var library = Library().encode()!
+    var library = Library()
+    @AppStorage("trainingCounter") var trainingCounter = 0
+
     @Published var board = newBoard(size: 3)
     @Published var player: Player = .X
     @Published var winner: Player? = nil
     @Published var launch = true
     @Published var train = false
-    
-    @AppStorage("trainingCounter") var trainingCounter = 0
-    var library = Library()
     
     var moves = [Move]()
     var players = 2
@@ -26,8 +27,6 @@ class Game: ObservableObject {
 
 @main
 struct TicTacToeApp: App {
-
-
     var body: some Scene {
         WindowGroup {
             GameView()

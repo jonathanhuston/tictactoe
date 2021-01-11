@@ -15,12 +15,12 @@ enum Player {
 
 typealias Board = [[Player]]
 
-struct Move: Hashable {
+struct Move: Hashable, Codable {
     var row = 0
     var col = 0
 }
 
-class Library {
+class Library: Codable {
     var score: Int = 0
     var nextMoves = [Move: Library]()
 }

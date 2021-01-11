@@ -7,12 +7,35 @@
 
 import Foundation
 
-func updateLibrary(with game: Game, winner: Player) {
-    var node = game.library
+extension Library {
+    func encode() -> Data? {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(self) {
+            return encoded
+        } else {
+            return nil
+        }
+    }
+    
+    static func decode(libraryData: Data) -> Library? {
+        let decoder = JSONDecoder()
+        if let library = try? decoder.decode(Library.self, from: libraryData) {
+            return library
+        } else {
+            return nil
+        }
+    }
+ }
 
+func updateLibrary(with game: Game, winner: Player) {
+//    var node = Library.decode(libraryData: game.library)!
+    var node = game.library
+    
+    print(node.nextMoves)
+    
     for (level, move) in game.moves.enumerated() {
         node.score += (winner == .X) ? (1 + level) : (-1 - level)
-        
+
         if node.nextMoves[move] == nil {
             node.nextMoves[move] = Library()
         }
@@ -24,8 +47,9 @@ func updateLibrary(with game: Game, winner: Player) {
 
 func bestMove(in game: Game, given possibleMoves: [Move]) -> Move {
     let best: (key: Move, value: Library)
+//    var node = Library.decode(libraryData: game.library)!
     var node = game.library
-    
+
     for move in game.moves {
         if node.nextMoves[move] == nil {
             return possibleMoves.randomElement()!
