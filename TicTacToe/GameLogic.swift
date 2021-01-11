@@ -15,13 +15,14 @@ func newBoard(size: Int) -> Board {
 
 func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
     game.board = newBoard(size: 3)
-    game.players = players
     game.playing = Piece.X
-    game.computerTurn = computerTurn || (players == 0)
-    game.remaining = 9
     game.winner = nil
     game.train = train
-    
+    game.moves = [Move]()
+    game.players = players
+    game.computerTurn = computerTurn || (players == 0)
+    game.remaining = 9
+
 //    if let bundleID = Bundle.main.bundleIdentifier {
 //        UserDefaults.standard.removePersistentDomain(forName: bundleID)
 //    }
@@ -127,6 +128,7 @@ func winner(_ game: Game) -> Piece? {
 
 func playPiece(in game: Game, row: Int, col: Int) {
     game.board[row][col] = game.playing
+    game.moves.append((game.board, game.playing, row, col))
     game.remaining -= 1
     game.winner = winner(game)
     game.playing = nextPlayer(player: game.playing)

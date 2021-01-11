@@ -14,4 +14,4 @@ enum Piece {
 }
 
 typealias Board = [[Piece]]
-
+typealias Move = (Board, Piece, Int, Int)

@@ -16,6 +16,7 @@ class Game: ObservableObject {
     
     @AppStorage("trainingCounter") var trainingCounter = 0
 
+    var moves = [Move]()
     var players = 2
     var computerTurn = false
     var remaining = 9
