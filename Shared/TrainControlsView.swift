@@ -16,22 +16,16 @@ struct TrainControlsView {
 extension TrainControlsView: View {
     var body: some View {
         HStack(spacing: 20) {
-            Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
-                .frame(width: 160)
-                .font(.title3)
-                .foregroundColor(.purple)
-            
-            Picker("", selection: $dummy) {
-            }
-            .pickerStyle(DefaultPickerStyle())
-            .frame(width: 0)
-            .hidden()
-            
             Button(action: {
                 game.train = false
             }) {
                 Text("Suspend")
             }
+            
+            Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
+                .frame(width: 200)
+                .font(.title3)
+                .foregroundColor(.purple)
             
             Button(action: {
                 game.trainingCounter = 0
@@ -39,6 +33,12 @@ extension TrainControlsView: View {
             }) {
                 Text("Reset")
             }
+            
+            Picker("", selection: $dummy) {
+            }
+            .pickerStyle(DefaultPickerStyle())
+            .frame(width: 0)
+            .hidden()
         }
         .padding()
     }

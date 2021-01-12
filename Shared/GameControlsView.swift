@@ -23,7 +23,7 @@ extension GameControlsView: View {
                 }
             }
             .pickerStyle(DefaultPickerStyle())
-            .frame(width: 185)
+            .fixedSize()
                 
             Button(action: {
                 game.launch = false
