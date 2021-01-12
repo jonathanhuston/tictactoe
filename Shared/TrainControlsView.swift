@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TrainControlsView {
     @EnvironmentObject var game: Game
+    
+    @State private var dummy = ""
 }
 
 extension TrainControlsView: View {
@@ -19,10 +21,23 @@ extension TrainControlsView: View {
                 .font(.title3)
                 .foregroundColor(.purple)
             
+            Picker("", selection: $dummy) {
+            }
+            .pickerStyle(DefaultPickerStyle())
+            .frame(width: 0)
+            .hidden()
+            
             Button(action: {
                 game.train = false
             }) {
-                Text("Suspend training")
+                Text("Suspend")
+            }
+            
+            Button(action: {
+                game.trainingCounter = 0
+                game.library = newLibrary()
+            }) {
+                Text("Reset")
             }
         }
         .padding()

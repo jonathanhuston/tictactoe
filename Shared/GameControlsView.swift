@@ -41,11 +41,7 @@ extension GameControlsView: View {
                     newGame(game, players: 0, train: true)
                 }
             }) {
-                if game.launch {
-                    Text("Play")
-                } else {
-                    Text("Play again?")
-                }
+                Text("Play")
             }
             
             Button(action: {

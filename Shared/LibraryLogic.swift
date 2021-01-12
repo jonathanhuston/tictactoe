@@ -27,6 +27,10 @@ extension Library {
     }
  }
 
+func newLibrary() -> Data {
+    Library().encode()!
+}
+
 func updateLibrary(with game: Game, winner: Player) {
     let library = Library.decode(libraryData: game.library)!
     var node = library

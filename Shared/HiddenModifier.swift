@@ -18,7 +18,7 @@ struct HiddenModifier: ViewModifier {
 }
 
 extension View {
-    func hidden(_ condition: Bool) -> some View {
+    func hidden(_ condition: Bool = true) -> some View {
         self.modifier(HiddenModifier(condition: condition))
     }
 }
