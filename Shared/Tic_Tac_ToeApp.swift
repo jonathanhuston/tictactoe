@@ -24,7 +24,7 @@ class Game: ObservableObject {
 }
 
 class ScreenScaling: ObservableObject {
-    @Published var factor: CGFloat = (Device.width < 400) ? 0.5 : 1
+    @Published var factor: CGFloat = (Device.width < 450) ? 0.7 : 1
 }
 
 @main
