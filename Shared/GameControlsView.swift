@@ -17,7 +17,7 @@ struct GameControlsView {
 
 extension GameControlsView: View {
     var body: some View {
-        HStack(spacing: 20 * screenScaling.factor) {
+        HStack(spacing: 20) {
             VStack {
                 Picker("", selection: $newGameType) {
                     ForEach(gameTypes, id:\.self) { gameType in
@@ -28,7 +28,7 @@ extension GameControlsView: View {
                 .fixedSize()
                 
                 if screenScaling.factor < 1 {
-                    GameButtonsView(newGameType: newGameType)
+                    GameButtonsView(newGameType: newGameType, extraSpacing: true)
                 }
             }
 

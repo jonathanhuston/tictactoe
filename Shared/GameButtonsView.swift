@@ -10,11 +10,12 @@ import SwiftUI
 struct GameButtonsView {
     @EnvironmentObject var game: Game
     var newGameType: String
+    var extraSpacing = false
 }
 
 extension GameButtonsView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: extraSpacing ? 60 : 20) {
             Button(action: {
                 game.launch = false
                 
