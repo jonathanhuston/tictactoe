@@ -24,7 +24,6 @@ extension TrainControlsView: View {
             
             Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
                 .frame(width: 200)
-                .font(.title3)
                 .foregroundColor(.purple)
             
             Button(action: {
