@@ -22,7 +22,7 @@ extension GameControlsView: View {
                     Text("\(gameType)")
                 }
             }
-            .pickerStyle(MenuPickerStyle())
+            .pickerStyle(DefaultPickerStyle())
             .frame(width: 185)
                 
             Button(action: {

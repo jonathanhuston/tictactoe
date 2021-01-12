@@ -1,12 +1,11 @@
 //
-//  TicTacToeApp.swift
-//  TicTacToe
+//  Tic_Tac_ToeApp.swift
+//  Shared
 //
-//  Created by Jonathan Huston on 1/10/21.
+//  Created by Jonathan Huston on 1/12/21.
 //
 
 import SwiftUI
-
 
 class Game: ObservableObject {
     @AppStorage("library") var library = Library().encode()!
