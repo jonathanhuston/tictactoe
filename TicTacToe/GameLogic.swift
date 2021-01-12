@@ -23,9 +23,10 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool
     game.computerTurn = computerTurn || (players == 0)
     game.remaining = 9
 
-    if let bundleID = Bundle.main.bundleIdentifier {
-        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-    }
+//    dev only 
+//    if let bundleID = Bundle.main.bundleIdentifier {
+//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+//    }
 
     if game.computerTurn {
         computerMove(in: game)
