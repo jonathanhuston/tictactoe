@@ -15,7 +15,7 @@ extension TrainControlsView: View {
     var body: some View {
         HStack(spacing: 20) {
             Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
-                .frame(width: 140)
+                .frame(width: 160)
                 .font(.title3)
                 .foregroundColor(.purple)
             
