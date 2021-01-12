@@ -9,14 +9,15 @@ import SwiftUI
 
 struct PiecesView {
     @EnvironmentObject var game: Game
+    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension PiecesView: View {
     var body: some View {
         
-        VStack(spacing: 20) {
+        VStack(spacing: 20 * screenScaling.factor) {
             ForEach(game.board.indices, id:\.self) {row in
-                HStack(spacing: 20) {
+                HStack(spacing: 20 * screenScaling.factor) {
                     ForEach(game.board[row].indices, id:\.self) {col in
                         PieceButtonView(row: row, col: col)
                     }
@@ -30,5 +31,6 @@ struct PiecesView_Previews: PreviewProvider {
     static var previews: some View {
         PiecesView()
             .environmentObject(Game())
+            .environmentObject(ScreenScaling())
     }
 }

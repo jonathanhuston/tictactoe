@@ -9,37 +9,47 @@ import SwiftUI
 
 struct TrainControlsView {
     @EnvironmentObject var game: Game
-    
-    @State private var dummy = ""
+    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension TrainControlsView: View {
     var body: some View {
-        HStack(spacing: 20) {
-            Button(action: {
-                game.train = false
-            }) {
-                Text("Suspend")
+        VStack(spacing: 0) {
+            if screenScaling.factor < 1 {
+                DummyPicker()
             }
             
-            Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
-                .frame(width: 200)
-                .foregroundColor(.purple)
-            
-            Button(action: {
-                game.trainingCounter = 0
-                game.library = newLibrary()
-            }) {
-                Text("Reset")
+            HStack() {
+                Button(action: {
+                    game.train = false
+                }) {
+                    Text("Suspend")
+                }
+                
+                if screenScaling.factor >= 1 {
+                    Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
+                        .frame(width: 200)
+                        .font(.title3)
+                        .foregroundColor(.purple)
+                } else {
+                    Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
+                        .fixedSize()
+                        .foregroundColor(.purple)
+                }
+                
+                Button(action: {
+                    game.trainingCounter = 0
+                    game.library = newLibrary()
+                }) {
+                    Text("Reset")
+                }
+                
+                if screenScaling.factor >= 1 {
+                    DummyPicker()
+                }
             }
-            
-            Picker("", selection: $dummy) {
-            }
-            .pickerStyle(DefaultPickerStyle())
-            .frame(width: 0)
-            .hidden()
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -47,5 +57,6 @@ struct TrainControlsView_Previews: PreviewProvider {
     static var previews: some View {
         TrainControlsView()
             .environmentObject(Game())
+            .environmentObject(ScreenScaling())
     }
 }

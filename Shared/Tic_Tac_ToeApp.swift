@@ -23,12 +23,17 @@ class Game: ObservableObject {
     var remaining = 9
 }
 
+class ScreenScaling: ObservableObject {
+    @Published var factor: CGFloat = (Device.width < 400) ? 0.5 : 1
+}
+
 @main
 struct TicTacToeApp: App {
     var body: some Scene {
         WindowGroup {
             GameView()
                 .environmentObject(Game())
+                .environmentObject(ScreenScaling())
         }
     }
 }

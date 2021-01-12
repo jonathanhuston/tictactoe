@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView {
     @EnvironmentObject var game: Game
+    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension GameView: View {
@@ -30,7 +31,7 @@ extension GameView: View {
                 TrainControlsView()
             }
         }
-        .frame(height: 650)
+        .frame(height: 650 * screenScaling.factor)
     }
 }
 
@@ -38,5 +39,6 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
             .environmentObject(Game())
+            .environmentObject(ScreenScaling())
     }
 }

@@ -1,5 +1,5 @@
 //
-//  GameButtonsView.swift
+//  GameControlsView.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/10/21.
@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameControlsView {
     @EnvironmentObject var game: Game
+    @EnvironmentObject var screenScaling: ScreenScaling
     
     private let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train"]
     @State private var newGameType = "Computer vs. Computer"
@@ -16,38 +17,23 @@ struct GameControlsView {
 
 extension GameControlsView: View {
     var body: some View {
-        HStack(spacing: 20) {
-            Picker("", selection: $newGameType) {
-                ForEach(gameTypes, id:\.self) { gameType in
-                    Text("\(gameType)")
+        HStack(spacing: 20 * screenScaling.factor) {
+            VStack {
+                Picker("", selection: $newGameType) {
+                    ForEach(gameTypes, id:\.self) { gameType in
+                        Text("\(gameType)")
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+                .fixedSize()
+                
+                if screenScaling.factor < 1 {
+                    GameButtonsView(newGameType: newGameType)
                 }
             }
-            .pickerStyle(DefaultPickerStyle())
-            .fixedSize()
-                
-            Button(action: {
-                game.launch = false
-                
-                switch newGameType {
-                case "Computer vs. Computer":
-                    newGame(game, players: 0)
-                case "Computer vs. Human":
-                    newGame(game, players: 1, computerTurn: true)
-                case "Human vs. Computer":
-                    newGame(game, players: 1, computerTurn: false)
-                case "Human vs. Human":
-                    newGame(game, players: 2)
-                default:
-                    newGame(game, players: 0, train: true)
-                }
-            }) {
-                Text("Play")
-            }
-            
-            Button(action: {
-                exit(0)
-            }) {
-                Text("Quit")
+
+            if screenScaling.factor >= 1 {
+                GameButtonsView(newGameType: newGameType)
             }
         }
         .hidden(game.winner == nil && !game.launch)
@@ -55,9 +41,10 @@ extension GameControlsView: View {
     }
 }
 
-struct GameButtonsView_Previews: PreviewProvider {
+struct GameControlsView_Previews: PreviewProvider {
     static var previews: some View {
         GameControlsView()
             .environmentObject(Game())
+            .environmentObject(ScreenScaling())
     }
 }
