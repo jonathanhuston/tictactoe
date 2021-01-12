@@ -7,26 +7,24 @@
 
 import Foundation
 
-func newBoard(size: Int) -> Board {
-    let emptyRow = Array(repeating: Player.none, count: size)
-    
-    return Array(repeating: emptyRow, count: size)
+func newBoard() -> Board {
+    Array(repeating: Player.none, count: 9)
 }
 
 func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
-    game.board = newBoard(size: 3)
+    game.board = newBoard()
     game.player = .X
     game.winner = nil
     game.train = train
     game.moves = []
     game.players = players
     game.computerTurn = computerTurn || (players == 0)
-    game.remaining = 9
+    game.possibleMoves = Set([0, 1, 2, 3, 4, 5, 6, 7, 8])
 
-//    dev only
-//    if let bundleID = Bundle.main.bundleIdentifier {
-//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-//    }
+//    DEV:
+    if let bundleID = Bundle.main.bundleIdentifier {
+        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+    }
 
     if game.computerTurn {
         computerMove(in: game)
@@ -41,85 +39,37 @@ func nextPlayer(player: Player) -> Player {
     }
 }
 
-func allSamePlayer(in squares: [Player]) -> Player? {
-    let firstSquare = squares[0]
-    
-    if firstSquare == .none {
-        return nil
-    }
-    
-    for square in squares {
-        if square != firstSquare {
-            return nil
-        }
-    }
-    
-    return firstSquare
-}
+let winningConstellations = [ Set([0, 1, 2]),
+                              Set([3, 4, 5]),
+                              Set([6, 7, 8]),
+                              Set([0, 3, 6]),
+                              Set([1, 4, 7]),
+                              Set([2, 5, 8]),
+                              Set([0, 4, 8]),
+                              Set([2, 4, 6]) ]
 
-func anyRowWinner(in board: Board) -> Player? {
-    for row in board {
-        if let winner = allSamePlayer(in: row) {
-            return winner
-        }
-    }
-    
-    return nil
-}
 
-func anyColWinner(in board: Board) -> Player? {
-    for i in 0..<board.count {
-        var col = [Player]()
+func findWinner(on board: Board) -> Player? {
+    for player in [Player.X, Player.O] {
+        let playedSquares = Set(board.indices.filter { board[$0] == player })
         
-        for row in board {
-            col.append(row[i])
+        for constellation in winningConstellations {
+            if constellation.isSubset(of: playedSquares) {
+                return player
+            }
         }
-        
-        if let winner = allSamePlayer(in: col) {
-            return winner
-        }
-    }
-    
-    return nil
-}
-
-func anyDiagWinner(in board: Board) -> Player? {
-    var diag1 = [Player]()
-    var diag2 = [Player]()
-
-    for i in 0..<board.count {
-        diag1.append(board[i][i])
-        diag2.append(board[i][board.count - i - 1])
-    }
-    
-    if let winner = allSamePlayer(in: diag1) {
-        return winner
-    }
-    
-    if let winner = allSamePlayer(in: diag2) {
-        return winner
     }
     
     return nil
 }
 
 func winner(_ game: Game) -> Player? {
-    if let winner = anyRowWinner(in: game.board) {
+    if let winner = findWinner(on: game.board) {
         updateLibrary(with: game, winner: winner)
         return winner
     }
     
-    if let winner = anyColWinner(in: game.board) {
-        updateLibrary(with: game, winner: winner)
-        return winner
-    }
-    
-    if let winner = anyDiagWinner(in: game.board) {
-        updateLibrary(with: game, winner: winner)
-        return winner
-    }
-    
-    if game.remaining == 0 {
+    if game.possibleMoves.isEmpty {
         updateLibrary(with: game, winner: .none)
         return Player.none
     }
@@ -128,25 +78,15 @@ func winner(_ game: Game) -> Player? {
 }
 
 func play(move: Move, in game: Game) {
-    game.board[move.row][move.col] = game.player
+    game.board[move] = game.player
     game.moves.append(move)
-    game.remaining -= 1
+    game.possibleMoves.remove(move)
     game.winner = winner(game)
     game.player = nextPlayer(player: game.player)
 }
 
 func computerMove(in game: Game) {
-    var possibleMoves = [Move]()
-    
-    for row in 0..<game.board.count {
-        for col in 0..<game.board.count {
-            if game.board[row][col] == .none {
-                possibleMoves.append(Move(row: row, col: col))
-            }
-        }
-    }
-    
-    let move = bestMove(in: game, given: possibleMoves)
+    let move = bestMove(in: game, given: game.possibleMoves)
         
     play(move: move, in: game)
     
@@ -163,8 +103,8 @@ func computerMove(in game: Game) {
     }
 }
 
-func humanMove(move: Move, in game: Game) {
-    play(move: move, in: game)
+func humanMove(row: Int, col: Int, in game: Game) {
+    play(move: row * 3 + col, in: game)
 
     if game.players != 2 && game.winner == nil {
         game.computerTurn = true

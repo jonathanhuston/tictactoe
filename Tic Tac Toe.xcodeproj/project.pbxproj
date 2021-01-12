@@ -126,11 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */,
+				15E9571525ADEF270001D26B /* Device.swift */,
 				156765B225ADB798002BACC9 /* Views */,
 				1587069A25ADB99A0011F155 /* Types.swift */,
 				1587069925ADB99A0011F155 /* GameLogic.swift */,
 				1587069825ADB99A0011F155 /* LibraryLogic.swift */,
-				15E9571525ADEF270001D26B /* Device.swift */,
 				15E2790D25ADB65A00222A42 /* Assets.xcassets */,
 			);
 			path = Shared;

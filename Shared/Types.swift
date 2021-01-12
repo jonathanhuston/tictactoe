@@ -13,12 +13,9 @@ enum Player {
     case none
 }
 
-typealias Board = [[Player]]
+typealias Board = [Player]
 
-struct Move: Hashable, Codable {
-    var row = 0
-    var col = 0
-}
+typealias Move = Int
 
 class Library: Codable {
     var score: Int = 0

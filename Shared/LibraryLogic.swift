@@ -48,7 +48,7 @@ func updateLibrary(with game: Game, winner: Player) {
     game.trainingCounter += 1
 }
 
-func bestMove(in game: Game, given possibleMoves: [Move]) -> Move {
+func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
     let best: (key: Move, value: Library)
     var node = Library.decode(libraryData: game.library)!
 

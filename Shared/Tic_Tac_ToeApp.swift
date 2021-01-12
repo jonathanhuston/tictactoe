@@ -11,7 +11,7 @@ class Game: ObservableObject {
     @AppStorage("library") var library = newLibrary()
     @AppStorage("trainingCounter") var trainingCounter = 0
 
-    @Published var board = newBoard(size: 3)
+    @Published var board = newBoard()
     @Published var player: Player = .X
     @Published var winner: Player? = nil
     @Published var launch = true
@@ -20,7 +20,7 @@ class Game: ObservableObject {
     var moves = [Move]()
     var players = 2
     var computerTurn = false
-    var remaining = 9
+    var possibleMoves: Set = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
 class ScreenScaling: ObservableObject {

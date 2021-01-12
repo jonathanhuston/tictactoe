@@ -39,7 +39,7 @@ extension TrainControlsView: View {
                 
                 Button(action: {
                     game.trainingCounter = 0
-                    game.library = newLibrary()
+//                    game.library = newLibrary()
                 }) {
                     Text("Reset")
                 }

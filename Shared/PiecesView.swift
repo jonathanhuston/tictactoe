@@ -14,14 +14,23 @@ struct PiecesView {
 
 extension PiecesView: View {
     var body: some View {
-        
         VStack(spacing: 20 * screenScaling.factor) {
-            ForEach(game.board.indices, id:\.self) {row in
-                HStack(spacing: 20 * screenScaling.factor) {
-                    ForEach(game.board[row].indices, id:\.self) {col in
-                        PieceButtonView(row: row, col: col)
-                    }
-                }
+            HStack(spacing: 20 * screenScaling.factor) {
+                PieceButtonView(row: 0, col: 0)
+                PieceButtonView(row: 0, col: 1)
+                PieceButtonView(row: 0, col: 2)
+            }
+            
+            HStack(spacing: 20 * screenScaling.factor) {
+                PieceButtonView(row: 1, col: 0)
+                PieceButtonView(row: 1, col: 1)
+                PieceButtonView(row: 1, col: 2)
+            }
+            
+            HStack(spacing: 20 * screenScaling.factor) {
+                PieceButtonView(row: 2, col: 0)
+                PieceButtonView(row: 2, col: 1)
+                PieceButtonView(row: 2, col: 2)
             }
         }
     }
