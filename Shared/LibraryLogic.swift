@@ -56,25 +56,33 @@ func symmetries(of gameMoves: [Move]) -> [[Move]] {
 }
 
 func updateLibrary(with game: Game, winner: Player) {
-//    let library = Library.decode(libraryData: game.library)!
-//    var node = library
-    
+    let library = Library.decode(libraryData: game.library)!
+    var newTrainedGame = false
+        
     for moves in symmetries(of: game.moves) {
-        var node = game.library
+        var node = library
             
         for move in moves {
             if node.nextMoves[move] == nil {
                 updateScore(of: node, with: winner)
+                newTrainedGame = true
                 node.nextMoves[move] = Library()
             }
             node = node.nextMoves[move]!
         }
         
         updateScore(of: node, with: winner)
+        
+        if newTrainedGame {
+//            print("Newly trained game")
+            game.trainingCounter += 1
+            newTrainedGame = false
+        }
     }
+    
+//    print(library.count)
 
-//    UserDefaults.standard.set(library.encode()!, forKey: "library")
-    game.trainingCounter += 1
+    UserDefaults.standard.set(library.encode()!, forKey: "library")
 }
 
 func score(node: Library) -> Double {
@@ -91,8 +99,7 @@ func score(node: Library) -> Double {
 
 func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
     let best: (key: Move, value: Library)
-//    var node = Library.decode(libraryData: game.library)!
-    var node = game.library
+    var node = Library.decode(libraryData: game.library)!
 
     for move in game.moves {
         if node.nextMoves[move] == nil {
@@ -122,14 +129,14 @@ func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
     
     if game.player == .X {
         best = node.nextMoves.max { a, b in score(node: a.value) < score(node: b.value) }!
-//        print("Score: \(score(node: best.value))")
-        if score(node: best.value) > 1 {
+        print("Score: \(score(node: best.value))")
+        if score(node: best.value) >= 1 {
             return best.key
         }
     } else {
         best = node.nextMoves.min { a, b in score(node: a.value) < score(node: b.value) }!
 //        print("Score: \(score(node: best.value))")
-        if score(node: best.value) < 1 {
+        if score(node: best.value) <= 1 {
             return best.key
         }
     }

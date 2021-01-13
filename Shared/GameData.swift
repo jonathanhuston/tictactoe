@@ -1,5 +1,5 @@
 //
-//  Types.swift
+//  GameData.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/10/21.
@@ -21,6 +21,10 @@ class Library: Codable {
     var scoreX = 0
     var scoreO = 0
     var nextMoves = [Move: Library]()
+    
+//    var count: Int {
+//        1 + nextMoves.reduce(0) { $0 + $1.value.count }
+//    }
 }
 
 let winningConstellations = [ Set([0, 1, 2]),

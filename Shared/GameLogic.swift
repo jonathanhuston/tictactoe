@@ -21,7 +21,6 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool
     game.computerTurn = computerTurn || (players == 0)
     game.possibleMoves = Set(0...8)
 
-//    DEV:
 //    if let bundleID = Bundle.main.bundleIdentifier {
 //        UserDefaults.standard.removePersistentDomain(forName: bundleID)
 //    }

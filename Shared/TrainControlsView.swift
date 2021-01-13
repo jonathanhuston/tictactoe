@@ -37,10 +37,12 @@ extension TrainControlsView: View {
                         .foregroundColor(.purple)
                 }
                 
-                // FIX
                 Button(action: {
+                    if let bundleID = Bundle.main.bundleIdentifier {
+                        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+                    }
                     game.trainingCounter = 0
-//                    game.library = newLibrary()
+                    game.train = false
                 }) {
                     Text("Reset")
                 }

@@ -11,8 +11,8 @@
 		1587069C25ADB99A0011F155 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* LibraryLogic.swift */; };
 		1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069925ADB99A0011F155 /* GameLogic.swift */; };
 		1587069E25ADB99A0011F155 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069925ADB99A0011F155 /* GameLogic.swift */; };
-		1587069F25ADB99A0011F155 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069A25ADB99A0011F155 /* Types.swift */; };
-		158706A025ADB99A0011F155 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069A25ADB99A0011F155 /* Types.swift */; };
+		1587069F25ADB99A0011F155 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069A25ADB99A0011F155 /* GameData.swift */; };
+		158706A025ADB99A0011F155 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069A25ADB99A0011F155 /* GameData.swift */; };
 		158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A325ADB9BB0011F155 /* HiddenModifier.swift */; };
 		158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A325ADB9BB0011F155 /* HiddenModifier.swift */; };
 		158706B025ADB9BB0011F155 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A425ADB9BB0011F155 /* GridView.swift */; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		1587069825ADB99A0011F155 /* LibraryLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
 		1587069925ADB99A0011F155 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
-		1587069A25ADB99A0011F155 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		1587069A25ADB99A0011F155 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		158706A325ADB9BB0011F155 /* HiddenModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenModifier.swift; sourceTree = "<group>"; };
 		158706A425ADB9BB0011F155 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		158706A525ADB9BB0011F155 /* TrainControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainControlsView.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */,
 				15E9571525ADEF270001D26B /* Device.swift */,
 				156765B225ADB798002BACC9 /* Views */,
-				1587069A25ADB99A0011F155 /* Types.swift */,
+				1587069A25ADB99A0011F155 /* GameData.swift */,
 				1587069925ADB99A0011F155 /* GameLogic.swift */,
 				1587069825ADB99A0011F155 /* LibraryLogic.swift */,
 				15E2790D25ADB65A00222A42 /* Assets.xcassets */,
@@ -276,7 +276,7 @@
 				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				158706B025ADB9BB0011F155 /* GridView.swift in Sources */,
 				158706BC25ADB9BB0011F155 /* GameView.swift in Sources */,
-				1587069F25ADB99A0011F155 /* Types.swift in Sources */,
+				1587069F25ADB99A0011F155 /* GameData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +301,7 @@
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				158706B125ADB9BB0011F155 /* GridView.swift in Sources */,
 				158706BD25ADB9BB0011F155 /* GameView.swift in Sources */,
-				158706A025ADB99A0011F155 /* Types.swift in Sources */,
+				158706A025ADB99A0011F155 /* GameData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
