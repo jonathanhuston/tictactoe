@@ -21,7 +21,7 @@ class Game: ObservableObject {
     var moves = [Move]()
     var players = 2
     var computerTurn = false
-    var possibleMoves: Set = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    var possibleMoves = Set(0...8)
 }
 
 class ScreenScaling: ObservableObject {

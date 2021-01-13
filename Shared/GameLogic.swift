@@ -19,7 +19,7 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool
     game.moves = []
     game.players = players
     game.computerTurn = computerTurn || (players == 0)
-    game.possibleMoves = Set([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    game.possibleMoves = Set(0...8)
 
 //    DEV:
 //    if let bundleID = Bundle.main.bundleIdentifier {
@@ -38,16 +38,6 @@ func nextPlayer(player: Player) -> Player {
         return .X
     }
 }
-
-let winningConstellations = [ Set([0, 1, 2]),
-                              Set([3, 4, 5]),
-                              Set([6, 7, 8]),
-                              Set([0, 3, 6]),
-                              Set([1, 4, 7]),
-                              Set([2, 5, 8]),
-                              Set([0, 4, 8]),
-                              Set([2, 4, 6]) ]
-
 
 func findWinner(on board: Board) -> Player? {
     for player in [Player.X, Player.O] {
