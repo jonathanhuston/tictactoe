@@ -37,6 +37,7 @@ extension TrainControlsView: View {
                         .foregroundColor(.purple)
                 }
                 
+                // FIX
                 Button(action: {
                     game.trainingCounter = 0
 //                    game.library = newLibrary()

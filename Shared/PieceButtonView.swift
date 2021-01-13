@@ -18,8 +18,6 @@ extension PieceButtonView: View {
     var body: some View {
         Button(action: {
             if game.board[row * 3 + col] == .none && game.winner == nil {
-                print(row)
-                print(col)
                 humanMove(row: row, col: col, in: game)
             }
         }) {

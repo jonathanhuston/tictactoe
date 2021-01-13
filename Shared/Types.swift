@@ -18,6 +18,7 @@ typealias Board = [Player]
 typealias Move = Int
 
 class Library: Codable {
-    var score: Int = 0
+    var scoreX = 0
+    var scoreO = 0
     var nextMoves = [Move: Library]()
 }

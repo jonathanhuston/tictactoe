@@ -22,9 +22,9 @@ func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool
     game.possibleMoves = Set([0, 1, 2, 3, 4, 5, 6, 7, 8])
 
 //    DEV:
-    if let bundleID = Bundle.main.bundleIdentifier {
-        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-    }
+//    if let bundleID = Bundle.main.bundleIdentifier {
+//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
+//    }
 
     if game.computerTurn {
         computerMove(in: game)
