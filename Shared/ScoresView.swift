@@ -18,9 +18,19 @@ extension ScoresView: View {
     var body: some View {
         if game.showScores && game.players != 0 {
             if let score = Library.currentScores(in: game)[row * 3 + col] {
-                Text("\(score)")
-                    .font(.title)
-                    .foregroundColor(.purple)
+                switch score {
+                case 1:
+                    Text("X")
+                        .score()
+                case -1:
+                    Text("O")
+                        .score()
+                case 0:
+                    Text("TIE")
+                        .score()
+                default:
+                    Text(" ")
+                }
             }
         }
     }

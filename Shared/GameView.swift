@@ -10,6 +10,8 @@ import SwiftUI
 struct GameView {
     @EnvironmentObject var game: Game
     @EnvironmentObject var screenScaling: ScreenScaling
+    
+    @State private var newGameType = "Computer vs. Computer"
 }
 
 extension GameView: View {
@@ -25,10 +27,14 @@ extension GameView: View {
         
             StatusView()
             
-            if !game.train {
-                GameControlsView()
-            } else {
+            if game.train {
                 TrainControlsView()
+            } else {
+                if game.players != 0 && !game.launch && game.winner == nil {
+                    ScoreToggleView()
+                } else {
+                    GameControlsView(newGameType: $newGameType)
+                }
             }
         }
         .frame(height: 650 * screenScaling.factor)

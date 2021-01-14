@@ -18,6 +18,8 @@ typealias Move = Int
 
 let allMoves = Set(0...8)
 
+let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train"]
+
 let winningConstellations = [ Set([0, 1, 2]),
                               Set([3, 4, 5]),
                               Set([6, 7, 8]),

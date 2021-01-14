@@ -10,9 +10,7 @@ import SwiftUI
 struct GameControlsView {
     @EnvironmentObject var game: Game
     @EnvironmentObject var screenScaling: ScreenScaling
-    
-    private let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train"]
-    @State private var newGameType = "Computer vs. Computer"
+    @Binding var newGameType: String
 }
 
 extension GameControlsView: View {
@@ -36,14 +34,14 @@ extension GameControlsView: View {
                 GameButtonsView(newGameType: newGameType)
             }
         }
-        .hidden(game.winner == nil && !game.launch)
+        .hidden(!game.launch && game.winner == nil)
         .padding()
     }
 }
 
 struct GameControlsView_Previews: PreviewProvider {
     static var previews: some View {
-        GameControlsView()
+        GameControlsView(newGameType: .constant("Computer vs. Computer"))
             .environmentObject(Game())
             .environmentObject(ScreenScaling())
     }
