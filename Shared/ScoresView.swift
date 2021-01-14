@@ -17,7 +17,7 @@ struct ScoresView {
 extension ScoresView: View {
     var body: some View {
         if game.showScores && game.players != 0 {
-            if let score = Library.currentScores(in: game)[row * 3 + col] {
+            if let score = game.currentScores[row * 3 + col] {
                 switch score {
                 case 1:
                     Text("X")

@@ -17,7 +17,9 @@ extension GameButtonsView: View {
     var body: some View {
         HStack(spacing: extraSpacing ? 60 : 20) {
             Button(action: {
+                
 //                Library.reset()
+                
                 game.launch = false
                 
                 switch newGameType {

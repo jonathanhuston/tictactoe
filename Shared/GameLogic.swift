@@ -13,10 +13,10 @@ extension Game {
         self.player = .X
         self.winner = nil
         self.train = train
-        self.showScores = true
-        self.currentScores = Library.currentScores(in: self)
         self.moves = []
         self.players = players
+        self.showScores = true
+        self.currentScores = Library.currentScores(in: self)
         self.computerTurn = computerTurn || (players == 0)
         self.possibleMoves = allMoves
         
@@ -70,8 +70,11 @@ extension Game {
 
     func computerMove() {
         let move = Library.bestMove(in: self, given: self.possibleMoves)
-            
+        
+        let showScores = self.showScores
+        self.showScores = false
         play(move: move)
+        self.showScores = showScores
         
         if self.players != 0 {
             self.computerTurn = false
