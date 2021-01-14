@@ -7,12 +7,14 @@
 
 import Foundation
 
-func newBoard() -> Board {
-    Array(repeating: Player.none, count: 9)
+extension Game {
+    static func newBoard() -> Board {
+        Array(repeating: Player.none, count: 9)
+    }
 }
 
 func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
-    game.board = newBoard()
+    game.board = Game.newBoard()
     game.player = .X
     game.winner = nil
     game.train = train

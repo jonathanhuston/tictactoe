@@ -14,12 +14,10 @@ enum Player {
 }
 
 typealias Board = [Player]
-
 typealias Move = Int
 
 class Library: Codable {
-    var scoreX = 0
-    var scoreO = 0
+    var score = 0
     var nextMoves = [Move: Library]()
     
 //    var count: Int {

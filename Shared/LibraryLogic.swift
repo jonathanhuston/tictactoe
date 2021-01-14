@@ -25,19 +25,11 @@ extension Library {
             return nil
         }
     }
- }
-
-func newLibrary() -> Data {
-    Library().encode()!
-}
-
-func updateScore(of node: Library, with winner: Player) {
-    if winner == .X {
-        node.scoreX += 1
-    } else if winner == .O {
-        node.scoreO += 1
+    
+    static func new() -> Data {
+        Library().encode()!
     }
-}
+ }
 
 func symmetries(of gameMoves: [Move]) -> [[Move]] {
     var symmetries: [[Move]] = [gameMoves]
@@ -55,52 +47,65 @@ func symmetries(of gameMoves: [Move]) -> [[Move]] {
     return symmetries
 }
 
+func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
+    return moves.max { a, b in a.value.score < b.value.score }!
+}
+
+func minScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
+    return moves.min { a, b in a.value.score < b.value.score }!
+}
+
 func updateLibrary(with game: Game, winner: Player) {
     let library = Library.decode(libraryData: game.library)!
     var newTrainedGame = false
         
     for moves in symmetries(of: game.moves) {
         var node = library
-            
+        var nodes = [Library]()
+        var player = Player.X
+
         for move in moves {
+            nodes.append(node)
+            player = nextPlayer(player: player)
             if node.nextMoves[move] == nil {
-                updateScore(of: node, with: winner)
                 newTrainedGame = true
                 node.nextMoves[move] = Library()
             }
             node = node.nextMoves[move]!
         }
-        
-        updateScore(of: node, with: winner)
+                
+        switch winner {
+        case .X:
+            node.score = 1
+        case .O:
+            node.score = -1
+        default:
+            node.score = 0
+        }
+                        
+        for node in nodes.reversed() {
+            if player == .X {
+                node.score = maxScore(for: node.nextMoves).value.score
+            } else {
+                node.score = minScore(for: node.nextMoves).value.score
+            }
+            player = nextPlayer(player: player)
+        }
         
         if newTrainedGame {
-//            print("Newly trained game")
             game.trainingCounter += 1
             newTrainedGame = false
         }
     }
     
-//    print(library.count)
-
     UserDefaults.standard.set(library.encode()!, forKey: "library")
 }
 
-func score(node: Library) -> Double {
-    if node.scoreX == 0 && node.scoreO == 0 {
-        return 1
-    }
-    
-    if node.scoreO == 0 {
-        return 1000
-    }
-    
-    return Double(node.scoreX / node.scoreO)
-}
-
 func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
-    let best: (key: Move, value: Library)
     var node = Library.decode(libraryData: game.library)!
+    let best: (key: Move, value: Library)
 
+    // if board configuration hasn't been explored yet, make random move
     for move in game.moves {
         if node.nextMoves[move] == nil {
             return possibleMoves.randomElement()!
@@ -121,22 +126,14 @@ func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
         }
     }
     
-//    for node in node.nextMoves {
-//        print("Move: \(node.key)")
-//        print("ScoreX: \(node.value.scoreX)")
-//        print("ScoreO: \(node.value.scoreO)")
-//    }
-    
     if game.player == .X {
-        best = node.nextMoves.max { a, b in score(node: a.value) < score(node: b.value) }!
-        print("Score: \(score(node: best.value))")
-        if score(node: best.value) >= 1 {
+        best = maxScore(for: node.nextMoves)
+        if best.value.score > -1 {
             return best.key
         }
     } else {
-        best = node.nextMoves.min { a, b in score(node: a.value) < score(node: b.value) }!
-//        print("Score: \(score(node: best.value))")
-        if score(node: best.value) <= 1 {
+        best = minScore(for: node.nextMoves)
+        if best.value.score < 1 {
             return best.key
         }
     }
