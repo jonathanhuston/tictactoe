@@ -79,7 +79,7 @@ extension Game {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.computerMove()
             }
-        } else if self.train {
+        } else if self.train && self.trainingCounter < uniqueGames {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.newGame(players: 0, train: true)
             }

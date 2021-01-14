@@ -14,6 +14,10 @@ struct TrainControlsView {
 
 extension TrainControlsView: View {
     var body: some View {
+        let counterText = (game.trainingCounter < uniqueGames)
+            ? "\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained"
+            : "Training complete"
+
         VStack(spacing: 0) {
             if screenScaling.factor < 1 {
                 DummyPicker()
@@ -27,12 +31,12 @@ extension TrainControlsView: View {
                 }
                 
                 if screenScaling.factor >= 1 {
-                    Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
+                    Text(counterText)
                         .frame(width: 200)
                         .font(.title3)
                         .foregroundColor(.purple)
                 } else {
-                    Text("\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained")
+                    Text(counterText)
                         .fixedSize()
                         .foregroundColor(.purple)
                 }

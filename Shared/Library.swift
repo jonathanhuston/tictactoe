@@ -58,6 +58,10 @@ extension Library {
     }
 
     static func update(with game: Game) {
+        if game.trainingCounter >= uniqueGames {
+            return
+        }
+        
         let library = Library.decode(libraryData: game.library)!
         var newTrainedGame = false
             
