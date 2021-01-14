@@ -13,16 +13,10 @@ struct PlayingStatusView {
 
 extension PlayingStatusView: View {
     var body: some View {
-        if game.player == .X {
-            Text("Player X's turn")
-                .font(.title)
-                .foregroundColor(.primary)
-                .hidden(game.launch)
-        } else {
-            Text("Player O's turn")
-                .font(.title)
-                .foregroundColor(.primary)
-        }
+        Text(game.player == .X ? "Player X's turn" : "Player O's turn")
+            .font(.title)
+            .foregroundColor(.primary)
+            .hidden(game.launch)
     }
 }
 

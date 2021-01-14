@@ -28,10 +28,7 @@ extension ScoreToggleView: View {
             .padding()
             
             if screenScaling.factor < 1 {
-                Button(action: {}) {
-                    Text(" ")
-                }
-                .hidden()
+                DummyButton()
             }
         }
     }

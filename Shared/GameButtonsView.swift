@@ -16,8 +16,7 @@ struct GameButtonsView {
 extension GameButtonsView: View {
     var body: some View {
         HStack(spacing: extraSpacing ? 60 : 20) {
-            Button(action: {
-                
+            Button("Play") {
 //                Library.reset()
                 
                 game.launch = false
@@ -34,14 +33,10 @@ extension GameButtonsView: View {
                 default:
                     game.newGame(players: 0, train: true)
                 }
-            }) {
-                Text("Play")
             }
             
-            Button(action: {
+            Button("Quit") {
                 exit(0)
-            }) {
-                Text("Quit")
             }
         }
     }

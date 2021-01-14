@@ -24,29 +24,16 @@ extension TrainControlsView: View {
             }
             
             HStack() {
-                Button(action: {
+                Button("Suspend") {
                     game.train = false
-                }) {
-                    Text("Suspend")
                 }
                 
-                if screenScaling.factor >= 1 {
-                    Text(counterText)
-                        .frame(width: 200)
-                        .font(.title3)
-                        .foregroundColor(.purple)
-                } else {
-                    Text(counterText)
-                        .fixedSize()
-                        .foregroundColor(.purple)
-                }
+                CounterView(text: counterText)
                 
-                Button(action: {
+                Button("Reset") {
                     Library.reset()
                     game.trainingCounter = 0
                     game.train = false
-                }) {
-                    Text("Reset")
                 }
                 
                 if screenScaling.factor >= 1 {
