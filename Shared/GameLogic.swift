@@ -19,9 +19,7 @@ extension Game {
         self.players = players
         self.computerTurn = computerTurn || (players == 0)
         self.possibleMoves = allMoves
-
-//        Library.reset()
-
+        
         if self.computerTurn {
             self.computerMove()
         }
@@ -89,11 +87,13 @@ extension Game {
     }
 
     func humanMove(row: Int, col: Int) {
+        let delay = self.showScores ? 0.01 : 0.1
+        
         play(move: row * 3 + col)
 
         if self.players != 2 && self.winner == nil {
             self.computerTurn = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.computerMove()
             }
         }
