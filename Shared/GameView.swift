@@ -37,7 +37,7 @@ extension GameView: View {
                 }
             }
         }
-        .frame(height: 600 * screenScaling.factor)
+        .frame(height: 650 * screenScaling.factor)
     }
 }
 
