@@ -9,13 +9,14 @@ import Foundation
 
 extension Game {
     func newGame(players: Int, computerTurn: Bool = false, train: Bool = false) {
+        Library.cache(to: self)
+        
         self.board = Game.newBoard()
         self.player = .X
         self.winner = nil
         self.train = train
         self.moves = []
         self.players = players
-        self.showScores = true
         self.currentScores = Library.currentScores(in: self)
         self.computerTurn = computerTurn || (players == 0)
         self.possibleMoves = allMoves
@@ -65,16 +66,14 @@ extension Game {
         self.moves.append(move)
         self.possibleMoves.remove(move)
         self.updateWinner()
+        self.currentScores = Library.currentScores(in: self)
         self.player = Game.nextPlayer(self.player)
     }
 
     func computerMove() {
         let move = Library.bestMove(in: self, given: self.possibleMoves)
         
-        let showScores = self.showScores
-        self.showScores = false
         play(move: move)
-        self.showScores = showScores
         
         if self.players != 0 {
             self.computerTurn = false
@@ -90,13 +89,11 @@ extension Game {
     }
 
     func humanMove(row: Int, col: Int) {
-        let delay = self.showScores ? 0.01 : 0.1
-        
         play(move: row * 3 + col)
 
         if self.players != 2 && self.winner == nil {
             self.computerTurn = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.computerMove()
             }
         }

@@ -8,9 +8,10 @@
 import SwiftUI
 
 class Game: ObservableObject {
-    @AppStorage("library") var library = Library.new()
+    @AppStorage("library") var library = Library().encode()!
     @AppStorage("trainingCounter") var trainingCounter = 0
 
+    @Published var libraryCache = Library()
     @Published var board = newBoard()
     @Published var player: Player = .X
     @Published var winner: Player? = nil

@@ -34,10 +34,6 @@ extension Library {
             return nil
         }
     }
-        
-    static func new() -> Data {
-        Library().encode()!
-    }
     
     func save() {
         UserDefaults.standard.set(self.encode()!, forKey: "library")
@@ -47,6 +43,10 @@ extension Library {
         if let bundleID = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundleID)
         }
+    }
+    
+    static func cache(to game: Game) {
+        game.libraryCache = Library.decode(libraryData: game.library)!
     }
 
     static func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
@@ -62,11 +62,10 @@ extension Library {
             return
         }
         
-        let library = Library.decode(libraryData: game.library)!
         var newTrainedGame = false
             
         for moves in symmetries(of: game.moves) {
-            var node = library
+            var node = game.libraryCache
             var nodes = [Library]()
             var player = Player.X
 
@@ -104,28 +103,28 @@ extension Library {
             }
         }
         
-        library.save()
+        game.libraryCache.save()
     }
     
     static func currentScores(in game: Game) -> [Int?] {
         var scores: [Int?] = Array(repeating: nil, count: 9)
-        var node = Library.decode(libraryData: game.library)!
-                
+        var node = game.libraryCache
+                        
         for move in game.moves {
             if node.nextMoves[move] == nil {
                 return scores
             }
             node = node.nextMoves[move]!
         }
-        
+                
         allMoves.forEach { scores[$0] = node.nextMoves[$0]?.score }
         
         return scores
     }
 
     static func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
-        var node = Library.decode(libraryData: game.library)!
         let best: (key: Move, value: Library)
+        var node = game.libraryCache
 
         // if board configuration hasn't been explored yet, make random move
         for move in game.moves {
