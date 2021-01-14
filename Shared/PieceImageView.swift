@@ -36,8 +36,6 @@ extension PieceImageView: View {
             case .none:
                 ScoresView(row: row, col: col)
             }
-            
-            
         }
     }
 }

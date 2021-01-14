@@ -9,20 +9,31 @@ import SwiftUI
 
 struct ScoreToggleView {
     @EnvironmentObject var game: Game
+    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension ScoreToggleView: View {
     var body: some View {
-        HStack {
-            DummyPicker()
-            
-            Toggle(isOn: $game.showScores) {
-                Text("Show hints")
+        VStack {
+            HStack {
+                DummyPicker()
+                
+                Toggle(isOn: $game.showScores) {
+                    Text("Show hints")
+                }
+                .fixedSize()
+                
+                DummyPicker()
             }
+            .padding()
             
-            DummyPicker()
+            if screenScaling.factor < 1 {
+                Button(action: {}) {
+                    Text(" ")
+                }
+                .hidden()
+            }
         }
-        .padding()
     }
 }
 
@@ -30,5 +41,6 @@ struct ScoreToggleView_Previews: PreviewProvider {
     static var previews: some View {
         ScoreToggleView()
             .environmentObject(Game())
+            .environmentObject(ScreenScaling())
     }
 }
