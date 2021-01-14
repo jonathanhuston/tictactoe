@@ -106,6 +106,22 @@ extension Library {
         
         library.save()
     }
+    
+    static func currentScores(in game: Game) -> [Int?] {
+        var scores: [Int?] = Array(repeating: nil, count: 9)
+        var node = Library.decode(libraryData: game.library)!
+                
+        for move in game.moves {
+            if node.nextMoves[move] == nil {
+                return scores
+            }
+            node = node.nextMoves[move]!
+        }
+        
+        allMoves.forEach { scores[$0] = node.nextMoves[$0]?.score }
+        
+        return scores
+    }
 
     static func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
         var node = Library.decode(libraryData: game.library)!

@@ -1,5 +1,5 @@
 //
-//  SinglePieceView.swift
+//  PieceButtonView.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/10/21.
@@ -19,6 +19,7 @@ extension PieceButtonView: View {
         Button(action: {
             if game.board[row * 3 + col] == .none && game.winner == nil {
                 game.humanMove(row: row, col: col)
+                game.currentScores = Library.currentScores(in: game)
             }
         }) {
             PieceImageView(row: row, col: col)

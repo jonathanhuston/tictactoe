@@ -34,8 +34,10 @@ extension PieceImageView: View {
                     .font(.system(size: 100 * screenScaling.factor, weight: .medium))
                     .foregroundColor(.blue)
             case .none:
-                Text(" ")
+                ScoresView(row: row, col: col)
             }
+            
+            
         }
     }
 }

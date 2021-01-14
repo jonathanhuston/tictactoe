@@ -13,12 +13,14 @@ extension Game {
         self.player = .X
         self.winner = nil
         self.train = train
+        self.showScores = true
+        self.currentScores = Library.currentScores(in: self)
         self.moves = []
         self.players = players
         self.computerTurn = computerTurn || (players == 0)
         self.possibleMoves = allMoves
 
-    //    Library.reset()
+//        Library.reset()
 
         if self.computerTurn {
             self.computerMove()

@@ -16,6 +16,8 @@ class Game: ObservableObject {
     @Published var winner: Player? = nil
     @Published var launch = true
     @Published var train = false
+    @Published var showScores = true
+    @Published var currentScores = [Int?]()
     
     var moves = [Move]()
     var players = 2
