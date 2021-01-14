@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-struct ScoreModifier: ViewModifier {    
+struct ScoreModifier: ViewModifier {
+    var reduce: Bool
+    
     func body(content: Content) -> some View {
         content
-            .font(.title)
+            .font(reduce ? .title2 : .title)
             .foregroundColor(.purple)
             .opacity(0.7)
     }
 }
 
 extension View {
-    func score() -> some View {
-        self.modifier(ScoreModifier())
+    func score(reduce: Bool = false) -> some View {
+        self.modifier(ScoreModifier(reduce: reduce))
     }
 }
