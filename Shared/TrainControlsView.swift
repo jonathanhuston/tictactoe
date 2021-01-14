@@ -38,9 +38,7 @@ extension TrainControlsView: View {
                 }
                 
                 Button(action: {
-                    if let bundleID = Bundle.main.bundleIdentifier {
-                        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-                    }
+                    Library.reset()
                     game.trainingCounter = 0
                     game.train = false
                 }) {

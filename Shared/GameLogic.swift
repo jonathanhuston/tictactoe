@@ -8,99 +8,92 @@
 import Foundation
 
 extension Game {
+    func newGame(players: Int, computerTurn: Bool = false, train: Bool = false) {
+        self.board = Game.newBoard()
+        self.player = .X
+        self.winner = nil
+        self.train = train
+        self.moves = []
+        self.players = players
+        self.computerTurn = computerTurn || (players == 0)
+        self.possibleMoves = allMoves
+
+    //    Library.reset()
+
+        if self.computerTurn {
+            self.computerMove()
+        }
+    }
+    
     static func newBoard() -> Board {
         Array(repeating: Player.none, count: 9)
     }
-}
 
-func newGame(_ game: Game, players: Int, computerTurn: Bool = false, train: Bool = false) {
-    game.board = Game.newBoard()
-    game.player = .X
-    game.winner = nil
-    game.train = train
-    game.moves = []
-    game.players = players
-    game.computerTurn = computerTurn || (players == 0)
-    game.possibleMoves = Set(0...8)
-
-//    if let bundleID = Bundle.main.bundleIdentifier {
-//        UserDefaults.standard.removePersistentDomain(forName: bundleID)
-//    }
-
-    if game.computerTurn {
-        computerMove(in: game)
+    static func nextPlayer(_ player: Player) -> Player {
+        player == .X ? .O : .X
     }
-}
 
-func nextPlayer(player: Player) -> Player {
-    if player == .X {
-        return .O
-    } else {
-        return .X
-    }
-}
-
-func findWinner(on board: Board) -> Player? {
-    for player in [Player.X, Player.O] {
-        let playedSquares = Set(board.indices.filter { board[$0] == player })
+    func findWinnerOnBoard() -> Player? {
+        for player in [Player.X, Player.O] {
+            let squaresWithPlayer = Set(self.board.indices.filter { board[$0] == player })
+            
+            for constellation in winningConstellations {
+                if constellation.isSubset(of: squaresWithPlayer) {
+                    return player
+                }
+            }
+        }
         
-        for constellation in winningConstellations {
-            if constellation.isSubset(of: playedSquares) {
-                return player
+        return nil
+    }
+
+    func updateWinner() {
+        if let winner = self.findWinnerOnBoard() {
+            self.winner = winner
+            Library.update(with: self)
+            return
+        }
+        
+        if self.possibleMoves.isEmpty {
+            self.winner = Player.none
+            Library.update(with: self)
+        }
+    }
+
+    func play(move: Move) {
+        self.board[move] = self.player
+        self.moves.append(move)
+        self.possibleMoves.remove(move)
+        self.updateWinner()
+        self.player = Game.nextPlayer(self.player)
+    }
+
+    func computerMove() {
+        let move = Library.bestMove(in: self, given: self.possibleMoves)
+            
+        play(move: move)
+        
+        if self.players != 0 {
+            self.computerTurn = false
+        } else if self.winner == nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.computerMove()
+            }
+        } else if self.train {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.newGame(players: 0, train: true)
             }
         }
     }
-    
-    return nil
-}
 
-func winner(_ game: Game) -> Player? {
-    if let winner = findWinner(on: game.board) {
-        updateLibrary(with: game, winner: winner)
-        return winner
-    }
-    
-    if game.possibleMoves.isEmpty {
-        updateLibrary(with: game, winner: .none)
-        return Player.none
-    }
-    
-    return nil
-}
+    func humanMove(row: Int, col: Int) {
+        play(move: row * 3 + col)
 
-func play(move: Move, in game: Game) {
-    game.board[move] = game.player
-    game.moves.append(move)
-    game.possibleMoves.remove(move)
-    game.winner = winner(game)
-    game.player = nextPlayer(player: game.player)
-}
-
-func computerMove(in game: Game) {
-    let move = bestMove(in: game, given: game.possibleMoves)
-        
-    play(move: move, in: game)
-    
-    if game.players != 0 {
-        game.computerTurn = false
-    } else if game.winner == nil {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            computerMove(in: game)
-        }
-    } else if game.train {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            newGame(game, players: 0, train: true)
-        }
-    }
-}
-
-func humanMove(row: Int, col: Int, in game: Game) {
-    play(move: row * 3 + col, in: game)
-
-    if game.players != 2 && game.winner == nil {
-        game.computerTurn = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            computerMove(in: game)
+        if self.players != 2 && self.winner == nil {
+            self.computerTurn = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.computerMove()
+            }
         }
     }
 }

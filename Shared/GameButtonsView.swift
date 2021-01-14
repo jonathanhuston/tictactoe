@@ -21,15 +21,15 @@ extension GameButtonsView: View {
                 
                 switch newGameType {
                 case "Computer vs. Computer":
-                    newGame(game, players: 0)
+                    game.newGame(players: 0)
                 case "Computer vs. Human":
-                    newGame(game, players: 1, computerTurn: true)
+                    game.newGame(players: 1, computerTurn: true)
                 case "Human vs. Computer":
-                    newGame(game, players: 1, computerTurn: false)
+                    game.newGame(players: 1, computerTurn: false)
                 case "Human vs. Human":
-                    newGame(game, players: 2)
+                    game.newGame(players: 2)
                 default:
-                    newGame(game, players: 0, train: true)
+                    game.newGame(players: 0, train: true)
                 }
             }) {
                 Text("Play")
