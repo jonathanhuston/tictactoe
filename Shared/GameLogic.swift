@@ -51,13 +51,17 @@ extension Game {
     func updateWinner() {
         if let winner = self.findWinnerOnBoard() {
             self.winner = winner
-            Library.update(with: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                Library.update(with: self)
+            }
             return
         }
         
         if self.possibleMoves.isEmpty {
             self.winner = Player.none
-            Library.update(with: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                Library.update(with: self)
+            }
         }
     }
 
@@ -83,7 +87,7 @@ extension Game {
             }
         } else if self.train && self.trainingCounter < uniqueGames {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.newGame(players: 0, train: true)
+                self.newGame(players: 0, train: self.train)
             }
         }
     }
