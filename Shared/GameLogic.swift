@@ -8,9 +8,10 @@
 import Foundation
 
 extension Game {
+    
     func newGame(players: Int, computerTurn: Bool = false, train: Bool = false) {
         if !fullyTrained() {
-            Library.cache(to: self)
+            LibraryLogic.cache(to: self)
         }
         
         board = Game.newBoard()
@@ -18,7 +19,7 @@ extension Game {
         winner = nil
         moves = []
         possibleMoves = allMoves
-        currentScores = Library.currentScores(in: self)
+        currentScores = LibraryLogic.currentScores(in: self)
         self.train = train
         self.players = players
         self.computerTurn = computerTurn || (players == 0)
@@ -58,7 +59,7 @@ extension Game {
         if let winner = Game.findWinner(on: self.board) {
             self.winner = winner
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                Library.update(with: self)
+                LibraryLogic.update(with: self)
             }
             return
         }
@@ -66,7 +67,7 @@ extension Game {
         if possibleMoves.isEmpty {
             winner = Player.none
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                Library.update(with: self)
+                LibraryLogic.update(with: self)
             }
         }
     }
@@ -76,12 +77,12 @@ extension Game {
         moves.append(move)
         possibleMoves.remove(move)
         updateWinner()
-        currentScores = Library.currentScores(in: self)
+        currentScores = LibraryLogic.currentScores(in: self)
         player = Game.nextPlayer(self.player)
     }
 
     func computerMove() {
-        let move = Library.bestMove(in: self, given: self.possibleMoves)
+        let move = LibraryLogic.bestMove(in: self, given: self.possibleMoves)
         
         play(move)
         
@@ -108,4 +109,5 @@ extension Game {
             }
         }
     }
+    
 }

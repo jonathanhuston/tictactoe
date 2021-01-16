@@ -31,7 +31,7 @@ extension TrainControlsView: View {
                 CounterView(text: counterText)
                 
                 Button("Reset") {
-                    Library.reset()
+                    LibraryLogic.reset()
                     game.libraryCache = Library()
                     game.gamesTrained = 0
                     game.train = false

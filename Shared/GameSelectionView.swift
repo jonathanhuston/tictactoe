@@ -31,7 +31,7 @@ extension GameSelectionView: View {
                 case "Train":
                     game.newGame(players: 0, train: true)
                  default:
-                    Library.populate(using: game)
+                    LibraryLogic.populate(using: game)
                     newGameType = gameTypes.first!
                 }
             }
@@ -41,9 +41,9 @@ extension GameSelectionView: View {
             }
         }
         .onAppear(perform: {
-//            Library.reset()
+//            LibraryLogic.reset()
             if game.launch && game.fullyTrained() {
-                Library.populate(using: game)
+                LibraryLogic.populate(using: game)
             }
         })
     }
