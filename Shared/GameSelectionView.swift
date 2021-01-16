@@ -17,8 +17,6 @@ extension GameSelectionView: View {
     var body: some View {
         HStack(spacing: extraSpacing ? 60 : 20) {
             Button("Play") {
-//                Library.reset()
-                
                 game.launch = false
                 
                 switch newGameType {
@@ -43,6 +41,7 @@ extension GameSelectionView: View {
             }
         }
         .onAppear(perform: {
+//            Library.reset()
             if game.launch && game.fullyTrained() {
                 Library.populate(using: game)
             }
