@@ -198,7 +198,7 @@ class LibraryLogic {
             game.gamesTrained = exploreMoves(at: game.libraryCache, given: BoardState(), gamesTrained: 0)
             game.populate = false
             game.launch = true
-            LibraryLogic.save(game.libraryCache)
+//            LibraryLogic.save(game.libraryCache)
         }
     }
     
