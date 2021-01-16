@@ -9,20 +9,22 @@ import Foundation
 
 extension Game {
     func newGame(players: Int, computerTurn: Bool = false, train: Bool = false) {
-        Library.cache(to: self)
+        if !fullyTrained() {
+            Library.cache(to: self)
+        }
         
-        self.board = Game.newBoard()
-        self.player = .X
-        self.winner = nil
+        board = Game.newBoard()
+        player = .X
+        winner = nil
         self.train = train
-        self.moves = []
+        moves = []
+        possibleMoves = allMoves
+        currentScores = Library.currentScores(in: self)
         self.players = players
-        self.currentScores = Library.currentScores(in: self)
         self.computerTurn = computerTurn || (players == 0)
-        self.possibleMoves = allMoves
         
         if self.computerTurn {
-            self.computerMove()
+            computerMove()
         }
     }
     
@@ -32,6 +34,10 @@ extension Game {
 
     static func nextPlayer(_ player: Player) -> Player {
         player == .X ? .O : .X
+    }
+    
+    func fullyTrained() -> Bool {
+        gamesTrained >= uniqueGames
     }
 
     static func findWinner(on board: Board) -> Player? {
@@ -57,35 +63,35 @@ extension Game {
             return
         }
         
-        if self.possibleMoves.isEmpty {
-            self.winner = Player.none
+        if possibleMoves.isEmpty {
+            winner = Player.none
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 Library.update(with: self)
             }
         }
     }
 
-    func play(move: Move) {
-        self.board[move] = self.player
-        self.moves.append(move)
-        self.possibleMoves.remove(move)
-        self.updateWinner()
-        self.currentScores = Library.currentScores(in: self)
-        self.player = Game.nextPlayer(self.player)
+    func play(_ move: Move) {
+        board[move] = player
+        moves.append(move)
+        possibleMoves.remove(move)
+        updateWinner()
+        currentScores = Library.currentScores(in: self)
+        player = Game.nextPlayer(self.player)
     }
 
     func computerMove() {
         let move = Library.bestMove(in: self, given: self.possibleMoves)
         
-        play(move: move)
+        play(move)
         
-        if self.players != 0 {
-            self.computerTurn = false
-        } else if self.winner == nil {
+        if players != 0 {
+            computerTurn = false
+        } else if winner == nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.computerMove()
             }
-        } else if self.train && self.trainingCounter < uniqueGames {
+        } else if train {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.newGame(players: 0, train: self.train)
             }
@@ -93,10 +99,10 @@ extension Game {
     }
 
     func humanMove(row: Int, col: Int) {
-        play(move: square(row, col))
+        play(square(row, col))
 
-        if self.players != 2 && self.winner == nil {
-            self.computerTurn = true
+        if players != 2 && winner == nil {
+            computerTurn = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 self.computerMove()
             }

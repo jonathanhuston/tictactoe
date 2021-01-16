@@ -9,9 +9,8 @@ import SwiftUI
 
 class Game: ObservableObject {
     @AppStorage("library") var library = Library().encode()!
-    @AppStorage("trainingCounter") var trainingCounter = 0
+    @AppStorage("gamesTrained") var gamesTrained = 0
 
-    @Published var libraryCache = Library()
     @Published var board = Game.newBoard()
     @Published var player: Player = .X
     @Published var winner: Player? = nil
@@ -21,10 +20,11 @@ class Game: ObservableObject {
     @Published var showScores = false
     @Published var currentScores = [Score?]()
     
+    var libraryCache = Library()
     var moves = [Move]()
+    var possibleMoves = allMoves
     var players = 2
     var computerTurn = false
-    var possibleMoves = allMoves
 }
 
 class ScreenScaling: ObservableObject {

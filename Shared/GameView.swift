@@ -26,11 +26,10 @@ extension GameView: View {
             }
         
             StatusView()
+                .hidden(game.launch)
             
             if game.train {
                 TrainControlsView()
-            } else if game.populate {
-                PopulateControlsView()
             } else {
                 if game.players != 0 && !game.launch && game.winner == nil {
                     ScoreToggleView()

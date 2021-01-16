@@ -26,7 +26,7 @@ extension Library {
         }
     }
     
-    static func decode(libraryData: Data) -> Library? {
+    private static func decode(libraryData: Data) -> Library? {
         let decoder = JSONDecoder()
         if let library = try? decoder.decode(Library.self, from: libraryData) {
             return library
@@ -35,7 +35,7 @@ extension Library {
         }
     }
     
-    func save() {
+    private func save() {
         UserDefaults.standard.set(self.encode()!, forKey: "library")
     }
     
@@ -49,16 +49,35 @@ extension Library {
         game.libraryCache = decode(libraryData: game.library)!
     }
 
-    static func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
-        return moves.max { a, b in a.value.score < b.value.score }!
+    private static func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
+        return moves.shuffled().max { a, b in a.value.score < b.value.score }!
     }
 
-    static func minScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
-        return moves.min { a, b in a.value.score < b.value.score }!
+    private static func minScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
+        return moves.shuffled().min { a, b in a.value.score < b.value.score }!
+    }
+    
+    private static func miniMaxScore(for moves: [Move: Library], given player: Player) -> Score {
+        if player == .X {
+            return maxScore(for: moves).value.score
+        } else {
+            return minScore(for: moves).value.score
+        }
+    }
+    
+    private static func score(given winner: Player?) -> Score {
+        switch winner {
+        case .X:
+            return 1
+        case .O:
+            return -1
+        default:
+            return 0
+        }
     }
 
     static func update(with game: Game) {
-        if game.trainingCounter >= uniqueGames {
+        if game.fullyTrained() {
             return
         }
         
@@ -78,27 +97,16 @@ extension Library {
                 node = node.nextMoves[move]!
                 player = Game.nextPlayer(player)
             }
-                    
-            switch game.winner {
-            case .X:
-                node.score = 1
-            case .O:
-                node.score = -1
-            default:
-                node.score = 0
-            }
+            
+            node.score = score(given: game.winner)
                             
             for node in nodes.reversed() {
                 player = Game.nextPlayer(player)
-                if player == .X {
-                    node.score = maxScore(for: node.nextMoves).value.score
-                } else {
-                    node.score = minScore(for: node.nextMoves).value.score
-                }
+                node.score = miniMaxScore(for: node.nextMoves, given: player)
             }
             
             if newTrainedGame {
-                game.trainingCounter += 1
+                game.gamesTrained += 1
                 newTrainedGame = false
             }
         }
@@ -109,16 +117,16 @@ extension Library {
     static func currentScores(in game: Game) -> [Score?] {
         var scores: [Score?] = Array(repeating: nil, count: 9)
         var node = game.libraryCache
-                        
+                                                
         for move in game.moves {
             if node.nextMoves[move] == nil {
                 return scores
             }
             node = node.nextMoves[move]!
         }
-                
+                        
         allMoves.forEach { scores[$0] = node.nextMoves[$0]?.score }
-        
+                        
         return scores
     }
 
@@ -139,7 +147,7 @@ extension Library {
         }
         
         // forces computer to explore new moves when training
-        if game.train {
+        if game.train && !game.fullyTrained() {
             if possibleMoves.count > node.nextMoves.count {
                 return (possibleMoves.subtracting(node.nextMoves.keys)).randomElement()!
             } else {
@@ -167,9 +175,55 @@ extension Library {
         }
     }
     
+    private struct BoardState {
+        var board = Game.newBoard()
+        var player = Player.X
+        var possibleMoves = allMoves
+    }
+    
+    private static func play(_ move: Move, given boardState: BoardState) -> (winner: Player?, newBoardState: BoardState) {
+        var newBoardState = boardState
+        
+        newBoardState.board[move] = boardState.player
+        newBoardState.player = Game.nextPlayer(boardState.player)
+        newBoardState.possibleMoves.remove(move)
+        
+        return (Game.findWinner(on: newBoardState.board), newBoardState)
+    }
+    
+    private static func exploreMoves(at node: Library, given boardState: BoardState, gamesTrained: Int) -> Int {
+        var counter = gamesTrained
+        
+        for move in boardState.possibleMoves {
+            node.nextMoves[move] = Library()
+            let (winner, newBoardState) = play(move, given: boardState)
+            if winner != nil {
+                node.nextMoves[move]!.score = score(given: winner)
+                counter += 1
+                continue
+            }
+            if newBoardState.possibleMoves.isEmpty {
+                node.nextMoves[move]!.score = 0
+                counter += 1
+                continue
+            }
+            counter = exploreMoves(at: node.nextMoves[move]!, given: newBoardState, gamesTrained: counter)
+        }
+
+        node.score = miniMaxScore(for: node.nextMoves, given: boardState.player)
+                
+        return counter
+    }
+    
     static func populate(using game: Game) {
-        reset()
-        cache(to: game)
-        game.trainingCounter = 0
+        game.populate = true
+        game.players = 0
+        game.libraryCache = Library()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            game.gamesTrained = exploreMoves(at: game.libraryCache, given: BoardState(), gamesTrained: 0)
+            game.populate = false
+            game.launch = true
+        }
     }
 }

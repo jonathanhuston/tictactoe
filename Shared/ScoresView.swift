@@ -22,13 +22,13 @@ extension ScoresView: View {
                 switch score {
                 case 1:
                     Text("X")
-                        .score(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: screenScaling.factor < 1)
                 case -1:
                     Text("O")
-                        .score(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: screenScaling.factor < 1)
                 case 0:
                     Text("TIE")
-                        .score(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: screenScaling.factor < 1)
                 default:
                     Text(" ")
                 }

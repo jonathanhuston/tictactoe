@@ -26,15 +26,15 @@ extension GameControlsView: View {
                 .fixedSize()
                 
                 if screenScaling.factor < 1 {
-                    GameButtonsView(newGameType: newGameType, extraSpacing: true)
+                    GameSelectionView(newGameType: $newGameType, extraSpacing: true)
                 }
             }
 
             if screenScaling.factor >= 1 {
-                GameButtonsView(newGameType: newGameType)
+                GameSelectionView(newGameType: $newGameType)
             }
         }
-        .hidden(!game.launch && game.winner == nil)
+        .hidden(game.populate || (!game.launch && game.winner == nil))
         .padding()
     }
 }

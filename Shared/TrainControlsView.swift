@@ -14,8 +14,8 @@ struct TrainControlsView {
 
 extension TrainControlsView: View {
     var body: some View {
-        let counterText = (game.trainingCounter < uniqueGames)
-            ? "\(game.trainingCounter) \(game.trainingCounter == 1 ? "game" : "games") trained"
+        let counterText = !game.fullyTrained()
+            ? "\(game.gamesTrained) \(game.gamesTrained == 1 ? "game" : "games") trained"
             : "Training complete"
 
         VStack(spacing: 0) {
@@ -32,7 +32,8 @@ extension TrainControlsView: View {
                 
                 Button("Reset") {
                     Library.reset()
-                    game.trainingCounter = 0
+                    game.libraryCache = Library()
+                    game.gamesTrained = 0
                     game.train = false
                 }
                 

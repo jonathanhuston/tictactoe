@@ -19,7 +19,7 @@ struct ScoreModifier: ViewModifier {
 }
 
 extension View {
-    func score(reduce: Bool = false) -> some View {
+    func scoreModifier(reduce: Bool = false) -> some View {
         self.modifier(ScoreModifier(reduce: reduce))
     }
 }

@@ -16,7 +16,6 @@ extension PlayingStatusView: View {
         Text(game.player == .X ? "Player X's turn" : "Player O's turn")
             .font(.title)
             .foregroundColor(.primary)
-            .hidden(game.launch)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  GameButtonsView.swift
+//  GameSelectionView.swift
 //  Tic Tac Toe
 //
 //  Created by Jonathan Huston on 1/12/21.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct GameButtonsView {
+struct GameSelectionView {
     @EnvironmentObject var game: Game
-    var newGameType: String
+    @Binding var newGameType: String
     var extraSpacing = false
 }
 
-extension GameButtonsView: View {
+extension GameSelectionView: View {
     var body: some View {
         HStack(spacing: extraSpacing ? 60 : 20) {
             Button("Play") {
@@ -32,8 +32,9 @@ extension GameButtonsView: View {
                     game.newGame(players: 2)
                 case "Train":
                     game.newGame(players: 0, train: true)
-                default:
+                 default:
                     Library.populate(using: game)
+                    newGameType = gameTypes.first!
                 }
             }
             
@@ -41,12 +42,17 @@ extension GameButtonsView: View {
                 exit(0)
             }
         }
+        .onAppear(perform: {
+            if game.launch && game.fullyTrained() {
+                Library.populate(using: game)
+            }
+        })
     }
 }
 
 struct GameButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        GameButtonsView(newGameType: "Computer vs. Computer")
+        GameSelectionView(newGameType: .constant("Computer vs. Computer"))
             .environmentObject(Game())
     }
 }
