@@ -18,7 +18,7 @@ struct ScoresView {
 extension ScoresView: View {
     var body: some View {
         if game.showScores && !game.computerTurn {
-            if let score = game.currentScores[row * 3 + col] {
+            if let score = game.currentScores[square(row, col)] {
                 switch score {
                 case 1:
                     Text("X")

@@ -20,7 +20,7 @@ extension GameView: View {
             ZStack {
                 GridView()
                 
-                if !game.launch {
+                if !game.launch && !game.populate {
                     PiecesView()
                 }
             }
@@ -29,6 +29,8 @@ extension GameView: View {
             
             if game.train {
                 TrainControlsView()
+            } else if game.populate {
+                PopulateControlsView()
             } else {
                 if game.players != 0 && !game.launch && game.winner == nil {
                     ScoreToggleView()

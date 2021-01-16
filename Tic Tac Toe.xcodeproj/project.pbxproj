@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15394B0825B261ED00643877 /* PopulateControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0725B261ED00643877 /* PopulateControlsView.swift */; };
+		15394B0925B261ED00643877 /* PopulateControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0725B261ED00643877 /* PopulateControlsView.swift */; };
+		15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
+		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		1587069B25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069C25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069925ADB99A0011F155 /* GameLogic.swift */; };
@@ -58,6 +62,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15394B0725B261ED00643877 /* PopulateControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateControlsView.swift; sourceTree = "<group>"; };
+		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
 		1587069825ADB99A0011F155 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		1587069925ADB99A0011F155 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		1587069A25ADB99A0011F155 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
@@ -119,9 +125,11 @@
 				158706AB25ADB9BB0011F155 /* StatusView.swift */,
 				158706A825ADB9BB0011F155 /* PlayingStatusView.swift */,
 				158706A925ADB9BB0011F155 /* WinnerStatusView.swift */,
+				15394B0C25B261FF00643877 /* PopulateStatusView.swift */,
 				158706AC25ADB9BB0011F155 /* GameControlsView.swift */,
 				15E9571E25ADFA080001D26B /* GameButtonsView.swift */,
 				158706A525ADB9BB0011F155 /* TrainControlsView.swift */,
+				15394B0725B261ED00643877 /* PopulateControlsView.swift */,
 				15AE172825B10CF900BDD663 /* CounterView.swift */,
 				15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */,
 				15AE172F25B10EA600BDD663 /* Modifiers */,
@@ -301,6 +309,7 @@
 				158706B625ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BA25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
 				158706C025ADB9BB0011F155 /* GameControlsView.swift in Sources */,
+				15394B0825B261ED00643877 /* PopulateControlsView.swift in Sources */,
 				15AE172925B10CF900BDD663 /* CounterView.swift in Sources */,
 				1587069B25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */,
@@ -310,6 +319,7 @@
 				158706B225ADB9BB0011F155 /* TrainControlsView.swift in Sources */,
 				15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
+				15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
@@ -331,6 +341,7 @@
 				158706B725ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BB25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
 				158706C125ADB9BB0011F155 /* GameControlsView.swift in Sources */,
+				15394B0925B261ED00643877 /* PopulateControlsView.swift in Sources */,
 				15AE172A25B10CF900BDD663 /* CounterView.swift in Sources */,
 				1587069C25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */,
@@ -340,6 +351,7 @@
 				158706B325ADB9BB0011F155 /* TrainControlsView.swift in Sources */,
 				15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
+				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,

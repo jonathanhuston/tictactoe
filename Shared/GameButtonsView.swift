@@ -30,8 +30,10 @@ extension GameButtonsView: View {
                     game.newGame(players: 1, computerTurn: false)
                 case "Human vs. Human":
                     game.newGame(players: 2)
-                default:
+                case "Train":
                     game.newGame(players: 0, train: true)
+                default:
+                    Library.populate(using: game)
                 }
             }
             

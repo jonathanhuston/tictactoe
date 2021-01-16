@@ -12,13 +12,14 @@ class Game: ObservableObject {
     @AppStorage("trainingCounter") var trainingCounter = 0
 
     @Published var libraryCache = Library()
-    @Published var board = newBoard()
+    @Published var board = Game.newBoard()
     @Published var player: Player = .X
     @Published var winner: Player? = nil
     @Published var launch = true
     @Published var train = false
+    @Published var populate = false
     @Published var showScores = false
-    @Published var currentScores = [Int?]()
+    @Published var currentScores = [Score?]()
     
     var moves = [Move]()
     var players = 2

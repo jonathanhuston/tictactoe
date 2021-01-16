@@ -24,7 +24,7 @@ extension PieceImageView: View {
             Color.primary.colorInvert()
                 .frame(width: width * screenScaling.factor, height: height * screenScaling.factor)
             
-            switch game.board[row * 3 + col] {
+            switch game.board[square(row, col)] {
             case .X:
                 Image(systemName: "xmark")
                     .font(.system(size: 125 * screenScaling.factor, weight: .regular))

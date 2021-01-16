@@ -17,7 +17,7 @@ struct PieceButtonView {
 extension PieceButtonView: View {
     var body: some View {
         Button(action: {
-            if game.board[row * 3 + col] == .none && game.winner == nil {
+            if game.board[square(row, col)] == .none && game.winner == nil {
                 game.humanMove(row: row, col: col)
             }
         }) {

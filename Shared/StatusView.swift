@@ -13,10 +13,14 @@ struct StatusView {
 
 extension StatusView: View {
     var body: some View {
-        if game.winner == nil {
-            PlayingStatusView()
+        if game.populate {
+            PopulateStatusView()
         } else {
-            WinnerStatusView(winningPlayer: game.winner!)
+            if game.winner == nil {
+                PlayingStatusView()
+            } else {
+                WinnerStatusView(winningPlayer: game.winner!)
+            }
         }
     }
 }

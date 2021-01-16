@@ -34,9 +34,9 @@ extension Game {
         player == .X ? .O : .X
     }
 
-    func findWinnerOnBoard() -> Player? {
+    static func findWinner(on board: Board) -> Player? {
         for player in [Player.X, Player.O] {
-            let squaresWithPlayer = Set(self.board.indices.filter { board[$0] == player })
+            let squaresWithPlayer = Set(board.indices.filter { board[$0] == player })
             
             for constellation in winningConstellations {
                 if constellation.isSubset(of: squaresWithPlayer) {
@@ -49,7 +49,7 @@ extension Game {
     }
 
     func updateWinner() {
-        if let winner = self.findWinnerOnBoard() {
+        if let winner = Game.findWinner(on: self.board) {
             self.winner = winner
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 Library.update(with: self)
@@ -93,7 +93,7 @@ extension Game {
     }
 
     func humanMove(row: Int, col: Int) {
-        play(move: row * 3 + col)
+        play(move: square(row, col))
 
         if self.players != 2 && self.winner == nil {
             self.computerTurn = true

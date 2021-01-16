@@ -8,7 +8,7 @@
 import Foundation
 
 class Library: Codable {
-    var score = 0
+    var score: Score = 0
     var nextMoves = [Move: Library]()
     
 //        var count: Int {
@@ -46,7 +46,7 @@ extension Library {
     }
     
     static func cache(to game: Game) {
-        game.libraryCache = Library.decode(libraryData: game.library)!
+        game.libraryCache = decode(libraryData: game.library)!
     }
 
     static func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
@@ -91,9 +91,9 @@ extension Library {
             for node in nodes.reversed() {
                 player = Game.nextPlayer(player)
                 if player == .X {
-                    node.score = Library.maxScore(for: node.nextMoves).value.score
+                    node.score = maxScore(for: node.nextMoves).value.score
                 } else {
-                    node.score = Library.minScore(for: node.nextMoves).value.score
+                    node.score = minScore(for: node.nextMoves).value.score
                 }
             }
             
@@ -106,8 +106,8 @@ extension Library {
         game.libraryCache.save()
     }
     
-    static func currentScores(in game: Game) -> [Int?] {
-        var scores: [Int?] = Array(repeating: nil, count: 9)
+    static func currentScores(in game: Game) -> [Score?] {
+        var scores: [Score?] = Array(repeating: nil, count: 9)
         var node = game.libraryCache
                         
         for move in game.moves {
@@ -165,5 +165,11 @@ extension Library {
         } else {
             return possibleMoves.randomElement()!
         }
+    }
+    
+    static func populate(using game: Game) {
+        reset()
+        cache(to: game)
+        game.trainingCounter = 0
     }
 }
