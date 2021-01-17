@@ -15,7 +15,7 @@ enum Player {
 
 typealias Board = [Player]
 typealias Move = Int
-typealias Score = Int
+typealias Score = Int8
 
 func square(_ row: Int, _ col: Int) -> Move {
     row * 3 + col
