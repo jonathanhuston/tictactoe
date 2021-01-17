@@ -36,6 +36,12 @@ extension GameView: View {
             }
         }
         .frame(height: 650 * Device.scaling)
+        .onAppear(perform: {
+//            LibraryLogic.reset()
+            if game.launch && game.fullyTrained() {
+                LibraryLogic.populate(using: game)
+            }
+        })
     }
 }
 

@@ -39,12 +39,6 @@ extension GameButtonsView: View {
                 exit(0)
             }
         }
-        .onAppear(perform: {
-//            LibraryLogic.reset()
-            if game.launch && game.fullyTrained() {
-                LibraryLogic.populate(using: game)
-            }
-        })
     }
 }
 
