@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScoresView {
     @EnvironmentObject var game: Game
-    @EnvironmentObject var screenScaling: ScreenScaling
     
     @State var row = 0
     @State var col = 0
@@ -22,13 +21,13 @@ extension ScoresView: View {
                 switch score {
                 case 1:
                     Text("X")
-                        .scoreModifier(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: Device.iPhone)
                 case -1:
                     Text("O")
-                        .scoreModifier(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: Device.iPhone)
                 case 0:
                     Text("TIE")
-                        .scoreModifier(reduce: screenScaling.factor < 1)
+                        .scoreModifier(reduce: Device.iPhone)
                 default:
                     Text(" ")
                 }
@@ -41,6 +40,5 @@ struct ScoresView_Previews: PreviewProvider {
     static var previews: some View {
         ScoresView()
             .environmentObject(Game())
-            .environmentObject(ScreenScaling())
     }
 }

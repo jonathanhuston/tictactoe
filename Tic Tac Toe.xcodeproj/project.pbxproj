@@ -35,8 +35,8 @@
 		158706BD25ADB9BB0011F155 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AA25ADB9BB0011F155 /* GameView.swift */; };
 		158706BE25ADB9BB0011F155 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AB25ADB9BB0011F155 /* StatusView.swift */; };
 		158706BF25ADB9BB0011F155 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AB25ADB9BB0011F155 /* StatusView.swift */; };
-		158706C025ADB9BB0011F155 /* GameControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AC25ADB9BB0011F155 /* GameControlsView.swift */; };
-		158706C125ADB9BB0011F155 /* GameControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AC25ADB9BB0011F155 /* GameControlsView.swift */; };
+		158706C025ADB9BB0011F155 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AC25ADB9BB0011F155 /* GameSelectionView.swift */; };
+		158706C125ADB9BB0011F155 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AC25ADB9BB0011F155 /* GameSelectionView.swift */; };
 		158706C225ADB9BB0011F155 /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AD25ADB9BB0011F155 /* PiecesView.swift */; };
 		158706C325ADB9BB0011F155 /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AD25ADB9BB0011F155 /* PiecesView.swift */; };
 		15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8654E25B0B0E300B4F239 /* ScoresView.swift */; };
@@ -47,16 +47,16 @@
 		15A8655E25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */; };
 		15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
 		15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
-		15AE172925B10CF900BDD663 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterView.swift */; };
-		15AE172A25B10CF900BDD663 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterView.swift */; };
+		15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
+		15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
 		15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */; };
 		15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */; };
 		15E2792225ADB65A00222A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2790D25ADB65A00222A42 /* Assets.xcassets */; };
 		15E2792325ADB65A00222A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2790D25ADB65A00222A42 /* Assets.xcassets */; };
 		15E9571625ADEF270001D26B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571525ADEF270001D26B /* Device.swift */; };
 		15E9571725ADEF270001D26B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571525ADEF270001D26B /* Device.swift */; };
-		15E9571F25ADFA080001D26B /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameSelectionView.swift */; };
-		15E9572025ADFA080001D26B /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameSelectionView.swift */; };
+		15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameButtonsView.swift */; };
+		15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameButtonsView.swift */; };
 		15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9572525ADFD840001D26B /* DummyPicker.swift */; };
 		15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9572525ADFD840001D26B /* DummyPicker.swift */; };
 /* End PBXBuildFile section */
@@ -76,13 +76,13 @@
 		158706A925ADB9BB0011F155 /* WinnerStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinnerStatusView.swift; sourceTree = "<group>"; };
 		158706AA25ADB9BB0011F155 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		158706AB25ADB9BB0011F155 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
-		158706AC25ADB9BB0011F155 /* GameControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControlsView.swift; sourceTree = "<group>"; };
+		158706AC25ADB9BB0011F155 /* GameSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
 		158706AD25ADB9BB0011F155 /* PiecesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesView.swift; sourceTree = "<group>"; };
 		15A8654E25B0B0E300B4F239 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		15A8655525B0B73C00B4F239 /* ScoreModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModifier.swift; sourceTree = "<group>"; };
 		15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreToggleView.swift; sourceTree = "<group>"; };
 		15AE171C25B10A0C00BDD663 /* DummyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyButton.swift; sourceTree = "<group>"; };
-		15AE172825B10CF900BDD663 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		15AE172825B10CF900BDD663 /* CounterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTextView.swift; sourceTree = "<group>"; };
 		15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeApp.swift; sourceTree = "<group>"; };
 		15E2790D25ADB65A00222A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15E2791225ADB65A00222A42 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +91,7 @@
 		15E2791C25ADB65A00222A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E2791D25ADB65A00222A42 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		15E9571525ADEF270001D26B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		15E9571E25ADFA080001D26B /* GameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
+		15E9571E25ADFA080001D26B /* GameButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonsView.swift; sourceTree = "<group>"; };
 		15E9572525ADFD840001D26B /* DummyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,10 +126,10 @@
 				158706A825ADB9BB0011F155 /* PlayingStatusView.swift */,
 				158706A925ADB9BB0011F155 /* WinnerStatusView.swift */,
 				15394B0C25B261FF00643877 /* PopulateStatusView.swift */,
-				158706AC25ADB9BB0011F155 /* GameControlsView.swift */,
-				15E9571E25ADFA080001D26B /* GameSelectionView.swift */,
+				158706AC25ADB9BB0011F155 /* GameSelectionView.swift */,
+				15E9571E25ADFA080001D26B /* GameButtonsView.swift */,
 				158706A525ADB9BB0011F155 /* TrainControlsView.swift */,
-				15AE172825B10CF900BDD663 /* CounterView.swift */,
+				15AE172825B10CF900BDD663 /* CounterTextView.swift */,
 				15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */,
 				15AE172F25B10EA600BDD663 /* Modifiers */,
 				15AE173025B10EB000BDD663 /* Dummies */,
@@ -308,8 +308,8 @@
 				158706BE25ADB9BB0011F155 /* StatusView.swift in Sources */,
 				158706B625ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BA25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
-				158706C025ADB9BB0011F155 /* GameControlsView.swift in Sources */,
-				15AE172925B10CF900BDD663 /* CounterView.swift in Sources */,
+				158706C025ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
+				15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069B25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */,
 				15E9571625ADEF270001D26B /* Device.swift in Sources */,
@@ -321,7 +321,7 @@
 				15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
-				15E9571F25ADFA080001D26B /* GameSelectionView.swift in Sources */,
+				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */,
 				158706B025ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655625B0B73C00B4F239 /* ScoreModifier.swift in Sources */,
@@ -340,8 +340,8 @@
 				158706BF25ADB9BB0011F155 /* StatusView.swift in Sources */,
 				158706B725ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BB25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
-				158706C125ADB9BB0011F155 /* GameControlsView.swift in Sources */,
-				15AE172A25B10CF900BDD663 /* CounterView.swift in Sources */,
+				158706C125ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
+				15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069C25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */,
 				15E9571725ADEF270001D26B /* Device.swift in Sources */,
@@ -353,7 +353,7 @@
 				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
-				15E9572025ADFA080001D26B /* GameSelectionView.swift in Sources */,
+				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */,
 				158706B125ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655725B0B73C00B4F239 /* ScoreModifier.swift in Sources */,

@@ -19,10 +19,13 @@ class LibraryLogic {
         UserDefaults.standard.set(library.encode()!, forKey: "library")
     }
     
-    static func reset() {
+    static func reset(_ game: Game) {
         if let bundleID = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundleID)
         }
+        game.libraryCache = Library()
+        game.gamesTrained = 0
+        game.train = false
     }
     
     static func cache(to game: Game) {

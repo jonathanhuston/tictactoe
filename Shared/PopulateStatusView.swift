@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopulateStatusView: View {
     var body: some View {
-        Text("Populating library...")
+        Text("Training all \(uniqueGames) games...")
             .font(.title)
             .foregroundColor(.purple)
     }

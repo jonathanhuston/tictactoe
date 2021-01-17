@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PieceImageView {
     @EnvironmentObject var game: Game
-    @EnvironmentObject var screenScaling: ScreenScaling
 
     @State var row = 0
     @State var col = 0
@@ -22,16 +21,16 @@ extension PieceImageView: View {
     var body: some View {
         ZStack {
             Color.primary.colorInvert()
-                .frame(width: width * screenScaling.factor, height: height * screenScaling.factor)
+                .frame(width: width * Device.scaling, height: height * Device.scaling)
             
             switch game.board[square(row, col)] {
             case .X:
                 Image(systemName: "xmark")
-                    .font(.system(size: 125 * screenScaling.factor, weight: .regular))
+                    .font(.system(size: 125 * Device.scaling, weight: .regular))
                     .foregroundColor(.red)
             case .O:
                 Image(systemName: "circle")
-                    .font(.system(size: 100 * screenScaling.factor, weight: .medium))
+                    .font(.system(size: 100 * Device.scaling, weight: .medium))
                     .foregroundColor(.blue)
             case .none:
                 ScoresView(row: row, col: col)
@@ -44,6 +43,5 @@ struct PieceImageView_Previews: PreviewProvider {
     static var previews: some View {
         PieceImageView(row: 0, col: 0)
             .environmentObject(Game())
-            .environmentObject(ScreenScaling())
     }
 }

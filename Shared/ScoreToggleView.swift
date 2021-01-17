@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScoreToggleView {
     @EnvironmentObject var game: Game
-    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension ScoreToggleView: View {
@@ -27,7 +26,7 @@ extension ScoreToggleView: View {
             }
             .padding()
             
-            if screenScaling.factor < 1 {
+            if Device.iPhone {
                 DummyButton()
             }
         }
@@ -38,6 +37,5 @@ struct ScoreToggleView_Previews: PreviewProvider {
     static var previews: some View {
         ScoreToggleView()
             .environmentObject(Game())
-            .environmentObject(ScreenScaling())
     }
 }

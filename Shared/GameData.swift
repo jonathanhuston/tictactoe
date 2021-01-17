@@ -23,7 +23,7 @@ func square(_ row: Int, _ col: Int) -> Move {
 
 let allMoves = Set<Move>(0...8)
 
-let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train", "Populate"]
+let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train", "Train all games"]
 
 let winningConstellations = [ Set<Move>([0, 1, 2]),
                               Set<Move>([3, 4, 5]),

@@ -9,37 +9,37 @@ import SwiftUI
 
 struct TrainControlsView {
     @EnvironmentObject var game: Game
-    @EnvironmentObject var screenScaling: ScreenScaling
 }
 
 extension TrainControlsView: View {
     var body: some View {
-        let counterText = !game.fullyTrained()
-            ? "\(game.gamesTrained) \(game.gamesTrained == 1 ? "game" : "games") trained"
-            : "Training complete"
+        if Device.iPhone {
+            VStack {
+                CounterTextView()
 
-        VStack(spacing: 0) {
-            if screenScaling.factor < 1 {
-                DummyPicker()
+                HStack(spacing: 40) {
+                    Button("Suspend") {
+                        game.train = false
+                    }
+                    
+                    Button("Reset") {
+                        LibraryLogic.reset(game)
+                    }
+                }
             }
-            
-            HStack() {
+        } else {
+            HStack {
                 Button("Suspend") {
                     game.train = false
                 }
                 
-                CounterView(text: counterText)
+                CounterTextView()
                 
                 Button("Reset") {
-                    LibraryLogic.reset()
-                    game.libraryCache = Library()
-                    game.gamesTrained = 0
-                    game.train = false
+                    LibraryLogic.reset(game)
                 }
                 
-                if screenScaling.factor >= 1 {
-                    DummyPicker()
-                }
+                DummyPicker()
             }
             .padding()
         }
@@ -50,6 +50,5 @@ struct TrainControlsView_Previews: PreviewProvider {
     static var previews: some View {
         TrainControlsView()
             .environmentObject(Game())
-            .environmentObject(ScreenScaling())
     }
 }

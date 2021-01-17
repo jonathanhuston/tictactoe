@@ -33,12 +33,24 @@ extension Game {
         Array(repeating: Player.none, count: 9)
     }
 
-    static func nextPlayer(_ player: Player) -> Player {
-        player == .X ? .O : .X
+    func humanNowPlaying() -> Bool {
+        return self.players != 0 && !self.launch && self.winner == nil
     }
     
     func fullyTrained() -> Bool {
         gamesTrained >= uniqueGames
+    }
+    
+    func counterText() -> String {
+        if fullyTrained() {
+            return "Training complete"
+        } else {
+            return "\(gamesTrained) \(gamesTrained == 1 ? "game" : "games") trained"
+        }
+    }
+    
+    static func nextPlayer(_ player: Player) -> Player {
+        player == .X ? .O : .X
     }
 
     static func findWinner(on board: Board) -> Player? {

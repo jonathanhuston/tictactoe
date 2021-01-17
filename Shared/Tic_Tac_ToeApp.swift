@@ -27,17 +27,12 @@ class Game: ObservableObject {
     var computerTurn = false
 }
 
-class ScreenScaling: ObservableObject {
-    @Published var factor: CGFloat = (Device.width < 450) ? 0.7 : 1
-}
-
 @main
 struct TicTacToeApp: App {
     var body: some Scene {
         WindowGroup {
             GameView()
                 .environmentObject(Game())
-                .environmentObject(ScreenScaling())
         }
     }
 }
