@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView {
     @EnvironmentObject var game: Game
     
-    @State private var newGameType = "Computer vs. Computer"
+    @State private var newGameType = gameTypes.first!
 }
 
 extension GameView: View {
@@ -29,16 +29,17 @@ extension GameView: View {
             
             if game.train {
                 TrainControlsView()
-            } else if game.humanNowPlaying() {
+            } else if game.players != 0 && game.inProgress() {
                 ScoreToggleView()
             } else {
                 GameSelectionView(newGameType: $newGameType)
-                    .hidden(game.populate || (!game.launch && game.winner == nil))
+                    .hidden(game.populate || game.inProgress())
                     .padding()
             }
         }
         .frame(height: 650 * Device.scaling)
         .onAppear(perform: {
+//            DEV:
 //            LibraryLogic.reset()
             if game.launch && game.fullyTrained() {
                 LibraryLogic.populate(using: game)

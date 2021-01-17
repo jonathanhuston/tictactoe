@@ -1,5 +1,5 @@
 //
-//  GameData.swift
+//  GameDefinitions.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/10/21.
@@ -13,15 +13,23 @@ enum Player {
     case none
 }
 
+func nextPlayer(_ player: Player) -> Player {
+    player == .X ? .O : .X
+}
+
 typealias Board = [Player]
-typealias Move = Int
-typealias Score = Int8
+
+let newBoard: Board = Array(repeating: Player.none, count: 9)
 
 func square(_ row: Int, _ col: Int) -> Move {
     row * 3 + col
 }
 
+typealias Move = Int
+
 let allMoves = Set<Move>(0...8)
+
+typealias Score = Int8
 
 let gameTypes = ["Computer vs. Computer", "Computer vs. Human", "Human vs. Computer", "Human vs. Human", "Train", "Train all games"]
 

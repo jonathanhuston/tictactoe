@@ -8,7 +8,7 @@
 import Foundation
 
 class Library: Codable {
-    var score: Score = 0
+    var score: Score? = nil
     var nextMoves = [Move: Library]()
 }
 

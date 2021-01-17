@@ -14,7 +14,7 @@ extension Game {
             LibraryLogic.cache(to: self)
         }
         
-        board = Game.newBoard()
+        board = newBoard
         player = .X
         winner = nil
         moves = []
@@ -29,12 +29,8 @@ extension Game {
         }
     }
     
-    static func newBoard() -> Board {
-        Array(repeating: Player.none, count: 9)
-    }
-
-    func humanNowPlaying() -> Bool {
-        return self.players != 0 && !self.launch && self.winner == nil
+    func inProgress() -> Bool {
+        !launch && winner == nil
     }
     
     func fullyTrained() -> Bool {
@@ -42,15 +38,7 @@ extension Game {
     }
     
     func counterText() -> String {
-        if fullyTrained() {
-            return "Training complete"
-        } else {
-            return "\(gamesTrained) \(gamesTrained == 1 ? "game" : "games") trained"
-        }
-    }
-    
-    static func nextPlayer(_ player: Player) -> Player {
-        player == .X ? .O : .X
+        fullyTrained() ? "Training complete" : "\(gamesTrained) \(gamesTrained == 1 ? "game" : "games") trained"
     }
 
     static func findWinner(on board: Board) -> Player? {
@@ -90,11 +78,11 @@ extension Game {
         possibleMoves.remove(move)
         updateWinner()
         currentScores = LibraryLogic.currentScores(in: self)
-        player = Game.nextPlayer(self.player)
+        player = nextPlayer(player)
     }
 
     func computerMove() {
-        let move = LibraryLogic.bestMove(in: self, given: self.possibleMoves)
+        let move = LibraryLogic.bestMove(in: self, given: possibleMoves)
         
         play(move)
         

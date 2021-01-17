@@ -10,7 +10,7 @@ import Foundation
 class LibraryLogic {
     
     private struct BoardState {
-        var board = Game.newBoard()
+        var board = newBoard
         var player = Player.X
         var possibleMoves = allMoves
     }
@@ -32,19 +32,15 @@ class LibraryLogic {
     }
 
     private static func maxScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
-        return moves.shuffled().max { a, b in a.value.score < b.value.score }!
+        moves.shuffled().max { a, b in a.value.score! < b.value.score! }!
     }
 
     private static func minScore(for moves: [Move: Library]) -> (key: Move, value: Library) {
-        return moves.shuffled().min { a, b in a.value.score < b.value.score }!
+        moves.shuffled().min { a, b in a.value.score! < b.value.score! }!
     }
 
     private static func miniMaxScore(for moves: [Move: Library], given player: Player) -> Score {
-        if player == .X {
-            return maxScore(for: moves).value.score
-        } else {
-            return minScore(for: moves).value.score
-        }
+        player == .X ? maxScore(for: moves).value.score! : minScore(for: moves).value.score!
     }
 
     private static func score(given winner: Player?) -> Score {
@@ -77,13 +73,13 @@ class LibraryLogic {
                     node.nextMoves[move] = Library()
                 }
                 node = node.nextMoves[move]!
-                player = Game.nextPlayer(player)
+                player = nextPlayer(player)
             }
             
             node.score = score(given: game.winner)
                             
             for node in nodes.reversed() {
-                player = Game.nextPlayer(player)
+                player = nextPlayer(player)
                 node.score = miniMaxScore(for: node.nextMoves, given: player)
             }
             
@@ -112,13 +108,44 @@ class LibraryLogic {
         return scores
     }
     
-    static func currentOutcomes(in game: Game, at square: Move) -> ([Player: Int]) {
-        var outcomes = [Player: Int]()
+    static func countOutcomes(from node: Library, for move: Move, acc: [Player: Int]) -> ([Player: Int]) {
+        var outcomes = acc
+        
+        // outcome not yet in trained games
+        guard let nextNode = node.nextMoves[move], let score = nextNode.score else {
+            return outcomes
+        }
+        
+        // outcome reached
+        if nextNode.nextMoves.isEmpty {
+            switch score {
+            case 1:
+                return [.X: acc[.X]! + 1, .O: acc[.O]!, .none: acc[.none]!]
+            case -1:
+                return [.X: acc[.X]!, .O: acc[.O]! + 1, .none: acc[.none]!]
+            case 0:
+                return [.X: acc[.X]!, .O: acc[.O]!, .none: acc[.none]! + 1]
+            default:
+                return outcomes
+            }
+        }
+        
+        for move in nextNode.nextMoves.keys {
+            outcomes = countOutcomes(from: nextNode, for: move, acc: outcomes)
+        }
+        
+        return outcomes
+    }
+    
+    static func currentOutcomes(in game: Game, for move: Move) -> ([Player: Int]) {
+        var outcomes: [Player: Int] = [.X: 0, .O: 0, .none: 0]
         var node = game.libraryCache
         
         game.moves.forEach { node = node.nextMoves[$0]! }
         
-        return [.X: 131184, .O: 77904, .none: 46080]
+        outcomes = countOutcomes(from: node, for: move, acc: outcomes)
+                
+        return outcomes
     }
 
     static func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
@@ -148,12 +175,12 @@ class LibraryLogic {
         
         if game.player == .X {
             best = maxScore(for: node.nextMoves)
-            if best.value.score > -1 {
+            if best.value.score! > -1 {
                 return best.key
             }
         } else {
             best = minScore(for: node.nextMoves)
-            if best.value.score < 1 {
+            if best.value.score! < 1 {
                 return best.key
             }
         }
@@ -170,7 +197,7 @@ class LibraryLogic {
         var newBoardState = boardState
         
         newBoardState.board[move] = boardState.player
-        newBoardState.player = Game.nextPlayer(boardState.player)
+        newBoardState.player = nextPlayer(boardState.player)
         newBoardState.possibleMoves.remove(move)
         
         return (Game.findWinner(on: newBoardState.board), newBoardState)

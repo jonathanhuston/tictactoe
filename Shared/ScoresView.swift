@@ -23,21 +23,21 @@ extension ScoresView: View {
                     case 1:
                         Text("X")
                             .fontWeight(.bold)
-                            .scoreModifier(reduce: Device.iPhone)
+                            .scoreModifier()
                     case -1:
                         Text("O")
                             .fontWeight(.bold)
-                            .scoreModifier(reduce: Device.iPhone)
+                            .scoreModifier()
                     case 0:
                         Text("TIE")
                             .fontWeight(.bold)
-                            .scoreModifier(reduce: Device.iPhone)
+                            .scoreModifier()
                     default:
                         Text("")
                     }
                     
                     if !Device.iPhone && game.showOutcomes {
-                        let outcomes = LibraryLogic.currentOutcomes(in: game, at: square(row, col))
+                        let outcomes = LibraryLogic.currentOutcomes(in: game, for: square(row, col))
                         OutcomeView(outcomes: outcomes)
                     }
                 }

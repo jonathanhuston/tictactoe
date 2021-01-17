@@ -15,12 +15,10 @@ extension StatusView: View {
     var body: some View {
         if game.populate {
             PopulateStatusView()
+        } else if game.winner == nil {
+            PlayingStatusView()
         } else {
-            if game.winner == nil {
-                PlayingStatusView()
-            } else {
-                WinnerStatusView(winningPlayer: game.winner!)
-            }
+            WinnerStatusView(winningPlayer: game.winner!)
         }
     }
 }

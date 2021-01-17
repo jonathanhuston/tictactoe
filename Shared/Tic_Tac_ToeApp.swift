@@ -11,7 +11,7 @@ class Game: ObservableObject {
     @AppStorage("library") var library = Library().encode()!
     @AppStorage("gamesTrained") var gamesTrained = 0
 
-    @Published var board = Game.newBoard()
+    @Published var board = newBoard
     @Published var player: Player = .X
     @Published var winner: Player? = nil
     @Published var launch = true
