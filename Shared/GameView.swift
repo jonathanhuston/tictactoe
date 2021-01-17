@@ -33,6 +33,8 @@ extension GameView: View {
                 ScoreToggleView()
             } else {
                 GameSelectionView(newGameType: $newGameType)
+                    .hidden(game.populate || (!game.launch && game.winner == nil))
+                    .padding()
             }
         }
         .frame(height: 650 * Device.scaling)

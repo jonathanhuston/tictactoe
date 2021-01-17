@@ -33,8 +33,6 @@ extension GameSelectionView: View {
                 GameButtonsView(newGameType: $newGameType)
             }
         }
-        .hidden(game.populate || (!game.launch && game.winner == nil))
-        .padding()
     }
 }
 

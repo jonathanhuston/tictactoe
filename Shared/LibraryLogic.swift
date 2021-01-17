@@ -25,7 +25,6 @@ class LibraryLogic {
         }
         game.libraryCache = Library()
         game.gamesTrained = 0
-        game.train = false
     }
     
     static func cache(to game: Game) {

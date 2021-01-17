@@ -24,6 +24,7 @@ extension TrainControlsView: View {
                     
                     Button("Reset") {
                         LibraryLogic.reset(game)
+                        game.train = false
                     }
                 }
             }
@@ -37,6 +38,7 @@ extension TrainControlsView: View {
                 
                 Button("Reset") {
                     LibraryLogic.reset(game)
+                    game.train = false
                 }
                 
                 DummyPicker()
