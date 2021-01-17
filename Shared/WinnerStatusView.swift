@@ -10,7 +10,7 @@ import SwiftUI
 struct WinnerStatusView {
     @EnvironmentObject var game: Game
     
-    var winningPlayer: Player
+    let winningPlayer: Player
 }
 
 extension WinnerStatusView: View {

@@ -111,6 +111,15 @@ class LibraryLogic {
                         
         return scores
     }
+    
+    static func currentOutcomes(in game: Game, at square: Move) -> ([Player: Int]) {
+        var outcomes = [Player: Int]()
+        var node = game.libraryCache
+        
+        game.moves.forEach { node = node.nextMoves[$0]! }
+        
+        return [.X: 131184, .O: 77904, .none: 46080]
+    }
 
     static func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
         let best: (key: Move, value: Library)

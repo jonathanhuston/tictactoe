@@ -22,6 +22,14 @@ extension ScoreToggleView: View {
                 }
                 .fixedSize()
                 
+                if !Device.iPhone {
+                    Toggle(isOn: $game.showOutcomes) {
+                        Text("Show outcomes")
+                    }
+                    .fixedSize()
+                    .disabled(!game.showScores)
+                }
+                
                 DummyPicker()
             }
             .padding()

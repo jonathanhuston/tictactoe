@@ -11,6 +11,8 @@
 		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		1566E59425B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
 		1566E59525B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
+		1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
+		1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
 		1587069B25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069C25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069925ADB99A0011F155 /* GameLogic.swift */; };
@@ -64,6 +66,7 @@
 /* Begin PBXFileReference section */
 		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
 		1566E59325B3ACE800C14957 /* LibraryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
+		1576ABDC25B4990300A62DBB /* OutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeView.swift; sourceTree = "<group>"; };
 		1587069825ADB99A0011F155 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		1587069925ADB99A0011F155 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		1587069A25ADB99A0011F155 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				158706A625ADB9BB0011F155 /* PieceButtonView.swift */,
 				158706A725ADB9BB0011F155 /* PieceImageView.swift */,
 				15A8654E25B0B0E300B4F239 /* ScoresView.swift */,
+				1576ABDC25B4990300A62DBB /* OutcomeView.swift */,
 				158706AB25ADB9BB0011F155 /* StatusView.swift */,
 				158706A825ADB9BB0011F155 /* PlayingStatusView.swift */,
 				158706A925ADB9BB0011F155 /* WinnerStatusView.swift */,
@@ -312,6 +316,7 @@
 				15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069B25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */,
+				1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571625ADEF270001D26B /* Device.swift in Sources */,
 				15A8655D25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */,
 				158706B825ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,
@@ -344,6 +349,7 @@
 				15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069C25ADB99A0011F155 /* Library.swift in Sources */,
 				15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */,
+				1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571725ADEF270001D26B /* Device.swift in Sources */,
 				15A8655E25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */,
 				158706B925ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,

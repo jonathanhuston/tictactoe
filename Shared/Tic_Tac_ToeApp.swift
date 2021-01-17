@@ -18,6 +18,7 @@ class Game: ObservableObject {
     @Published var train = false
     @Published var populate = false
     @Published var showScores = false
+    @Published var showOutcomes = false
     @Published var currentScores = [Score?]()
     
     var libraryCache = Library()
