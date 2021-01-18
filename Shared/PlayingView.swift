@@ -1,5 +1,5 @@
 //
-//  ScoreToggleView.swift
+//  PlayingView.swift
 //  Tic Tac Toe
 //
 //  Created by Jonathan Huston on 1/14/21.
@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct ScoreToggleView {
+struct PlayingView {
     @EnvironmentObject var game: Game
 }
 
-extension ScoreToggleView: View {
+extension PlayingView: View {
     var body: some View {
         VStack {
-            HStack {
+            HStack(spacing: 20) {
                 DummyPicker()
+                
+                BackButtonView()
                 
                 Toggle(isOn: $game.showScores) {
                     Text("Show hints")
                 }
-                .fixedSize()
                 
                 if !Device.iPhone {
                     Toggle(isOn: $game.showOutcomes) {
@@ -29,7 +30,7 @@ extension ScoreToggleView: View {
                     .fixedSize()
                     .disabled(!game.showScores)
                 }
-                
+                                
                 DummyPicker()
             }
             .padding()
@@ -43,7 +44,7 @@ extension ScoreToggleView: View {
 
 struct ScoreToggleView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreToggleView()
+        PlayingView()
             .environmentObject(Game())
     }
 }

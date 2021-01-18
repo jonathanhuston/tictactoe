@@ -23,8 +23,8 @@
 		158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A325ADB9BB0011F155 /* HiddenModifier.swift */; };
 		158706B025ADB9BB0011F155 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A425ADB9BB0011F155 /* GridView.swift */; };
 		158706B125ADB9BB0011F155 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A425ADB9BB0011F155 /* GridView.swift */; };
-		158706B225ADB9BB0011F155 /* TrainControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A525ADB9BB0011F155 /* TrainControlsView.swift */; };
-		158706B325ADB9BB0011F155 /* TrainControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A525ADB9BB0011F155 /* TrainControlsView.swift */; };
+		158706B225ADB9BB0011F155 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A525ADB9BB0011F155 /* TrainingView.swift */; };
+		158706B325ADB9BB0011F155 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A525ADB9BB0011F155 /* TrainingView.swift */; };
 		158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A625ADB9BB0011F155 /* PieceButtonView.swift */; };
 		158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A625ADB9BB0011F155 /* PieceButtonView.swift */; };
 		158706B625ADB9BB0011F155 /* PieceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706A725ADB9BB0011F155 /* PieceImageView.swift */; };
@@ -41,12 +41,14 @@
 		158706C125ADB9BB0011F155 /* GameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AC25ADB9BB0011F155 /* GameSelectionView.swift */; };
 		158706C225ADB9BB0011F155 /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AD25ADB9BB0011F155 /* PiecesView.swift */; };
 		158706C325ADB9BB0011F155 /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158706AD25ADB9BB0011F155 /* PiecesView.swift */; };
+		15A0162325B500D2007074C8 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0162225B500D2007074C8 /* BackButtonView.swift */; };
+		15A0162425B500D2007074C8 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0162225B500D2007074C8 /* BackButtonView.swift */; };
 		15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8654E25B0B0E300B4F239 /* ScoresView.swift */; };
 		15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8654E25B0B0E300B4F239 /* ScoresView.swift */; };
 		15A8655625B0B73C00B4F239 /* ScoreModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655525B0B73C00B4F239 /* ScoreModifier.swift */; };
 		15A8655725B0B73C00B4F239 /* ScoreModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655525B0B73C00B4F239 /* ScoreModifier.swift */; };
-		15A8655D25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */; };
-		15A8655E25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */; };
+		15A8655D25B0BE7600B4F239 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* PlayingView.swift */; };
+		15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* PlayingView.swift */; };
 		15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
 		15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
 		15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
@@ -72,7 +74,7 @@
 		1587069A25ADB99A0011F155 /* GameDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDefinitions.swift; sourceTree = "<group>"; };
 		158706A325ADB9BB0011F155 /* HiddenModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HiddenModifier.swift; sourceTree = "<group>"; };
 		158706A425ADB9BB0011F155 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
-		158706A525ADB9BB0011F155 /* TrainControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainControlsView.swift; sourceTree = "<group>"; };
+		158706A525ADB9BB0011F155 /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
 		158706A625ADB9BB0011F155 /* PieceButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceButtonView.swift; sourceTree = "<group>"; };
 		158706A725ADB9BB0011F155 /* PieceImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceImageView.swift; sourceTree = "<group>"; };
 		158706A825ADB9BB0011F155 /* PlayingStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingStatusView.swift; sourceTree = "<group>"; };
@@ -81,9 +83,10 @@
 		158706AB25ADB9BB0011F155 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		158706AC25ADB9BB0011F155 /* GameSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectionView.swift; sourceTree = "<group>"; };
 		158706AD25ADB9BB0011F155 /* PiecesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesView.swift; sourceTree = "<group>"; };
+		15A0162225B500D2007074C8 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		15A8654E25B0B0E300B4F239 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		15A8655525B0B73C00B4F239 /* ScoreModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModifier.swift; sourceTree = "<group>"; };
-		15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreToggleView.swift; sourceTree = "<group>"; };
+		15A8655C25B0BE7600B4F239 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		15AE171C25B10A0C00BDD663 /* DummyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyButton.swift; sourceTree = "<group>"; };
 		15AE172825B10CF900BDD663 /* CounterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTextView.swift; sourceTree = "<group>"; };
 		15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeApp.swift; sourceTree = "<group>"; };
@@ -132,9 +135,10 @@
 				15394B0C25B261FF00643877 /* PopulateStatusView.swift */,
 				158706AC25ADB9BB0011F155 /* GameSelectionView.swift */,
 				15E9571E25ADFA080001D26B /* GameButtonsView.swift */,
-				158706A525ADB9BB0011F155 /* TrainControlsView.swift */,
+				158706A525ADB9BB0011F155 /* TrainingView.swift */,
 				15AE172825B10CF900BDD663 /* CounterTextView.swift */,
-				15A8655C25B0BE7600B4F239 /* ScoreToggleView.swift */,
+				15A8655C25B0BE7600B4F239 /* PlayingView.swift */,
+				15A0162225B500D2007074C8 /* BackButtonView.swift */,
 				15AE172F25B10EA600BDD663 /* Modifiers */,
 				15AE173025B10EB000BDD663 /* Dummies */,
 			);
@@ -309,6 +313,7 @@
 			files = (
 				158706C225ADB9BB0011F155 /* PiecesView.swift in Sources */,
 				1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */,
+				15A0162325B500D2007074C8 /* BackButtonView.swift in Sources */,
 				158706BE25ADB9BB0011F155 /* StatusView.swift in Sources */,
 				158706B625ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BA25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
@@ -318,9 +323,9 @@
 				15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */,
 				1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571625ADEF270001D26B /* Device.swift in Sources */,
-				15A8655D25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */,
+				15A8655D25B0BE7600B4F239 /* PlayingView.swift in Sources */,
 				158706B825ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,
-				158706B225ADB9BB0011F155 /* TrainControlsView.swift in Sources */,
+				158706B225ADB9BB0011F155 /* TrainingView.swift in Sources */,
 				15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */,
@@ -342,6 +347,7 @@
 			files = (
 				158706C325ADB9BB0011F155 /* PiecesView.swift in Sources */,
 				1587069E25ADB99A0011F155 /* GameLogic.swift in Sources */,
+				15A0162425B500D2007074C8 /* BackButtonView.swift in Sources */,
 				158706BF25ADB9BB0011F155 /* StatusView.swift in Sources */,
 				158706B725ADB9BB0011F155 /* PieceImageView.swift in Sources */,
 				158706BB25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
@@ -351,9 +357,9 @@
 				15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */,
 				1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571725ADEF270001D26B /* Device.swift in Sources */,
-				15A8655E25B0BE7600B4F239 /* ScoreToggleView.swift in Sources */,
+				15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */,
 				158706B925ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,
-				158706B325ADB9BB0011F155 /* TrainControlsView.swift in Sources */,
+				158706B325ADB9BB0011F155 /* TrainingView.swift in Sources */,
 				15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,

@@ -33,6 +33,10 @@ extension Game {
         !launch && winner == nil
     }
     
+    func computerFirstMove() -> Bool {
+        moves.count == 1 && players == 1 && player == .O
+    }
+    
     func fullyTrained() -> Bool {
         gamesTrained >= uniqueGames
     }
@@ -70,6 +74,25 @@ extension Game {
                 LibraryLogic.update(with: self)
             }
         }
+    }
+    
+    private func takeBackOneMove() {
+        let move = moves.last!
+        
+        board[move] = .none
+        moves.removeLast()
+        possibleMoves.insert(move)
+        player = nextPlayer(player)
+    }
+    
+    func takeBackMove() {
+        takeBackOneMove()
+        
+        if !moves.isEmpty && players == 1 {
+            takeBackOneMove()
+        }
+        
+        currentScores = LibraryLogic.currentScores(in: self)
     }
 
     private func play(_ move: Move) {

@@ -28,18 +28,16 @@ extension GameView: View {
                 .hidden(game.launch)
             
             if game.train {
-                TrainControlsView()
+                TrainingView()
             } else if game.players != 0 && game.inProgress() {
-                ScoreToggleView()
+                PlayingView()
             } else {
                 GameSelectionView(newGameType: $newGameType)
                     .hidden(game.populate || game.inProgress())
-                    .padding()
             }
         }
         .frame(height: 650 * Device.scaling)
         .onAppear(perform: {
-//            DEV:
 //            LibraryLogic.reset()
             if game.launch && game.fullyTrained() {
                 LibraryLogic.populate(using: game)

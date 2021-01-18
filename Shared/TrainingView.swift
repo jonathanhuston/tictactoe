@@ -1,17 +1,17 @@
 //
-//  TrainControlsView.swift
+//  TrainingView.swift
 //  TicTacToe
 //
 //  Created by Jonathan Huston on 1/11/21.
-//
+//5
 
 import SwiftUI
 
-struct TrainControlsView {
+struct TrainingView {
     @EnvironmentObject var game: Game
 }
 
-extension TrainControlsView: View {
+extension TrainingView: View {
     var body: some View {
         if Device.iPhone {
             VStack {
@@ -50,7 +50,7 @@ extension TrainControlsView: View {
 
 struct TrainControlsView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainControlsView()
+        TrainingView()
             .environmentObject(Game())
     }
 }

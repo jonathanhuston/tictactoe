@@ -33,6 +33,7 @@ extension GameSelectionView: View {
                 GameButtonsView(newGameType: $newGameType)
             }
         }
+        .padding()
     }
 }
 
