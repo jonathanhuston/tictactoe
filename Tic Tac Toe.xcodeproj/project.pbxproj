@@ -63,8 +63,6 @@
 		15E9571725ADEF270001D26B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571525ADEF270001D26B /* Device.swift */; };
 		15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameButtonsView.swift */; };
 		15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9571E25ADFA080001D26B /* GameButtonsView.swift */; };
-		15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9572525ADFD840001D26B /* DummyPicker.swift */; };
-		15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9572525ADFD840001D26B /* DummyPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +99,6 @@
 		15E2791D25ADB65A00222A42 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		15E9571525ADEF270001D26B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		15E9571E25ADFA080001D26B /* GameButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonsView.swift; sourceTree = "<group>"; };
-		15E9572525ADFD840001D26B /* DummyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +141,6 @@
 				15AE172825B10CF900BDD663 /* CounterTextView.swift */,
 				15A8655C25B0BE7600B4F239 /* PlayingView.swift */,
 				15AE172F25B10EA600BDD663 /* Modifiers */,
-				15AE173025B10EB000BDD663 /* Dummies */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -157,14 +153,6 @@
 				15A8655525B0B73C00B4F239 /* ScoreModifier.swift */,
 			);
 			name = Modifiers;
-			sourceTree = "<group>";
-		};
-		15AE173025B10EB000BDD663 /* Dummies */ = {
-			isa = PBXGroup;
-			children = (
-				15E9572525ADFD840001D26B /* DummyPicker.swift */,
-			);
-			name = Dummies;
 			sourceTree = "<group>";
 		};
 		15E2790525ADB65800222A42 = {
@@ -324,7 +312,6 @@
 				158706C025ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
 				15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069B25ADB99A0011F155 /* Library.swift in Sources */,
-				15E9572625ADFD840001D26B /* DummyPicker.swift in Sources */,
 				1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571625ADEF270001D26B /* Device.swift in Sources */,
 				15A8655D25B0BE7600B4F239 /* PlayingView.swift in Sources */,
@@ -359,7 +346,6 @@
 				158706C125ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
 				15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */,
 				1587069C25ADB99A0011F155 /* Library.swift in Sources */,
-				15E9572725ADFD840001D26B /* DummyPicker.swift in Sources */,
 				1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */,
 				15E9571725ADEF270001D26B /* Device.swift in Sources */,
 				15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */,

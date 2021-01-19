@@ -40,8 +40,6 @@ extension TrainingView: View {
                     LibraryLogic.reset(game)
                     game.train = false
                 }
-                
-                DummyPicker()
             }
             .padding()
         }

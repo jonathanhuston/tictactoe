@@ -15,8 +15,6 @@ extension PlayingView: View {
     var body: some View {
         VStack {
             HStack(spacing: 20) {
-                DummyPicker()
-                
                 Toggle(isOn: $game.showScores) {
                     Text("Show hints")
                 }
@@ -27,8 +25,6 @@ extension PlayingView: View {
                 }
                 .fixedSize()
                 .disabled(!game.showScores)
-                                
-//                DummyPicker()
             }
             .padding()
         }
