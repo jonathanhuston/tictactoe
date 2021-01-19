@@ -18,7 +18,7 @@ extension Game {
         player = .X
         winner = nil
         moves = []
-        possibleMoves = allMoves
+        movesTakenBack = []
         currentScores = LibraryLogic.currentScores(in: self)
         self.train = train
         self.players = players
@@ -27,6 +27,10 @@ extension Game {
         if self.computerTurn {
             computerMove()
         }
+    }
+    
+    func possibleMoves() -> Set<Move> {
+        allMoves.subtracting(moves)
     }
     
     func inProgress() -> Bool {
@@ -68,7 +72,7 @@ extension Game {
             return
         }
         
-        if possibleMoves.isEmpty {
+        if possibleMoves().isEmpty {
             winner = Player.none
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 LibraryLogic.update(with: self)
@@ -81,7 +85,7 @@ extension Game {
         
         board[move] = .none
         moves.removeLast()
-        possibleMoves.insert(move)
+        movesTakenBack.append(move)
         player = nextPlayer(player)
     }
     
@@ -92,20 +96,40 @@ extension Game {
             takeBackOneMove()
         }
         
+        winner = nil
+        currentScores = LibraryLogic.currentScores(in: self)
+    }
+    
+    func redoOneMove() {
+        if let move = movesTakenBack.popLast() {
+            board[move] = player
+            moves.append(move)
+            player = nextPlayer(player)
+        }
+    }
+    
+    func redoMove() {
+        redoOneMove()
+        
+        if !movesTakenBack.isEmpty && players == 1 {
+            redoOneMove()
+        }
+        
+        updateWinner()
         currentScores = LibraryLogic.currentScores(in: self)
     }
 
     private func play(_ move: Move) {
         board[move] = player
         moves.append(move)
-        possibleMoves.remove(move)
+        movesTakenBack = []
         updateWinner()
         currentScores = LibraryLogic.currentScores(in: self)
         player = nextPlayer(player)
     }
 
     func computerMove() {
-        let move = LibraryLogic.bestMove(in: self, given: possibleMoves)
+        let move = LibraryLogic.bestMove(in: self)
         
         play(move)
         

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
+		1542672B25B72518007210DD /* StatusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542672A25B72518007210DD /* StatusModifier.swift */; };
+		1542672C25B72518007210DD /* StatusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542672A25B72518007210DD /* StatusModifier.swift */; };
+		1542673225B726B8007210DD /* ForwardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542673125B726B8007210DD /* ForwardButtonView.swift */; };
+		1542673325B726B8007210DD /* ForwardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542673125B726B8007210DD /* ForwardButtonView.swift */; };
 		1566E59425B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
 		1566E59525B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
 		1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
@@ -67,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
+		1542672A25B72518007210DD /* StatusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModifier.swift; sourceTree = "<group>"; };
+		1542673125B726B8007210DD /* ForwardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardButtonView.swift; sourceTree = "<group>"; };
 		1566E59325B3ACE800C14957 /* LibraryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
 		1576ABDC25B4990300A62DBB /* OutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeView.swift; sourceTree = "<group>"; };
 		1587069825ADB99A0011F155 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 				15A8654E25B0B0E300B4F239 /* ScoresView.swift */,
 				1576ABDC25B4990300A62DBB /* OutcomeView.swift */,
 				158706AB25ADB9BB0011F155 /* StatusView.swift */,
+				15A0162225B500D2007074C8 /* BackButtonView.swift */,
+				1542673125B726B8007210DD /* ForwardButtonView.swift */,
 				158706A825ADB9BB0011F155 /* PlayingStatusView.swift */,
 				158706A925ADB9BB0011F155 /* WinnerStatusView.swift */,
 				15394B0C25B261FF00643877 /* PopulateStatusView.swift */,
@@ -138,7 +146,6 @@
 				158706A525ADB9BB0011F155 /* TrainingView.swift */,
 				15AE172825B10CF900BDD663 /* CounterTextView.swift */,
 				15A8655C25B0BE7600B4F239 /* PlayingView.swift */,
-				15A0162225B500D2007074C8 /* BackButtonView.swift */,
 				15AE172F25B10EA600BDD663 /* Modifiers */,
 				15AE173025B10EB000BDD663 /* Dummies */,
 			);
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				158706A325ADB9BB0011F155 /* HiddenModifier.swift */,
+				1542672A25B72518007210DD /* StatusModifier.swift */,
 				15A8655525B0B73C00B4F239 /* ScoreModifier.swift */,
 			);
 			name = Modifiers;
@@ -328,11 +336,13 @@
 				158706B225ADB9BB0011F155 /* TrainingView.swift in Sources */,
 				15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
+				1542673225B726B8007210DD /* ForwardButtonView.swift in Sources */,
 				15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */,
+				1542672B25B72518007210DD /* StatusModifier.swift in Sources */,
 				158706B025ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655625B0B73C00B4F239 /* ScoreModifier.swift in Sources */,
 				1566E59425B3ACE800C14957 /* LibraryLogic.swift in Sources */,
@@ -362,11 +372,13 @@
 				158706B325ADB9BB0011F155 /* TrainingView.swift in Sources */,
 				15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
 				158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
+				1542673325B726B8007210DD /* ForwardButtonView.swift in Sources */,
 				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */,
+				1542672C25B72518007210DD /* StatusModifier.swift in Sources */,
 				158706B125ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655725B0B73C00B4F239 /* ScoreModifier.swift in Sources */,
 				1566E59525B3ACE800C14957 /* LibraryLogic.swift in Sources */,

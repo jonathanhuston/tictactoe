@@ -23,7 +23,7 @@ class Game: ObservableObject {
     
     var libraryCache = Library()
     var moves = [Move]()
-    var possibleMoves = allMoves
+    var movesTakenBack = [Move]()
     var players = 2
     var computerTurn = false
 }

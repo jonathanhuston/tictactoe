@@ -15,10 +15,25 @@ extension StatusView: View {
     var body: some View {
         if game.populate {
             PopulateStatusView()
-        } else if game.winner == nil {
-            PlayingStatusView()
         } else {
-            WinnerStatusView(winningPlayer: game.winner!)
+            HStack() {
+                BackButtonView()
+                    .hidden(game.players == 0)
+                    .disabled(game.computerTurn
+                                || game.moves.isEmpty
+                                || game.computerFirstMove())
+                
+                if game.winner == nil {
+                    PlayingStatusView()
+                } else {
+                    WinnerStatusView()
+                }
+                
+                ForwardButtonView()
+                    .hidden(game.players == 0)
+                    .disabled(game.computerTurn
+                                || game.movesTakenBack.isEmpty)
+            }
         }
     }
 }

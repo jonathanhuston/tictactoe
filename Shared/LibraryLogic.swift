@@ -148,9 +148,10 @@ class LibraryLogic {
         return outcomes
     }
 
-    static func bestMove(in game: Game, given possibleMoves: Set<Move>) -> Move {
+    static func bestMove(in game: Game) -> Move {
         let best: (key: Move, value: Library)
         var node = game.libraryCache
+        let possibleMoves = game.possibleMoves()
 
         // if board configuration hasn't been explored yet, make random move
         for move in game.moves {

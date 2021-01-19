@@ -17,27 +17,20 @@ extension PlayingView: View {
             HStack(spacing: 20) {
                 DummyPicker()
                 
-                BackButtonView()
-                
                 Toggle(isOn: $game.showScores) {
                     Text("Show hints")
                 }
+                .fixedSize()
                 
-                if !Device.iPhone {
-                    Toggle(isOn: $game.showOutcomes) {
-                        Text("Show outcomes")
-                    }
-                    .fixedSize()
-                    .disabled(!game.showScores)
+                Toggle(isOn: $game.showOutcomes) {
+                    Text("Show outcomes")
                 }
+                .fixedSize()
+                .disabled(!game.showScores)
                                 
                 DummyPicker()
             }
             .padding()
-            
-            if Device.iPhone {
-                DummyButton()
-            }
         }
     }
 }

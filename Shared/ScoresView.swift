@@ -36,7 +36,7 @@ extension ScoresView: View {
                         Text("")
                     }
                     
-                    if !Device.iPhone && game.showOutcomes {
+                    if game.showOutcomes {
                         let outcomes = LibraryLogic.currentOutcomes(in: game, for: square(row, col))
                         OutcomeView(outcomes: outcomes)
                     }

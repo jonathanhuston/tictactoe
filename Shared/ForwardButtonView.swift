@@ -1,31 +1,31 @@
 //
-//  BackButtonView.swift
+//  ForwardButtonView.swift
 //  Tic Tac Toe
 //
-//  Created by Jonathan Huston on 1/18/21.
+//  Created by Jonathan Huston on 1/19/21.
 //
 
 import SwiftUI
 
-struct BackButtonView {
+struct ForwardButtonView {
     @EnvironmentObject var game: Game
 }
 
-extension BackButtonView: View {
+extension ForwardButtonView: View {
     var body: some View {
         Button(action: {
-            game.takeBackMove()
+            game.redoMove()
         }) {
-            Image(systemName: "arrow.backward")
+            Image(systemName: "arrow.forward")
                 .frame(width: 50 * Device.scaling)
 
         }
     }
 }
 
-struct BackButtonView_Previews: PreviewProvider {
+struct ForwardButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        BackButtonView()
+        ForwardButtonView()
             .environmentObject(Game())
     }
 }

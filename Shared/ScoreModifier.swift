@@ -12,7 +12,7 @@ struct ScoreModifier: ViewModifier {
         content
             .font(Device.iPhone ? .title2 : .title)
             .foregroundColor(.purple)
-            .opacity(0.7)
+            .opacity(0.8)
     }
 }
 

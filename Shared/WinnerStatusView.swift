@@ -9,32 +9,30 @@ import SwiftUI
 
 struct WinnerStatusView {
     @EnvironmentObject var game: Game
-    
-    let winningPlayer: Player
 }
 
 extension WinnerStatusView: View {
     var body: some View {
-        switch winningPlayer {
+        switch game.winner {
         case .X:
             Text("PLAYER X WINS!")
-                .font(.title)
-                .foregroundColor(.red)
+                .statusModifier(color: .red)
+
         case .O:
             Text("PLAYER O WINS!")
-                .font(.title)
-                .foregroundColor(.blue)
-        case .none:
+                .statusModifier(color: .blue)
+
+        default:
             Text("IT'S A TIE!")
-                .font(.title)
-                .foregroundColor(.primary)
+                .statusModifier(color: .primary)
+
         }
     }
 }
 
 struct WinnerStatusView_Previews: PreviewProvider {
     static var previews: some View {
-        WinnerStatusView(winningPlayer: .X)
+        WinnerStatusView()
             .environmentObject(Game())
     }
 }

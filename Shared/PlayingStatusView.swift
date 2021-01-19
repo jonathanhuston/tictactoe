@@ -14,8 +14,7 @@ struct PlayingStatusView {
 extension PlayingStatusView: View {
     var body: some View {
         Text(game.player == .X ? "Player X's turn" : "Player O's turn")
-            .font(.title)
-            .foregroundColor(.primary)
+            .statusModifier(color: .primary)
     }
 }
 
