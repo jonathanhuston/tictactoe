@@ -20,7 +20,7 @@ extension OutcomeView: View {
         }
         .font(Device.iPhone ? .body : .title3)
         .foregroundColor(.purple)
-        .opacity(0.7)
+        .opacity(0.8)
     }
 }
 

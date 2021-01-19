@@ -14,7 +14,7 @@ struct StatusModifier: ViewModifier {
         content
             .font(.title)
             .foregroundColor(color)
-            .frame(width: 200 * Device.scaling)
+            .frame(width: 220)
     }
 }
 

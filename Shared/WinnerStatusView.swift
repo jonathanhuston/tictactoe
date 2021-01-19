@@ -17,15 +17,12 @@ extension WinnerStatusView: View {
         case .X:
             Text("PLAYER X WINS!")
                 .statusModifier(color: .red)
-
         case .O:
             Text("PLAYER O WINS!")
                 .statusModifier(color: .blue)
-
         default:
             Text("IT'S A TIE!")
                 .statusModifier(color: .primary)
-
         }
     }
 }

@@ -17,7 +17,7 @@ extension BackButtonView: View {
             game.takeBackMove()
         }) {
             Image(systemName: "arrow.backward")
-                .frame(width: 50 * Device.scaling)
+                .frame(width: 50)
 
         }
     }

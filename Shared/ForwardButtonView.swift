@@ -17,7 +17,7 @@ extension ForwardButtonView: View {
             game.redoMove()
         }) {
             Image(systemName: "arrow.forward")
-                .frame(width: 50 * Device.scaling)
+                .frame(width: 50)
 
         }
     }

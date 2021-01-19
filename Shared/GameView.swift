@@ -38,7 +38,7 @@ extension GameView: View {
         }
         .frame(height: 650 * Device.scaling)
         .onAppear(perform: {
-//            LibraryLogic.reset()
+//            LibraryLogic.reset(game)
             if game.launch && game.fullyTrained() {
                 LibraryLogic.populate(using: game)
             }
