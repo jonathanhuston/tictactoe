@@ -28,7 +28,7 @@ extension PlayingView: View {
                 .fixedSize()
                 .disabled(!game.showScores)
                                 
-                DummyPicker()
+//                DummyPicker()
             }
             .padding()
         }

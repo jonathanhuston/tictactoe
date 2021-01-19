@@ -14,17 +14,11 @@ struct CounterTextView {
 extension CounterTextView: View {
     var body: some View {
         if Device.iPhone {
-            HStack {
-                DummyPicker()
-                
-                Text(game.counterText())
-                    .fixedSize()
-                    .font(.title2)
-                    .foregroundColor(.purple)
-                
-                DummyPicker()
-            }
-            .padding()
+            Text(game.counterText())
+                .fixedSize()
+                .font(.title2)
+                .foregroundColor(.purple)
+                .padding()
         } else {
             Text(game.counterText())
                 .frame(width: 200)

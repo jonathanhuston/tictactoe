@@ -33,7 +33,9 @@ extension PieceImageView: View {
                     .font(.system(size: 100 * Device.scaling, weight: .medium))
                     .foregroundColor(.blue)
             case .none:
-                ScoresView(row: row, col: col)
+                if game.showScores && !game.computerTurn {
+                        ScoresView(row: row, col: col)
+                }
             }
         }
     }

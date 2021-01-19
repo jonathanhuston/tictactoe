@@ -18,9 +18,7 @@ extension OutcomeView: View {
             Text("O:\t\(outcomes[.O]!)")
             Text("–:\t\(outcomes[.none]!)")
         }
-        .font(Device.iPhone ? .body : .title3)
-        .foregroundColor(.purple)
-        .opacity(0.8)
+        .scoreModifier(size: 18)
     }
 }
 

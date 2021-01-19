@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-struct ScoreModifier: ViewModifier {    
+struct ScoreModifier: ViewModifier {
+    var size: CGFloat
+    
     func body(content: Content) -> some View {
         content
-            .font(Device.iPhone ? .title2 : .title)
+            .font(.system(size: size * Device.scaling))
             .foregroundColor(.purple)
             .opacity(0.8)
     }
 }
 
 extension View {
-    func scoreModifier() -> some View {
-        self.modifier(ScoreModifier())
+    func scoreModifier(size: CGFloat) -> some View {
+        self.modifier(ScoreModifier(size: size))
     }
 }

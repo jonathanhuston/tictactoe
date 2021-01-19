@@ -16,30 +16,28 @@ struct ScoresView {
 
 extension ScoresView: View {
     var body: some View {
-        if game.showScores && !game.computerTurn {
-            if let score = game.currentScores[square(row, col)] {
-                VStack(spacing: 5) {
-                    switch score {
-                    case 1:
-                        Text("X")
-                            .fontWeight(.bold)
-                            .scoreModifier()
-                    case -1:
-                        Text("O")
-                            .fontWeight(.bold)
-                            .scoreModifier()
-                    case 0:
-                        Text("TIE")
-                            .fontWeight(.bold)
-                            .scoreModifier()
-                    default:
-                        Text("")
-                    }
-                    
-                    if game.showOutcomes {
-                        let outcomes = LibraryLogic.currentOutcomes(in: game, for: square(row, col))
-                        OutcomeView(outcomes: outcomes)
-                    }
+        if let score = game.currentScores[square(row, col)] {
+            VStack(spacing: 5) {
+                switch score {
+                case 1:
+                    Text("X")
+                        .fontWeight(.bold)
+                        .scoreModifier(size: 22)
+                case -1:
+                    Text("O")
+                        .fontWeight(.bold)
+                        .scoreModifier(size: 22)
+                case 0:
+                    Text("TIE")
+                        .fontWeight(.bold)
+                        .scoreModifier(size: 22)
+                default:
+                    Text("")
+                }
+                
+                if game.showOutcomes {
+                    let outcomes = LibraryLogic.currentOutcomes(in: game, for: square(row, col))
+                    OutcomeView(outcomes: outcomes)
                 }
             }
         }

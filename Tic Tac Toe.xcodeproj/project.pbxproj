@@ -53,8 +53,6 @@
 		15A8655725B0B73C00B4F239 /* ScoreModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655525B0B73C00B4F239 /* ScoreModifier.swift */; };
 		15A8655D25B0BE7600B4F239 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* PlayingView.swift */; };
 		15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* PlayingView.swift */; };
-		15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
-		15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE171C25B10A0C00BDD663 /* DummyButton.swift */; };
 		15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
 		15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
 		15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */; };
@@ -93,7 +91,6 @@
 		15A8654E25B0B0E300B4F239 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		15A8655525B0B73C00B4F239 /* ScoreModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModifier.swift; sourceTree = "<group>"; };
 		15A8655C25B0BE7600B4F239 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
-		15AE171C25B10A0C00BDD663 /* DummyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyButton.swift; sourceTree = "<group>"; };
 		15AE172825B10CF900BDD663 /* CounterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTextView.swift; sourceTree = "<group>"; };
 		15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeApp.swift; sourceTree = "<group>"; };
 		15E2790D25ADB65A00222A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				15E9572525ADFD840001D26B /* DummyPicker.swift */,
-				15AE171C25B10A0C00BDD663 /* DummyButton.swift */,
 			);
 			name = Dummies;
 			sourceTree = "<group>";
@@ -338,7 +334,6 @@
 				158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				1542673225B726B8007210DD /* ForwardButtonView.swift in Sources */,
 				15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */,
-				15AE171D25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */,
@@ -374,7 +369,6 @@
 				158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				1542673325B726B8007210DD /* ForwardButtonView.swift in Sources */,
 				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,
-				15AE171E25B10A0C00BDD663 /* DummyButton.swift in Sources */,
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */,

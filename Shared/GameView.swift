@@ -26,7 +26,10 @@ extension GameView: View {
         
             StatusView()
                 .hidden(game.launch)
-            
+        }
+        .frame(height: 550 * Device.scaling)
+        
+        VStack {
             if game.train {
                 TrainingView()
             } else if game.players != 0 && game.inProgress() {
@@ -36,7 +39,7 @@ extension GameView: View {
                     .hidden(game.populate || game.inProgress())
             }
         }
-        .frame(height: 650 * Device.scaling)
+        .frame(height: Device.iPhone ? 250 : (Device.iOS ? 200 : 100))
         .onAppear(perform: {
 //            LibraryLogic.reset(game)
             if game.launch && game.fullyTrained() {
