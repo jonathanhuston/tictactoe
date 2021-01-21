@@ -30,15 +30,21 @@ extension TrainingView: View {
             }
         } else {
             HStack {
-                Button("Suspend") {
+                Button(action: {
                     game.train = false
+                }) {
+                    Text("Suspend")
+                        .frame(width: 60)
                 }
                 
                 CounterTextView()
                 
-                Button("Reset") {
+                Button(action: {
                     LibraryLogic.reset(game)
                     game.train = false
+                }) {
+                    Text("Reset")
+                        .frame(width: 60)
                 }
             }
             .padding()

@@ -18,7 +18,6 @@ extension ForwardButtonView: View {
         }) {
             Image(systemName: "arrow.forward")
                 .frame(width: 50)
-
         }
     }
 }
