@@ -13,7 +13,7 @@ struct TrainingView {
 
 extension TrainingView: View {
     var body: some View {
-        if Device.iPhone {
+        if Device.iOS {
             VStack {
                 CounterTextView()
 

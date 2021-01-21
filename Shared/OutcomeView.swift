@@ -14,11 +14,11 @@ struct OutcomeView {
 extension OutcomeView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("X:\t\(outcomes[.X]!)")
-            Text("O:\t\(outcomes[.O]!)")
-            Text("–:\t\(outcomes[.none]!)")
+            OutcomeTextView(piece: "X", outcome: outcomes[.X]!)
+            OutcomeTextView(piece: "O", outcome: outcomes[.O]!)
+            OutcomeTextView(piece: "-", outcome: outcomes[.none]!)
         }
-        .scoreModifier(size: 18)
+        .scoreModifier(size: 20)
     }
 }
 

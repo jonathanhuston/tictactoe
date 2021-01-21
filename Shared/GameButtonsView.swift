@@ -14,10 +14,10 @@ struct GameButtonsView {
 
 extension GameButtonsView: View {
     var body: some View {
-        HStack(spacing: Device.iPhone ? 60 : 20) {
+        HStack(spacing: Device.iOS ? 60 : 20) {
             Button("Play") {
                 game.launch = false
-                
+                            
                 switch newGameType {
                 case "Computer vs. Computer":
                     game.newGame(players: 0)

@@ -13,7 +13,7 @@ struct CounterTextView {
 
 extension CounterTextView: View {
     var body: some View {
-        if Device.iPhone {
+        if Device.iOS {
             Text(game.counterText())
                 .fixedSize()
                 .font(.title2)

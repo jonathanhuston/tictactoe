@@ -18,7 +18,6 @@ extension BackButtonView: View {
         }) {
             Image(systemName: "arrow.backward")
                 .frame(width: 50)
-
         }
     }
 }

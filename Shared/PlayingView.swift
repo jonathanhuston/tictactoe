@@ -16,12 +16,12 @@ extension PlayingView: View {
         VStack {
             HStack(spacing: 20) {
                 Toggle(isOn: $game.showScores) {
-                    Text("Show hints")
+                    Text("Hints")
                 }
                 .fixedSize()
                 
                 Toggle(isOn: $game.showOutcomes) {
-                    Text("Show outcomes")
+                    Text("Outcomes")
                 }
                 .fixedSize()
                 .disabled(!game.showScores)

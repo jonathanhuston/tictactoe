@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
+		153EC73325B8F4B600331FB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73225B8F4B600331FB8 /* BoardView.swift */; };
+		153EC73425B8F4B600331FB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73225B8F4B600331FB8 /* BoardView.swift */; };
+		153EC73A25B8F51800331FB8 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73925B8F51800331FB8 /* ControlsView.swift */; };
+		153EC73B25B8F51800331FB8 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73925B8F51800331FB8 /* ControlsView.swift */; };
+		153EC74125B8F9D800331FB8 /* OutcomeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC74025B8F9D800331FB8 /* OutcomeTextView.swift */; };
+		153EC74225B8F9D800331FB8 /* OutcomeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC74025B8F9D800331FB8 /* OutcomeTextView.swift */; };
 		1542672B25B72518007210DD /* StatusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542672A25B72518007210DD /* StatusModifier.swift */; };
 		1542672C25B72518007210DD /* StatusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542672A25B72518007210DD /* StatusModifier.swift */; };
 		1542673225B726B8007210DD /* ForwardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542673125B726B8007210DD /* ForwardButtonView.swift */; };
@@ -67,6 +73,9 @@
 
 /* Begin PBXFileReference section */
 		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
+		153EC73225B8F4B600331FB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		153EC73925B8F51800331FB8 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		153EC74025B8F9D800331FB8 /* OutcomeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeTextView.swift; sourceTree = "<group>"; };
 		1542672A25B72518007210DD /* StatusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModifier.swift; sourceTree = "<group>"; };
 		1542673125B726B8007210DD /* ForwardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardButtonView.swift; sourceTree = "<group>"; };
 		1566E59325B3ACE800C14957 /* LibraryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
@@ -124,11 +133,14 @@
 			children = (
 				158706AA25ADB9BB0011F155 /* GameView.swift */,
 				158706A425ADB9BB0011F155 /* GridView.swift */,
+				153EC73225B8F4B600331FB8 /* BoardView.swift */,
 				158706AD25ADB9BB0011F155 /* PiecesView.swift */,
 				158706A625ADB9BB0011F155 /* PieceButtonView.swift */,
 				158706A725ADB9BB0011F155 /* PieceImageView.swift */,
+				153EC73925B8F51800331FB8 /* ControlsView.swift */,
 				15A8654E25B0B0E300B4F239 /* ScoresView.swift */,
 				1576ABDC25B4990300A62DBB /* OutcomeView.swift */,
+				153EC74025B8F9D800331FB8 /* OutcomeTextView.swift */,
 				158706AB25ADB9BB0011F155 /* StatusView.swift */,
 				15A0162225B500D2007074C8 /* BackButtonView.swift */,
 				1542673125B726B8007210DD /* ForwardButtonView.swift */,
@@ -307,7 +319,9 @@
 				1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */,
 				15A0162325B500D2007074C8 /* BackButtonView.swift in Sources */,
 				158706BE25ADB9BB0011F155 /* StatusView.swift in Sources */,
+				153EC74125B8F9D800331FB8 /* OutcomeTextView.swift in Sources */,
 				158706B625ADB9BB0011F155 /* PieceImageView.swift in Sources */,
+				153EC73A25B8F51800331FB8 /* ControlsView.swift in Sources */,
 				158706BA25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
 				158706C025ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
 				15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */,
@@ -324,6 +338,7 @@
 				158706B425ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9571F25ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8654F25B0B0E300B4F239 /* ScoresView.swift in Sources */,
+				153EC73325B8F4B600331FB8 /* BoardView.swift in Sources */,
 				1542672B25B72518007210DD /* StatusModifier.swift in Sources */,
 				158706B025ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655625B0B73C00B4F239 /* ScoreModifier.swift in Sources */,
@@ -341,7 +356,9 @@
 				1587069E25ADB99A0011F155 /* GameLogic.swift in Sources */,
 				15A0162425B500D2007074C8 /* BackButtonView.swift in Sources */,
 				158706BF25ADB9BB0011F155 /* StatusView.swift in Sources */,
+				153EC74225B8F9D800331FB8 /* OutcomeTextView.swift in Sources */,
 				158706B725ADB9BB0011F155 /* PieceImageView.swift in Sources */,
+				153EC73B25B8F51800331FB8 /* ControlsView.swift in Sources */,
 				158706BB25ADB9BB0011F155 /* WinnerStatusView.swift in Sources */,
 				158706C125ADB9BB0011F155 /* GameSelectionView.swift in Sources */,
 				15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */,
@@ -358,6 +375,7 @@
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
 				15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */,
+				153EC73425B8F4B600331FB8 /* BoardView.swift in Sources */,
 				1542672C25B72518007210DD /* StatusModifier.swift in Sources */,
 				158706B125ADB9BB0011F155 /* GridView.swift in Sources */,
 				15A8655725B0B73C00B4F239 /* ScoreModifier.swift in Sources */,

@@ -9,43 +9,21 @@ import SwiftUI
 
 struct GameView {
     @EnvironmentObject var game: Game
-    
-    @State private var newGameType = gameTypes.first!
 }
 
 extension GameView: View {
     var body: some View {
-        VStack {
-            ZStack {
-                GridView()
-                
-                if !game.launch && !game.populate {
-                    PiecesView()
-                }
+        if !Device.iOS || Device.iOS && Device.portrait() {
+            VStack {
+                BoardView()
+                ControlsView()
             }
-        
-            StatusView()
-                .hidden(game.launch)
-        }
-        .frame(height: 550 * Device.scaling)
-        
-        VStack {
-            if game.train {
-                TrainingView()
-            } else if game.players != 0 && game.inProgress() {
-                PlayingView()
-            } else {
-                GameSelectionView(newGameType: $newGameType)
-                    .hidden(game.populate || game.inProgress())
+        } else {
+            HStack {
+                BoardView()
+                ControlsView()
             }
         }
-        .frame(height: Device.iPhone ? 250 : (Device.iOS ? 200 : 100))
-        .onAppear(perform: {
-//            LibraryLogic.reset(game)
-            if game.launch && game.fullyTrained() {
-                LibraryLogic.populate(using: game)
-            }
-        })
     }
 }
 

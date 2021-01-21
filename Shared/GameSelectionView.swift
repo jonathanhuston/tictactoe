@@ -24,12 +24,12 @@ extension GameSelectionView: View {
                 .pickerStyle(DefaultPickerStyle())
                 .fixedSize()
                 
-                if Device.iPhone {
+                if Device.iOS {
                     GameButtonsView(newGameType: $newGameType)
                 }
             }
 
-            if !Device.iPhone {
+            if !Device.iOS {
                 GameButtonsView(newGameType: $newGameType)
             }
         }
