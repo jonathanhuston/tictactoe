@@ -9,14 +9,25 @@ import SwiftUI
 
 struct Device {
     #if os(iOS)
-    static var scaling = min(UIScreen.main.bounds.size.width,
-                             UIScreen.main.bounds.size.height) / 625
+    static func height() -> CGFloat {
+        UIScreen.main.bounds.size.height
+    }
     
-    static var iOS = true
+    static func width() -> CGFloat {
+        UIScreen.main.bounds.size.width
+    }
+    
+    static let scaling = min(width(), height()) / 625
+    
+    static func isPortrait() -> Bool {
+        height() > width()
+    }
+    
+    static let iOS = true
     
     #elseif os(macOS)
-    static var scaling: CGFloat = 1
+    static let scaling: CGFloat = 1
     
-    static var iOS = false
+    static let iOS = false
     #endif
 }

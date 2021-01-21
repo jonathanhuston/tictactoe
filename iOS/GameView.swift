@@ -20,7 +20,7 @@ struct GameView {
 extension GameView: View {
     var body: some View {
         Group {
-            if orientation.isPortrait {
+            if orientation.isPortrait || Device.isPortrait() {
                 VStack {
                     BoardView()
                     ControlsView()
