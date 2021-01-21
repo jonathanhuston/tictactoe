@@ -9,21 +9,31 @@ import SwiftUI
 
 struct GameView {
     @EnvironmentObject var game: Game
-    @EnvironmentObject var orientation: Orientation
+    
+    @State var orientation = UIDevice.current.orientation
+    
+    let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+            .makeConnectable()
+            .autoconnect()
 }
 
 extension GameView: View {
     var body: some View {
-        if !Device.iOS || Device.iOS && Device.portrait() {
-            VStack {
-                BoardView()
-                ControlsView()
+        Group {
+            if !Device.iOS || Device.iOS && orientation.isPortrait {
+                VStack {
+                    BoardView()
+                    ControlsView()
+                }
+            } else {
+                HStack {
+                    BoardView()
+                    ControlsView()
+                }
             }
-        } else {
-            HStack {
-                BoardView()
-                ControlsView()
-            }
+        }
+        .onReceive(orientationChanged) { _ in
+            self.orientation = UIDevice.current.orientation
         }
     }
 }

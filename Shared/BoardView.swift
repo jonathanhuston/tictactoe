@@ -26,11 +26,11 @@ extension BoardView: View {
                 .hidden(game.launch)
         }
         .frame(width: 550 * Device.scaling, height: 550 * Device.scaling)
-        .onAppear(perform: {
+        .onAppear() {
             if game.launch && game.fullyTrained() {
                 LibraryLogic.populate(using: game)
             }
-        })
+        }
     }
 }
 
