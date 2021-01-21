@@ -25,7 +25,7 @@ extension ControlsView: View {
                     .hidden(game.populate || game.inProgress())
             }
         }
-        .frame(width: 250, height: Device.iOS ? 400 * Device.scaling : 100)
+        .frame(width: 280, height: Device.iOS ? 280 : 100)
     }
 }
 

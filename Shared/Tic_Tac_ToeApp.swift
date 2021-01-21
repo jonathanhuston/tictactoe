@@ -28,12 +28,17 @@ class Game: ObservableObject {
     var computerTurn = false
 }
 
+class Orientation: ObservableObject {
+    @Published var portrait = Device.portrait()
+}
+
 @main
 struct TicTacToeApp: App {
     var body: some Scene {
         WindowGroup {
             GameView()
                 .environmentObject(Game())
+                .environmentObject(Orientation())
         }
         
     }

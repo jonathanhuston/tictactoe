@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView {
     @EnvironmentObject var game: Game
+    @EnvironmentObject var orientation: Orientation
 }
 
 extension GameView: View {

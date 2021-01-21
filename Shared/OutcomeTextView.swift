@@ -16,7 +16,7 @@ extension OutcomeTextView: View {
     var body: some View {
         HStack {
             Text("\(piece):")
-                .frame(width: 20 * Device.scaling)
+                .frame(width: 22 * Device.scaling)
             Text("\(outcome)")
         }
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct PopulateStatusView: View {
     var body: some View {
         Text("Training all \(uniqueGames) games...")
-            .font(.title)
+            .font(Device.iOS ? .title2 : .title)
             .foregroundColor(.purple)
     }
 }

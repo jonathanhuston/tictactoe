@@ -25,7 +25,7 @@ extension BoardView: View {
             StatusView()
                 .hidden(game.launch)
         }
-        .frame(width: 580 * Device.scaling, height: 550 * Device.scaling)
+        .frame(width: 550 * Device.scaling, height: 550 * Device.scaling)
         .onAppear(perform: {
             if game.launch && game.fullyTrained() {
                 LibraryLogic.populate(using: game)

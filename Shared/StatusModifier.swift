@@ -12,7 +12,7 @@ struct StatusModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .font(.title)
+            .font(Device.iOS ? .title2 : .title)
             .foregroundColor(color)
             .frame(width: 220)
     }

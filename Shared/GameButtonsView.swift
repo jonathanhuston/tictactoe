@@ -17,7 +17,7 @@ extension GameButtonsView: View {
         HStack(spacing: Device.iOS ? 60 : 20) {
             Button("Play") {
                 game.launch = false
-                            
+                                        
                 switch newGameType {
                 case "Computer vs. Computer":
                     game.newGame(players: 0)
