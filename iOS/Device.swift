@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Device {
-    #if os(iOS)
     static func height() -> CGFloat {
         UIScreen.main.bounds.size.height
     }
@@ -24,10 +23,4 @@ struct Device {
     }
     
     static let iOS = true
-    
-    #elseif os(macOS)
-    static let scaling: CGFloat = 1
-    
-    static let iOS = false
-    #endif
 }
