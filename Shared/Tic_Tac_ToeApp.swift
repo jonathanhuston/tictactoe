@@ -30,6 +30,10 @@ class Game: ObservableObject {
 
 @main
 struct TicTacToeApp: App {
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
+    
     var body: some Scene {
         WindowGroup {
             GameView()

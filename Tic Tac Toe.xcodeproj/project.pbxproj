@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1514A93F25BEDCAC0078F7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1514A93E25BEDCAC0078F7EC /* MainMenu.xib */; };
 		15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		153EC73325B8F4B600331FB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73225B8F4B600331FB8 /* BoardView.swift */; };
@@ -21,6 +22,7 @@
 		1542673325B726B8007210DD /* ForwardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542673125B726B8007210DD /* ForwardButtonView.swift */; };
 		1566E59425B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
 		1566E59525B3ACE800C14957 /* LibraryLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566E59325B3ACE800C14957 /* LibraryLogic.swift */; };
+		1573B9FE25BED224009DCBF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573B9FC25BED224009DCBF9 /* AppDelegate.swift */; };
 		1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
 		1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
 		1587069B25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
@@ -72,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1514A93E25BEDCAC0078F7EC /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
 		153EC73225B8F4B600331FB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		153EC73925B8F51800331FB8 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		1542672A25B72518007210DD /* StatusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModifier.swift; sourceTree = "<group>"; };
 		1542673125B726B8007210DD /* ForwardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardButtonView.swift; sourceTree = "<group>"; };
 		1566E59325B3ACE800C14957 /* LibraryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
+		1573B9FC25BED224009DCBF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1576ABDC25B4990300A62DBB /* OutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeView.swift; sourceTree = "<group>"; };
 		1587069825ADB99A0011F155 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		1587069925ADB99A0011F155 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 		15E2791B25ADB65A00222A42 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				1573B9FC25BED224009DCBF9 /* AppDelegate.swift */,
+				1514A93E25BEDCAC0078F7EC /* MainMenu.xib */,
 				159D5CB425BE2F77000BAF8C /* Device.swift */,
 				15E5C9E225B9AE6800ACAA5D /* GameView.swift */,
 				15E2791C25ADB65A00222A42 /* Info.plist */,
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E2792325ADB65A00222A42 /* Assets.xcassets in Resources */,
+				1514A93F25BEDCAC0078F7EC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +387,7 @@
 				15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */,
 				158706B525ADB9BB0011F155 /* PieceButtonView.swift in Sources */,
 				15E9572025ADFA080001D26B /* GameButtonsView.swift in Sources */,
+				1573B9FE25BED224009DCBF9 /* AppDelegate.swift in Sources */,
 				15A8655025B0B0E300B4F239 /* ScoresView.swift in Sources */,
 				153EC73425B8F4B600331FB8 /* BoardView.swift in Sources */,
 				1542672C25B72518007210DD /* StatusModifier.swift in Sources */,
@@ -556,9 +564,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9P8C6ZACEU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -584,6 +593,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9P8C6ZACEU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
