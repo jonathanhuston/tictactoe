@@ -1,6 +1,6 @@
 //
 //  GameButtonsView.swift
-//  Tic Tac Toe
+//  Tic Tac Toe Aficionado
 //
 //  Created by Jonathan Huston on 1/12/21.
 //

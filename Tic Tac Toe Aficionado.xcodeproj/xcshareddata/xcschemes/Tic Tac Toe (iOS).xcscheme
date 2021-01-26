@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "15E2791125ADB65A00222A42"
                BuildableName = "Tic Tac Toe.app"
-               BlueprintName = "Tic Tac Toe (iOS)"
+               BlueprintName = "Tic Tac Toe Aficionado (iOS)"
                ReferencedContainer = "container:Tic Tac Toe Aficionado.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15E2791125ADB65A00222A42"
             BuildableName = "Tic Tac Toe.app"
-            BlueprintName = "Tic Tac Toe (iOS)"
+            BlueprintName = "Tic Tac Toe Aficionado (iOS)"
             ReferencedContainer = "container:Tic Tac Toe Aficionado.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "15E2791125ADB65A00222A42"
             BuildableName = "Tic Tac Toe.app"
-            BlueprintName = "Tic Tac Toe (iOS)"
+            BlueprintName = "Tic Tac Toe Aficionado (iOS)"
             ReferencedContainer = "container:Tic Tac Toe Aficionado.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

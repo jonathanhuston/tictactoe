@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1514A93F25BEDCAC0078F7EC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1514A93E25BEDCAC0078F7EC /* MainMenu.xib */; };
 		15394B0D25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		15394B0E25B261FF00643877 /* PopulateStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15394B0C25B261FF00643877 /* PopulateStatusView.swift */; };
 		153EC73325B8F4B600331FB8 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EC73225B8F4B600331FB8 /* BoardView.swift */; };
@@ -25,6 +24,7 @@
 		1573B9FE25BED224009DCBF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1573B9FC25BED224009DCBF9 /* AppDelegate.swift */; };
 		1576ABDD25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
 		1576ABDE25B4990300A62DBB /* OutcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576ABDC25B4990300A62DBB /* OutcomeView.swift */; };
+		1584D7A625C0AB8800331A12 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1584D7A525C0AB8800331A12 /* MainMenu.xib */; };
 		1587069B25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069C25ADB99A0011F155 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069825ADB99A0011F155 /* Library.swift */; };
 		1587069D25ADB99A0011F155 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1587069925ADB99A0011F155 /* GameLogic.swift */; };
@@ -63,8 +63,8 @@
 		15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8655C25B0BE7600B4F239 /* PlayingView.swift */; };
 		15AE172925B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
 		15AE172A25B10CF900BDD663 /* CounterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AE172825B10CF900BDD663 /* CounterTextView.swift */; };
-		15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */; };
-		15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */; };
+		15E2791E25ADB65A00222A42 /* Tic_Tac_Toe_AficionadoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_Toe_AficionadoApp.swift */; };
+		15E2791F25ADB65A00222A42 /* Tic_Tac_Toe_AficionadoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2790B25ADB65900222A42 /* Tic_Tac_Toe_AficionadoApp.swift */; };
 		15E2792225ADB65A00222A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2790D25ADB65A00222A42 /* Assets.xcassets */; };
 		15E2792325ADB65A00222A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2790D25ADB65A00222A42 /* Assets.xcassets */; };
 		15E5C9E325B9AE6800ACAA5D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E5C9E225B9AE6800ACAA5D /* GameView.swift */; };
@@ -74,7 +74,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1514A93E25BEDCAC0078F7EC /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		15394B0C25B261FF00643877 /* PopulateStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateStatusView.swift; sourceTree = "<group>"; };
 		153EC73225B8F4B600331FB8 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		153EC73925B8F51800331FB8 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		1566E59325B3ACE800C14957 /* LibraryLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryLogic.swift; sourceTree = "<group>"; };
 		1573B9FC25BED224009DCBF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1576ABDC25B4990300A62DBB /* OutcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeView.swift; sourceTree = "<group>"; };
+		1584D7A525C0AB8800331A12 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		1587069825ADB99A0011F155 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		1587069925ADB99A0011F155 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		1587069A25ADB99A0011F155 /* GameDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDefinitions.swift; sourceTree = "<group>"; };
@@ -104,12 +104,12 @@
 		15A8655525B0B73C00B4F239 /* ScoreModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModifier.swift; sourceTree = "<group>"; };
 		15A8655C25B0BE7600B4F239 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		15AE172825B10CF900BDD663 /* CounterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTextView.swift; sourceTree = "<group>"; };
-		15D23E9525BEC11F00356D4C /* Tic Tac ToeRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tic Tac ToeRelease.entitlements"; sourceTree = "<group>"; };
-		15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeApp.swift; sourceTree = "<group>"; };
+		15D23E9525BEC11F00356D4C /* Tic Tac Toe AficionadoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tic Tac Toe AficionadoRelease.entitlements"; sourceTree = "<group>"; };
+		15E2790B25ADB65900222A42 /* Tic_Tac_Toe_AficionadoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_Toe_AficionadoApp.swift; sourceTree = "<group>"; };
 		15E2790D25ADB65A00222A42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15E2791225ADB65A00222A42 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E2791525ADB65A00222A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15E2791A25ADB65A00222A42 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E2791A25ADB65A00222A42 /* Tic Tac Toe Aficionado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe Aficionado.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E2791C25ADB65A00222A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E2791D25ADB65A00222A42 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		15E5C9E225B9AE6800ACAA5D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		15E2790525ADB65800222A42 = {
 			isa = PBXGroup;
 			children = (
-				15D23E9525BEC11F00356D4C /* Tic Tac ToeRelease.entitlements */,
+				15D23E9525BEC11F00356D4C /* Tic Tac Toe AficionadoRelease.entitlements */,
 				15E2790A25ADB65900222A42 /* Shared */,
 				15E2791425ADB65A00222A42 /* iOS */,
 				15E2791B25ADB65A00222A42 /* macOS */,
@@ -187,7 +187,7 @@
 		15E2790A25ADB65900222A42 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				15E2790B25ADB65900222A42 /* Tic_Tac_ToeApp.swift */,
+				15E2790B25ADB65900222A42 /* Tic_Tac_Toe_AficionadoApp.swift */,
 				156765B225ADB798002BACC9 /* Views */,
 				1587069A25ADB99A0011F155 /* GameDefinitions.swift */,
 				1587069925ADB99A0011F155 /* GameLogic.swift */,
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				15E2791225ADB65A00222A42 /* Tic Tac Toe.app */,
-				15E2791A25ADB65A00222A42 /* Tic Tac Toe.app */,
+				15E2791A25ADB65A00222A42 /* Tic Tac Toe Aficionado.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,10 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				1573B9FC25BED224009DCBF9 /* AppDelegate.swift */,
-				1514A93E25BEDCAC0078F7EC /* MainMenu.xib */,
 				159D5CB425BE2F77000BAF8C /* Device.swift */,
 				15E5C9E225B9AE6800ACAA5D /* GameView.swift */,
 				15E2791C25ADB65A00222A42 /* Info.plist */,
+				1584D7A525C0AB8800331A12 /* MainMenu.xib */,
 				15E2791D25ADB65A00222A42 /* macOS.entitlements */,
 			);
 			path = macOS;
@@ -233,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		15E2791125ADB65A00222A42 /* Tic Tac Toe (iOS) */ = {
+		15E2791125ADB65A00222A42 /* Tic Tac Toe Aficionado (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15E2792625ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe (iOS)" */;
+			buildConfigurationList = 15E2792625ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe Aficionado (iOS)" */;
 			buildPhases = (
 				15E2790E25ADB65A00222A42 /* Sources */,
 				15E2790F25ADB65A00222A42 /* Frameworks */,
@@ -245,14 +245,14 @@
 			);
 			dependencies = (
 			);
-			name = "Tic Tac Toe (iOS)";
+			name = "Tic Tac Toe Aficionado (iOS)";
 			productName = "Tic Tac Toe (iOS)";
 			productReference = 15E2791225ADB65A00222A42 /* Tic Tac Toe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		15E2791925ADB65A00222A42 /* Tic Tac Toe (macOS) */ = {
+		15E2791925ADB65A00222A42 /* Tic Tac Toe Aficionado (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 15E2792925ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe (macOS)" */;
+			buildConfigurationList = 15E2792925ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe Aficionado (macOS)" */;
 			buildPhases = (
 				15E2791625ADB65A00222A42 /* Sources */,
 				15E2791725ADB65A00222A42 /* Frameworks */,
@@ -262,9 +262,9 @@
 			);
 			dependencies = (
 			);
-			name = "Tic Tac Toe (macOS)";
+			name = "Tic Tac Toe Aficionado (macOS)";
 			productName = "Tic Tac Toe (macOS)";
-			productReference = 15E2791A25ADB65A00222A42 /* Tic Tac Toe.app */;
+			productReference = 15E2791A25ADB65A00222A42 /* Tic Tac Toe Aficionado.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -297,8 +297,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				15E2791125ADB65A00222A42 /* Tic Tac Toe (iOS) */,
-				15E2791925ADB65A00222A42 /* Tic Tac Toe (macOS) */,
+				15E2791125ADB65A00222A42 /* Tic Tac Toe Aficionado (iOS) */,
+				15E2791925ADB65A00222A42 /* Tic Tac Toe Aficionado (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -317,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15E2792325ADB65A00222A42 /* Assets.xcassets in Resources */,
-				1514A93F25BEDCAC0078F7EC /* MainMenu.xib in Resources */,
+				1584D7A625C0AB8800331A12 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +343,7 @@
 				15A8655D25B0BE7600B4F239 /* PlayingView.swift in Sources */,
 				158706B825ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,
 				158706B225ADB9BB0011F155 /* TrainingView.swift in Sources */,
-				15E2791E25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
+				15E2791E25ADB65A00222A42 /* Tic_Tac_Toe_AficionadoApp.swift in Sources */,
 				159D5CB125BE2F5D000BAF8C /* Device.swift in Sources */,
 				158706AE25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				1542673225B726B8007210DD /* ForwardButtonView.swift in Sources */,
@@ -380,7 +380,7 @@
 				15A8655E25B0BE7600B4F239 /* PlayingView.swift in Sources */,
 				158706B925ADB9BB0011F155 /* PlayingStatusView.swift in Sources */,
 				158706B325ADB9BB0011F155 /* TrainingView.swift in Sources */,
-				15E2791F25ADB65A00222A42 /* Tic_Tac_ToeApp.swift in Sources */,
+				15E2791F25ADB65A00222A42 /* Tic_Tac_Toe_AficionadoApp.swift in Sources */,
 				159D5CB525BE2F77000BAF8C /* Device.swift in Sources */,
 				158706AF25ADB9BB0011F155 /* HiddenModifier.swift in Sources */,
 				1542673325B726B8007210DD /* ForwardButtonView.swift in Sources */,
@@ -578,7 +578,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanhuston.Tic-Tac-Toe";
-				PRODUCT_NAME = "Tic Tac Toe";
+				PRODUCT_NAME = "Tic Tac Toe Aficionado";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -589,7 +589,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Tic Tac ToeRelease.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Tic Tac Toe AficionadoRelease.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -604,7 +604,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jonathanhuston.Tic-Tac-Toe";
-				PRODUCT_NAME = "Tic Tac Toe";
+				PRODUCT_NAME = "Tic Tac Toe Aficionado";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -622,7 +622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15E2792625ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe (iOS)" */ = {
+		15E2792625ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe Aficionado (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E2792725ADB65A00222A42 /* Debug */,
@@ -631,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		15E2792925ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe (macOS)" */ = {
+		15E2792925ADB65A00222A42 /* Build configuration list for PBXNativeTarget "Tic Tac Toe Aficionado (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E2792A25ADB65A00222A42 /* Debug */,
