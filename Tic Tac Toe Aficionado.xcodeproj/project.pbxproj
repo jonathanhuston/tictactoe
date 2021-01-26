@@ -284,7 +284,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 15E2790925ADB65800222A42 /* Build configuration list for PBXProject "Tic Tac Toe" */;
+			buildConfigurationList = 15E2790925ADB65800222A42 /* Build configuration list for PBXProject "Tic Tac Toe Aficionado" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -567,7 +567,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9P8C6ZACEU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -593,7 +593,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9P8C6ZACEU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -613,7 +613,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		15E2790925ADB65800222A42 /* Build configuration list for PBXProject "Tic Tac Toe" */ = {
+		15E2790925ADB65800222A42 /* Build configuration list for PBXProject "Tic Tac Toe Aficionado" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				15E2792425ADB65A00222A42 /* Debug */,
