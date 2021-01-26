@@ -39,6 +39,5 @@ struct TicTacToeApp: App {
             GameView()
                 .environmentObject(Game())
         }
-        
     }
 }

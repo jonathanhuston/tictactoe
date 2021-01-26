@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let nib = NSNib(nibNamed: NSNib.Name("MainMenu"), bundle: Bundle.main)
         nib?.instantiate(withOwner: NSApplication.shared, topLevelObjects: nil)
+        NSWindow.allowsAutomaticWindowTabbing = false
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
