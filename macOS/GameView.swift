@@ -17,6 +17,11 @@ extension GameView: View {
             BoardView()
             ControlsView()
         }
+        .onAppear() {
+            if game.launch && game.fullyTrained() {
+                LibraryLogic.populate(using: game)
+            }
+        }
     }
 }
 

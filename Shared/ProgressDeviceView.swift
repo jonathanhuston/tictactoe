@@ -11,6 +11,7 @@ struct ProgressDeviceView: View {
     var body: some View {
         if Device.iOS {
             ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .purple))
                 .padding()
         } else {
             ProgressView()

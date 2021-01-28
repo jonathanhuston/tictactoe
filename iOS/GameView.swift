@@ -35,6 +35,11 @@ extension GameView: View {
         .onReceive(orientationChanged) { _ in
             self.orientation = UIDevice.current.orientation
         }
+        .onAppear() {
+            if game.launch && game.fullyTrained() {
+                LibraryLogic.populate(using: game)
+            }
+        }
     }
 }
 
