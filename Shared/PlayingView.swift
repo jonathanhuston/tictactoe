@@ -19,11 +19,13 @@ extension PlayingView: View {
                     Text("Hints")
                 }
                 .fixedSize()
+                .toggleStyle(SwitchToggleStyle(tint: Color.purple))
                 
                 Toggle(isOn: $game.showOutcomes) {
                     Text("Outcomes")
                 }
                 .fixedSize()
+                .toggleStyle(SwitchToggleStyle(tint: Color.purple))
                 .disabled(!game.showScores)
             }
             .padding()
