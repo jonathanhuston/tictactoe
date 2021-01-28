@@ -23,7 +23,7 @@ extension BoardView: View {
             }
         
             StatusView()
-                .hidden(game.launch)
+                .hidden(game.launch && !game.populate)
         }
         .frame(width: 550 * Device.scaling, height: 550 * Device.scaling)
         .onAppear() {

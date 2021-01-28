@@ -15,14 +15,16 @@ struct ControlsView {
 
 extension ControlsView: View {
     var body: some View {
-        VStack {
+        Group {
             if game.train {
                 TrainingView()
+            } else if game.populate {
+                ProgressDeviceView()
             } else if game.players != 0 && game.inProgress() {
                 PlayingView()
             } else {
                 GameSelectionView(newGameType: $newGameType)
-                    .hidden(game.populate || game.inProgress())
+                    .hidden(game.inProgress())
             }
         }
         .frame(width: 280, height: Device.iOS ? 280 : 100)
