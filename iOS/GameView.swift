@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView {
     @EnvironmentObject var game: Game
     
-    @State var orientation = UIDevice.current.orientation
+    @State private var orientation = UIDevice.current.orientation
     
     let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
             .makeConnectable()
