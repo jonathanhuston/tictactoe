@@ -10,8 +10,8 @@ import SwiftUI
 struct PieceImageView {
     @EnvironmentObject var game: Game
 
-    @State var row = 0
-    @State var col = 0
+    let row: Int
+    let col: Int
     
     let width: CGFloat = 140
     let height: CGFloat = 140

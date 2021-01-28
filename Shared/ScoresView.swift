@@ -10,8 +10,8 @@ import SwiftUI
 struct ScoresView {
     @EnvironmentObject var game: Game
     
-    @State var row = 0
-    @State var col = 0
+    let row: Int
+    let col: Int
 }
 
 extension ScoresView: View {
@@ -46,7 +46,7 @@ extension ScoresView: View {
 
 struct ScoresView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoresView()
+        ScoresView(row: 0, col: 1)
             .environmentObject(Game())
     }
 }

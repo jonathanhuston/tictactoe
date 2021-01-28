@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HiddenModifier: ViewModifier {
-    var condition: Bool
+    let condition: Bool
     
     func body(content: Content) -> some View {
         content

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreModifier: ViewModifier {
-    var size: CGFloat
+    let size: CGFloat
     
     func body(content: Content) -> some View {
         content

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OutcomeTextView {
-    var piece: String
-    var outcome: Int
+    let piece: String
+    let outcome: Int
 }
 
 extension OutcomeTextView: View {

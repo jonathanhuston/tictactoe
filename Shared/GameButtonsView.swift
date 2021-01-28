@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GameButtonsView {
     @EnvironmentObject var game: Game
-
     @Binding var newGameType: String
 }
 
